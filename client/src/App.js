@@ -1,9 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [tasks, setTasks] = useState([
+    {
+      name: "do something",
+      category: "wip"
+    },
+    {
+      name: "do something else",
+      category: "wip"
+    }
+  ])
+
   useEffect(() => {
     console.log("Hello!");
     axios
@@ -12,22 +23,35 @@ function App() {
         console.log(res.data.message);
       })
   })
+
+  function getPlayerStats() {
+    // const name = "Uber Guy"
+    axios
+      .post("/api/player", {name: "uber Guy"})
+      .then(res => {
+        console.log(res);
+      })
+  }
+
+  function onDragOver(e) {
+    e.preventDefault();
+  }
+
   return (
+    // tasks.forEach (task => {
+
+    // })
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => getPlayerStats()}>Get Stats</button>
+      <div className="container-drag">
+        <div id="One" className="wip">
+          <h3>Wip</h3>
+        </div>
+        <div id="two" className="droppable" onDragOver={ e => onDragOver(e)}>
+          <h3>Complete</h3>
+        </div>
+      </div>
     </div>
   );
 }
