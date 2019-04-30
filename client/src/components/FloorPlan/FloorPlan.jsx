@@ -14,7 +14,7 @@ function FloorPlan() {
 
   const taskList = { wip: [], complete: [] }
 
-  tasks.forEach (task => {
+  tasks.forEach(task => {
     taskList[task.category].push(
       <div
         key={task.name}
@@ -25,22 +25,46 @@ function FloorPlan() {
         {task.name}
       </div>
     )
-  })
+  });
+
   function onDragOver(e) {
     e.preventDefault();
   }
 
   function onDragStart(e, name) {
     console.log("dragstart:", name);
-    
+    e.dataTransfer.setData("name", name)
+  }
+
+  function onDrop(e, cat) {
+    let name = e.dataTransfer.getData("name");
+
+    let taskList = tasks.filter(task => {
+      if (task.name === name) {
+        task.category = cat;
+      }
+      return task
+    });
+
+    setTasks(taskList);
   }
   return (
     <div className="container-drag">
-        <div id="One" className="wip">
+        <div
+          id="One"
+          className="wip"
+          onDragOver={ e => onDragOver(e)}
+          onDrop={e => onDrop(e, "wip")}
+          >
           <h3>Wip</h3>
           {taskList.wip}
         </div>
-        <div id="two" className="droppable" onDragOver={ e => onDragOver(e)}>
+        <div 
+          id="two" 
+          className="droppable"
+          onDragOver={ e => onDragOver(e)}
+          onDrop={e => onDrop(e, "complete")}
+          >
           <h3>Complete</h3>
           {taskList.complete}
         </div>
