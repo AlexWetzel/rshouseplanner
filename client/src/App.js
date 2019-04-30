@@ -1,19 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
+
+import FloorPlan from './components/FloorPlan';
 import './App.css';
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      name: "do something",
-      category: "wip"
-    },
-    {
-      name: "do something else",
-      category: "wip"
-    }
-  ])
+  // const [tasks, setTasks] = useState([
+  //   {
+  //     name: "do something",
+  //     category: "wip"
+  //   },
+  //   {
+  //     name: "do something else",
+  //     category: "wip"
+  //   }
+  // ])
+
+  // const taskList = { wip: [], complete: [] }
+
+  // tasks.forEach (task => {
+  //   taskList[task.category].push(
+  //     <div
+  //       key={task.name}
+  //       onDragStart={ e => onDragStart(e, task.name)}
+  //       draggable
+  //       className="draggable"
+  //     >
+  //       {task.name}
+  //     </div>
+  //   )
+  // })
 
   useEffect(() => {
     console.log("Hello!");
@@ -33,25 +49,19 @@ function App() {
       })
   }
 
-  function onDragOver(e) {
-    e.preventDefault();
-  }
+  // function onDragOver(e) {
+  //   e.preventDefault();
+  // }
+
+  // function onDragStart(e, name) {
+  //   console.log("dragstart:", name);
+
+  // }
 
   return (
-    // tasks.forEach (task => {
-
-    // })
-
     <div className="App">
       <button onClick={() => getPlayerStats()}>Get Stats</button>
-      <div className="container-drag">
-        <div id="One" className="wip">
-          <h3>Wip</h3>
-        </div>
-        <div id="two" className="droppable" onDragOver={ e => onDragOver(e)}>
-          <h3>Complete</h3>
-        </div>
-      </div>
+      <FloorPlan />
     </div>
   );
 }
