@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 function FloorPlan() {
   const [tasks, setTasks] = useState([
     {
-      name: "do something",
+      name: "one",
       category: "wip"
     },
     {
-      name: "do something else",
-      category: "wip"
+      name: "two",
+      category: "complete"
     }
   ])
 
@@ -18,7 +18,7 @@ function FloorPlan() {
     taskList[task.category].push(
       <div
         key={task.name}
-        onDragStart={ e => onDragStart(e, task.name)}
+        onDragStart={ e => onDragStart(e, task.category)}
         draggable
         className="draggable"
       >
@@ -31,18 +31,25 @@ function FloorPlan() {
     e.preventDefault();
   }
 
-  function onDragStart(e, name) {
-    console.log("dragstart:", name);
-    e.dataTransfer.setData("name", name)
+  function onDragStart(e, cat) {
+    console.log("dragstart:", cat);
+    // e.dataTransfer.setData("name", name);
+    e.dataTransfer.setData("category", cat)
   }
 
-  function onDrop(e, cat) {
-    let name = e.dataTransfer.getData("name");
-
-    let taskList = tasks.filter(task => {
-      if (task.name === name) {
-        task.category = cat;
+  function onDrop(e, newCat) {
+    let oldCat = e.dataTransfer.getData("category");
+    console.log(oldCat, newCat)
+    let taskList = tasks.map(task => {
+      if (task.category === oldCat) {
+        // let catExchange = task.category;
+        task.category = newCat;
+        
       }
+      else if (task.category === newCat) {
+        task.category = oldCat;
+      }
+      console.log(task)
       return task
     });
 
