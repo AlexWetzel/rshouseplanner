@@ -1,22 +1,14 @@
 import React from 'react'
 import style from './GridPlane.module.css';
-import { GridSquare } from '../Grid';
+// import { GridSquare } from '../Grid';
+// import Room from '../Room';
 
-function GridPlane() {
-  const size = 5;
-  const gridSquares = []
-
-  for (let i = 0; i < size; i++) {
-    for (let j = 0; j < size; j++) {
-      gridSquares.push(
-        <GridSquare />
-      )
-    }    
-  }
+function GridPlane(props) {
 
   return (
     <div className={`${style.gridPlane}`}>
-      {gridSquares}
+      {/* {gridSquares} */}
+      {props.children}
     </div>
   )
 }
