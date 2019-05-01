@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { GridPlane } from '../Grid'
 
 function FloorPlan() {
   const [tasks, setTasks] = useState([
@@ -57,25 +58,26 @@ function FloorPlan() {
   }
   return (
     <div className="container-drag">
-        <div
-          id="One"
-          className="wip"
-          onDragOver={ e => onDragOver(e)}
-          onDrop={e => onDrop(e, "wip")}
-          >
-          <h3>Wip</h3>
-          {taskList.wip}
-        </div>
-        <div 
-          id="two" 
-          className="droppable"
-          onDragOver={ e => onDragOver(e)}
-          onDrop={e => onDrop(e, "complete")}
-          >
-          <h3>Complete</h3>
-          {taskList.complete}
-        </div>
+      <div
+        id="One"
+        className="wip"
+        onDragOver={ e => onDragOver(e)}
+        onDrop={e => onDrop(e, "wip")}
+        >
+        <h3>Wip</h3>
+        {taskList.wip}
       </div>
+      <div 
+        id="two" 
+        className="droppable"
+        onDragOver={ e => onDragOver(e)}
+        onDrop={e => onDrop(e, "complete")}
+        >
+        <h3>Complete</h3>
+        {taskList.complete}
+      </div>
+      <GridPlane />
+    </div>
   )
 }
 
