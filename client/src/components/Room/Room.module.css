@@ -8,3 +8,6 @@
   background-color: green;
   color: white;
 }
+.room:hover {
+  opacity: 0.5;
+}

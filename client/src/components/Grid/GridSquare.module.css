@@ -1,10 +1,26 @@
 .gridSquare {
   z-index: 100;
-  background-color: aqua;
   position: relative;
   width: 98px;
   height: 98px;
   border-style: solid;
   border-width: 1px;
-  border-color: black;
+  border-color: white;
 }
+.gridSquare:hover {
+  background-color: rgb(255, 255, 122);
+}
+
+/* .squareHighlight {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.squareHighlight:hover {
+  background-color: rgb(255, 255, 122);
+  opacity: 0.5;
+} */

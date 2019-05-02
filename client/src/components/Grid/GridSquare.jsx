@@ -5,6 +5,7 @@ function GridSquare(props) {
   return (
     <span className={`${style.gridSquare}`} {...props}>
       {props.children}
+      {/* <span className={`${style.squareHighlight}`} /> */}
     </span>
   )
 }
