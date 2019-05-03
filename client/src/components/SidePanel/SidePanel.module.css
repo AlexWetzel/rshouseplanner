@@ -1,0 +1,9 @@
+.sidePanel {
+  position: absolute;
+  left: 0;
+  z-index: 20;
+  background-color: rgb(73, 68, 51);
+  width: 500px;
+  height: 500px;
+  color: yellow;
+}

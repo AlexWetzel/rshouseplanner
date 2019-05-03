@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 import FloorPlan from './components/FloorPlan';
-import './App.css';
+import SidePanel from './components/SidePanel';
+import style from './App.module.css';
 
 function App() {
 
@@ -24,8 +25,9 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={() => getPlayerStats()}>Get Stats</button>
+    <div className={`${style.App}`}>
+      {/* <button onClick={() => getPlayerStats()}>Get Stats</button> */}
+      <SidePanel />
       <FloorPlan />
     </div>
   );
