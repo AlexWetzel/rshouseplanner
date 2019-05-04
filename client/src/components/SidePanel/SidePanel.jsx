@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './SidePanel.module.css';
-import Garden from '../Garden';
+import { Garden } from '../Layouts';
 import Dropdown from '../Dropdown/Dropdown';
 
 export default function SidePanel() {

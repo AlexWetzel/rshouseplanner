@@ -1,5 +1,8 @@
 .hotSpot {
   position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px;
   border: 2px dashed white; 
   width: auto;
   height: auto;
@@ -7,6 +10,24 @@
   /* opacity: 0.4; */
 }
 
+.hotSpot:hover ~ span{
+  background-color: rgb(231, 231, 179);
+}
 .hotSpot:hover {
   background-color: rgb(231, 231, 179);
 }
+
+
+
+
+/* 
+.poly {
+  fill: rgb(197, 192, 192);
+  stroke: white;
+  stroke-width: 2px;
+  stroke-dasharray: 5px;
+}
+
+.poly:hover {
+  fill: rgb(231, 231, 179);
+} */
