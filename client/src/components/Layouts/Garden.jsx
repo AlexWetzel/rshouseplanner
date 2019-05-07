@@ -44,8 +44,8 @@ export function Garden() {
   ]
   return (
     <div className={`${style.layout}`}>
-      {hotSpots.map( hS => {
-        return <HotSpot name={hS.name} position={hS.position} />
+      {hotSpots.map( hs => {
+        return <HotSpot key={hs.name} name={hs.name} position={hs.position} />
       })}
     </div>
   )

@@ -7,14 +7,13 @@ import style from './App.module.css';
 
 function App() {
 
-  useEffect(() => {
-    console.log("Hello!");
-    axios
-      .get("/api/hello")
-      .then(res => {
-        console.log(res.data.message);
-      })
-  })
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/hello")
+  //     .then(res => {
+  //       console.log(res.data.message);
+  //     })
+  // })
 
   function getPlayerStats() {
     axios

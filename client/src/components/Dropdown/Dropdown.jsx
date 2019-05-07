@@ -7,7 +7,7 @@ export default function Dropdown(props) {
       
       <select>
         {props.builds.map( b => {
-          return <option>{b.name}</option>
+          return <option key={b.name}>{b.name}</option>
         })}
       </select>
     </div>

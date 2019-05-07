@@ -5,7 +5,7 @@ export default function HotSpot(props) {
 
   return (
     <span>
-      {props.position.map(p => {
+      {props.position.map((p, index) => {
         const [t,r,b,l] = p;
   
         const position = {
@@ -15,7 +15,8 @@ export default function HotSpot(props) {
           left: l+'%',
         }
         return (
-        <span 
+        <span
+          key={props.name + index}
           className={`${style.hotSpot}`}
           style={position}
         >

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './SidePanel.module.css';
 import { Garden } from '../Layouts';
 import Dropdown from '../Dropdown/Dropdown';
+import { StoreContext } from '../../context/StoreContext';
+import { types } from '../../context/reducers'
 
 export default function SidePanel() {
+  const { state, dispatch, actions } = useContext(StoreContext);
+
+  // function test() {
+
+  // }
   const roomData = {
     name: 'Garden',
     level: '1',
@@ -56,9 +63,10 @@ export default function SidePanel() {
     <div className={`${style.sidePanel}`}>
       Test
       <Garden />
+      <button onClick={() => actions.test()}>test</button>
 
-      {roomData.hotSpots.map(hS => {
-        return <Dropdown name={hS.name} builds={hS.builds}/>
+      {roomData.hotSpots.map(hs => {
+        return <Dropdown key={hs.name} name={hs.name} builds={hs.builds}/>
       })}
       
     </div>
