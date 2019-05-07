@@ -3,7 +3,7 @@ import style from './SidePanel.module.css';
 import { Garden } from '../Layouts';
 import Dropdown from '../Dropdown/Dropdown';
 import { StoreContext } from '../../context/StoreContext';
-import { types } from '../../context/reducers'
+import { types } from '../../context/reducers';
 
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);

@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { GridPlane, GridSquare } from '../Grid';
 import Room from '../Room';
+import { StoreContext } from '../../context/StoreContext';
 
 function FloorPlan() {
-  const [rooms, setRooms] = useState([
-    {
-      name: "bedroom",
-      coordinates: "1,2"
-    },
-    {
-      name: "garden",
-      coordinates: "2,4"
-    }
-  ])
+  // const [rooms, setRooms] = useState([
+  //   {
+  //     name: "bedroom",
+  //     coordinates: "1,2"
+  //   },
+  //   {
+  //     name: "garden",
+  //     coordinates: "2,4"
+  //   }
+  // ])
+
+  const { state, actions } = useContext(StoreContext);
+  const { rooms } = state;
 
   const size = 5;
   const gridSquares = []
@@ -25,7 +29,7 @@ function FloorPlan() {
           key={`${x},${y}`}
           coordinates={`${x},${y}`}
           onDragOver={ e => onDragOver(e)}
-          onDrop={e => onDrop(e, coords)}
+          onDrop={e => actions.swapRooms(e, coords, rooms)}
         >
           <RoomRender coords={coords} />
         </GridSquare>
@@ -43,24 +47,24 @@ function FloorPlan() {
     e.dataTransfer.setData("coordinates", coords)
   }
 
-  function onDrop(e, newCoords) {
-    let oldCoords = e.dataTransfer.getData("coordinates");
-    console.log(oldCoords, newCoords)
-    let newRooms = rooms.map(room => {
-      if (room.coordinates === oldCoords) {
-        room.coordinates = newCoords;        
-      }
-      else if (room.coordinates === newCoords) {
-        room.coordinates = oldCoords;
-      }
-      return room
-    });
+  // function onDrop(e, newCoords) {
+  //   let oldCoords = e.dataTransfer.getData("coordinates");
+  //   console.log(oldCoords, newCoords)
+  //   let newRooms = rooms.map(room => {
+  //     if (room.coordinates === oldCoords) {
+  //       room.coordinates = newCoords;        
+  //     }
+  //     else if (room.coordinates === newCoords) {
+  //       room.coordinates = oldCoords;
+  //     }
+  //     return room
+  //   });
 
-    setRooms(newRooms);
-  }
+  //   setRooms(newRooms);
+  // }
 
   function RoomRender(props) {
-    const room =  rooms.find(room => room.coordinates === props.coords);
+    const room = rooms.find(room => room.coordinates === props.coords);
     if (room) {
       return <Room onDragStart={e => onDragStart(e, room.coordinates)} name={room.name} />;
     }
