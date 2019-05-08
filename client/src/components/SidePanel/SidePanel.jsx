@@ -5,78 +5,26 @@ import Dropdown from '../Dropdown/Dropdown';
 import { StoreContext } from '../../context/StoreContext';
 import { types } from '../../context/reducers';
 
+import * as roomData from '../../data/roomData';
+import * as roomMaps from '../../data/roomMaps';
+
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);
   const { selectedRoom } = state;
-  // function test() {
-
-  // }
-  const roomData = [{
-    name: 'Garden',
-    level: '1',
-    price: '1000',
-    hotSpots: [
-      {
-        name: 'Centrepiece',
-        builds: [
-          {
-            name: 'Exit Portal',
-            level: '1',
-            materials: [
-              { name: 'Iron Bar', quantity: 10}
-            ]
-          },
-          {
-            name: 'Decorative Rock',
-            level: '5',
-            materials: [
-              { name: 'Limestone Brick', quantity: 5 }
-            ]
-          },
-          {
-            name: 'Pond',
-            level: '10',
-            materials: [
-              { name: 'Soft Clay', quantity: 10}
-            ]
-          },
-          {
-            name: 'Imp Statue',
-            level: '15',
-            materials: [
-              { name: 'Limestone Brick', quantity: 5 },
-              { name: 'Soft Clay', quantity: 5 },
-            ]
-          },
-          {
-            name: 'Dungeon Entrance',
-            level: '70',
-            materials: [
-              { name: 'Marble Brick', quantity: 1 }
-            ]
-          },
-        ]
-      }
-    ]
-  },
-  {
-    name: 'Bedroom',
-    level: '12',
-    price: '1000',
-    hotSpots: []
-  }]
-
-
-
 
   function RoomSelected() {
-    const room = roomData.find(room => {
-      return room.name === selectedRoom.name
-    });
+    const roomName = selectedRoom.name.toLowerCase();
+    // const room = roomData.find(room => {
+    //   return room.name === selectedRoom.name
+    // });
+    const room = roomData[roomName];
+    const map = roomMaps[roomName];
+    console.log(room);
+    console.log(map);
 
     return(
       <>
-        <Layout room={selectedRoom} />
+        <Layout room={selectedRoom} hotSpots={map}/>
         <h3>{'Hotspots'}</h3>
         {room.hotSpots.map(hs => {
           return <Dropdown key={hs.name} name={hs.name} builds={hs.builds}/>
