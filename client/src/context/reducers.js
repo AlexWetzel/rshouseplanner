@@ -10,14 +10,15 @@ const initialState = {
       coordinates: "2,4"
     }
   ],
-  selectedRoom: null
-
+  selectedRoom: null,
+  selectedHotSpot: null
 };
 
 const types = {
   test: 'TEST',
   selectRoom: 'SELECT_ROOM',
-  swapRooms: 'SWAP_ROOMS'
+  swapRooms: 'SWAP_ROOMS',
+  selectHotSpot: 'SELECT_HOTSPOT'
 }
 
 const reducer = (state = initialState, action) => {
