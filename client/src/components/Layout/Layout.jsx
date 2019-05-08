@@ -2,9 +2,8 @@ import React from 'react';
 import style from "./Layout.module.css";
 import HotSpot from '../HotSpot/HotSpot';
 
-export function Garden() {
+export default function Layout(props) {
   const hotSpots = [
-
     // {
     //   points: '37.5,37.5 62.5,37.5 62.5,62.5 62.5,37.5'
     // }
@@ -40,11 +39,11 @@ export function Garden() {
       name: 'Tip Jar',
       position: [[62.5, 75, 25, 12.5]]
     }
-
   ]
   return (
     <div className={`${style.layout}`}>
-      {hotSpots.map( hs => {
+      {props.room.name}
+      {hotSpots.map(hs => {
         return <HotSpot key={hs.name} name={hs.name} position={hs.position} />
       })}
     </div>

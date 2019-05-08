@@ -2,20 +2,10 @@ import React, { useState, useEffect, useContext } from 'react'
 import { GridPlane, GridSquare } from '../Grid';
 import Room from '../Room';
 import { StoreContext } from '../../context/StoreContext';
+import { types } from '../../context/reducers';
 
 function FloorPlan() {
-  // const [rooms, setRooms] = useState([
-  //   {
-  //     name: "bedroom",
-  //     coordinates: "1,2"
-  //   },
-  //   {
-  //     name: "garden",
-  //     coordinates: "2,4"
-  //   }
-  // ])
-
-  const { state, actions } = useContext(StoreContext);
+  const { state, dispatch, actions } = useContext(StoreContext);
   const { rooms } = state;
 
   const size = 5;
@@ -47,28 +37,18 @@ function FloorPlan() {
     e.dataTransfer.setData("coordinates", coords)
   }
 
-  // function onDrop(e, newCoords) {
-  //   let oldCoords = e.dataTransfer.getData("coordinates");
-  //   console.log(oldCoords, newCoords)
-  //   let newRooms = rooms.map(room => {
-  //     if (room.coordinates === oldCoords) {
-  //       room.coordinates = newCoords;        
-  //     }
-  //     else if (room.coordinates === newCoords) {
-  //       room.coordinates = oldCoords;
-  //     }
-  //     return room
-  //   });
-
-  //   setRooms(newRooms);
-  // }
-
   function RoomRender(props) {
     const room = rooms.find(room => room.coordinates === props.coords);
     if (room) {
-      return <Room onDragStart={e => onDragStart(e, room.coordinates)} name={room.name} />;
+      return (
+        <Room
+          onDragStart={e => onDragStart(e, room.coordinates)}
+          name={room.name}
+          onClick={() => dispatch({ type: types.selectRoom, payload: room })}
+          />
+      )
     }
-    else return null;
+    else return <Room onClick={() => dispatch({ type: types.selectRoom, payload: null })}/>
   }
 
   return (

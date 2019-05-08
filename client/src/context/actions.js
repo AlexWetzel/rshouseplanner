@@ -20,6 +20,7 @@ export const useActions = (state, dispatch) => {
 
     dispatch({ type: types.swapRooms, payload: newRooms });
   }
+
   return {
     test,
     swapRooms

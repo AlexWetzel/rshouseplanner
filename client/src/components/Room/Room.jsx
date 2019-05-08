@@ -6,7 +6,7 @@ function Room(props) {
     <div
       className={`${style.room}`}
       draggable
-      onDragStart={props.onDragStart}
+      {...props}
       >
       {props.name}
     </div>

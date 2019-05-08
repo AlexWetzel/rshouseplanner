@@ -1,17 +1,17 @@
 import React, { useContext } from 'react';
 import style from './SidePanel.module.css';
-import { Garden } from '../Layouts';
+import Layout from '../Layout';
 import Dropdown from '../Dropdown/Dropdown';
 import { StoreContext } from '../../context/StoreContext';
 import { types } from '../../context/reducers';
 
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);
-
+  const { selectedRoom } = state;
   // function test() {
 
   // }
-  const roomData = {
+  const roomData = [{
     name: 'Garden',
     level: '1',
     price: '1000',
@@ -58,16 +58,51 @@ export default function SidePanel() {
         ]
       }
     ]
+  },
+  {
+    name: 'Bedroom',
+    level: '12',
+    price: '1000',
+    hotSpots: []
+  }]
+
+
+
+
+  function RoomSelected() {
+    const room = roomData.find(room => {
+      return room.name === selectedRoom.name
+    });
+
+    return(
+      <>
+        <Layout room={selectedRoom} />
+        <h3>{'Hotspots'}</h3>
+        {room.hotSpots.map(hs => {
+          return <Dropdown key={hs.name} name={hs.name} builds={hs.builds}/>
+        })}
+      </>
+    );
+  }
+
+  function NoRoomSelected() {
+    return(
+      <h1>No Rooms Selected</h1>
+    )
   }
   return (
     <div className={`${style.sidePanel}`}>
-      Test
-      <Garden />
-      <button onClick={() => actions.test()}>test</button>
+       {
+        (selectedRoom) 
+        ? <RoomSelected />
+        : <NoRoomSelected />  
+        }
+      
+      {/* <button onClick={() => actions.test()}>test</button> */}
 
-      {roomData.hotSpots.map(hs => {
-        return <Dropdown key={hs.name} name={hs.name} builds={hs.builds}/>
-      })}
+ 
+      
+
       
     </div>
   )

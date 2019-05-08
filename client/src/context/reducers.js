@@ -2,18 +2,17 @@ const initialState = {
   message: 'Hello',
   rooms: [
     {
-      name: "bedroom",
+      name: "Bedroom",
       coordinates: "1,2"
     },
     {
-      name: "garden",
+      name: "Garden",
       coordinates: "2,4"
     }
   ],
   selectedRoom: null
 
 };
-
 
 const types = {
   test: 'TEST',
@@ -33,7 +32,10 @@ const reducer = (state = initialState, action) => {
         rooms: action.payload
       }
     case types.selectRoom:
-      return state;
+      return {
+        ...state,
+        selectedRoom: action.payload
+      };
     default:
       return state;
   }
