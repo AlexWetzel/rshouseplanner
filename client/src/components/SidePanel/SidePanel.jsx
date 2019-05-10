@@ -10,32 +10,51 @@ import * as roomMaps from '../../data/roomMaps';
 
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);
-  const { selectedRoom } = state;
+  const { selectedRoom, rooms } = state;
+
+  const roomNames = Object.keys(roomData)
 
   function RoomSelected() {
-    const roomName = selectedRoom.name.toLowerCase();
-    // const room = roomData.find(room => {
-    //   return room.name === selectedRoom.name
-    // });
-    const room = roomData[roomName];
-    const map = roomMaps[roomName];
-    console.log(room);
-    console.log(map);
-
-    return(
-      <>
-        <Layout room={selectedRoom} hotSpots={map}/>
-        <h3>{'Hotspots'}</h3>
-        {room.hotSpots.map(hs => {
-          return <Dropdown key={hs.name} name={hs.name} builds={hs.builds}/>
-        })}
-      </>
-    );
+    if (selectedRoom.name === 'No room'){
+      return (
+        <Dropdown
+          name={'Select a room'}
+          options={
+            roomNames.map(rn => {return roomData[rn]})
+          }
+          onChange={e => actions.changeRoom(e, roomData, selectedRoom, rooms)}
+        />
+      )
+    }
+    else {
+      const roomName = selectedRoom.name.toLowerCase();
+      // const room = roomData.find(room => {
+      //   return room.name === selectedRoom.name
+      // });
+      const room = roomData[roomName];
+      const map = roomMaps[roomName];
+      console.log(room);
+      console.log(map);
+  
+      return(
+        <>
+          <Layout room={selectedRoom} hotSpots={map}/>
+          <h3>{'Hotspots'}</h3>
+          {room.hotSpots.map(hs => {
+            return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
+          })}
+        </>
+      );
+    }
+ 
   }
 
   function NoRoomSelected() {
     return(
-      <h1>No Rooms Selected</h1>
+      // <>
+        <h1>No Rooms Selected</h1>
+
+      // </>
     )
   }
   return (

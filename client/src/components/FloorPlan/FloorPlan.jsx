@@ -16,8 +16,8 @@ function FloorPlan() {
       const coords = `${x},${y}`;
       gridSquares.push(
         <GridSquare
-          key={`${x},${y}`}
-          coordinates={`${x},${y}`}
+          key={coords}
+          coordinates={coords}
           onDragOver={ e => onDragOver(e)}
           onDrop={e => actions.swapRooms(e, coords, rooms)}
         >
@@ -42,13 +42,20 @@ function FloorPlan() {
     if (room) {
       return (
         <Room
-          onDragStart={e => onDragStart(e, room.coordinates)}
+          key={props.coords}
           name={room.name}
+          coordinates={props.coords}
+          onDragStart={e => onDragStart(e, room.coordinates)}
           onClick={() => dispatch({ type: types.selectRoom, payload: room })}
           />
       )
     }
-    else return <Room onClick={() => dispatch({ type: types.selectRoom, payload: null })}/>
+    else return(
+      <Room
+        key={props.coords}
+        coordinates={props.coords}
+        onClick={() => dispatch({ type: types.selectRoom, payload: {name: "No room", coordinates: props.coords} })}/>
+    ) 
   }
 
   return (

@@ -5,9 +5,16 @@ export default function Dropdown(props) {
     <div>
       <h4>{props.name}</h4>
       
-      <select>
-        {props.builds.map( b => {
-          return <option key={b.name}>{b.name}</option>
+      <select onChange={props.onChange}>
+        <option value="No room">---</option>
+        {props.options.map(o => {
+          return <option
+            key={o.name}
+            value={o.name}
+
+              >
+              {o.name}
+            </option>
         })}
       </select>
     </div>

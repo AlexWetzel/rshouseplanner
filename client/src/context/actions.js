@@ -21,8 +21,40 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.swapRooms, payload: newRooms });
   }
 
+  function changeRoom(e, roomData, selectRoom, rooms) {
+    const roomName = e.target.value;
+    console.log('room Name:', roomName);
+    const room = roomData[roomName.toLowerCase()];
+    console.log('room data:', room);
+    console.log('selectRoom: ', selectRoom)
+    
+    const newRoom = {
+      name: room.name,
+      coordinates: selectRoom.coordinates
+    }
+
+    const roomIsHere = rooms.find( r => {return r.coordinates === selectRoom.coordinates})
+    // Remove room
+    if (roomName === 'No room') {
+
+    }
+    // Replace room
+    else if(roomIsHere){
+      // dispatch({ type: types.swapRooms, payload: newRoom })
+    } 
+    // Add room
+    else {
+      dispatch({ type: types.addRoom, payload: newRoom })
+    }
+    // const newRoom = 'This is a test'
+    // console.log('new room: ',newRoom)
+
+    dispatch({ type: types.selectRoom, payload: newRoom })
+  }
+
   return {
     test,
-    swapRooms
+    swapRooms,
+    changeRoom
   };
 }

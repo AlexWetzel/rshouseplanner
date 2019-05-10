@@ -18,7 +18,8 @@ const types = {
   test: 'TEST',
   selectRoom: 'SELECT_ROOM',
   swapRooms: 'SWAP_ROOMS',
-  selectHotSpot: 'SELECT_HOTSPOT'
+  selectHotSpot: 'SELECT_HOTSPOT',
+  addRoom: 'ADD_ROOM'
 }
 
 const reducer = (state = initialState, action) => {
@@ -27,7 +28,7 @@ const reducer = (state = initialState, action) => {
       console.log(state.message)
       return state.message;
     case types.swapRooms:
-      console.log(action.payload)
+      console.log('new rooms', action.payload)
       return {
         ...state,
         rooms: action.payload
@@ -37,6 +38,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         selectedRoom: action.payload
       };
+    case types.selectHotSpot:
+      return {
+        ...state,
+        selectedHotSpot: action.payload
+      }
+    case types.addRoom:
+      return {
+        ...state,
+        rooms: [...state.rooms, action.payload]
+      }
     default:
       return state;
   }
