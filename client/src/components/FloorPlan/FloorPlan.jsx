@@ -46,7 +46,7 @@ function FloorPlan() {
           name={room.name}
           coordinates={props.coords}
           onDragStart={e => onDragStart(e, room.coordinates)}
-          onClick={() => dispatch({ type: types.selectRoom, payload: room })}
+          onClick={() => actions.selectRoom(room)}
           />
       )
     }

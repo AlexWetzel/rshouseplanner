@@ -5,6 +5,11 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.test});
   }
 
+  function selectRoom(room) {
+    dispatch({ type: types.selectHotSpot, payload: "none" });
+    dispatch({ type: types.selectRoom, payload: room })
+  }
+
   function swapRooms(e, newCoords, rooms) {
     let oldCoords = e.dataTransfer.getData("coordinates");
     console.log(oldCoords, newCoords)
@@ -22,6 +27,8 @@ export const useActions = (state, dispatch) => {
   }
 
   function changeRoom(e, roomData, selectRoom, rooms) {
+    dispatch({ type: types.selectHotSpot, payload: "none" });
+
     const roomName = e.target.value;
     console.log('room Name:', roomName);
     const room = roomData[roomName.toLowerCase()];
@@ -54,6 +61,7 @@ export const useActions = (state, dispatch) => {
 
   return {
     test,
+    selectRoom,
     swapRooms,
     changeRoom
   };

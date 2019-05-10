@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './HotSpot.module.css';
 import { StoreContext } from '../../context/StoreContext';
 import { types } from '../../context/reducers';
@@ -7,6 +7,8 @@ export default function HotSpot(props) {
   const { state, dispatch } = useContext(StoreContext);
   const { selectedHotSpot } = state;
 
+  const [hover, setHover] = useState(false);
+
   function checkForSelection() {
     if(selectedHotSpot === props.name) {
       return style.hotSpotSelect;
@@ -14,7 +16,7 @@ export default function HotSpot(props) {
   }
 
   return (
-    <span>
+    <span className={`${(checkForSelection() || hover) ? style.hotSpotSelect : null }`}>
       {props.position.map((p, index) => {
         const [t,r,b,l] = p;
   
@@ -27,8 +29,10 @@ export default function HotSpot(props) {
         return (
         <span
           key={props.name + index}
-          className={`${style.hotSpot} ${checkForSelection()}`}
+          className={`${style.hotSpot}`}
           style={position}
+          onMouseEnter={() => setHover(true)}
+          onMouseLeave={() => setHover(false)}
           onClick={() => dispatch({ type: types.selectHotSpot, payload: props.name })}
         >
           <p>{props.name}</p>
