@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from './HotSpot.module.css';
+import { StoreContext } from '../../context/StoreContext';
+import { types } from '../../context/reducers';
 
 export default function HotSpot(props) {
+  const { state, dispatch } = useContext(StoreContext);
+  const { selectedHotSpot } = state;
+
+  function checkForSelection() {
+    if(selectedHotSpot === props.name) {
+      return style.hotSpotSelect;
+    }
+  }
 
   return (
     <span>
@@ -17,8 +27,9 @@ export default function HotSpot(props) {
         return (
         <span
           key={props.name + index}
-          className={`${style.hotSpot}`}
+          className={`${style.hotSpot} ${checkForSelection()}`}
           style={position}
+          onClick={() => dispatch({ type: types.selectHotSpot, payload: props.name })}
         >
           <p>{props.name}</p>
         </span>

@@ -10,10 +10,10 @@
   /* opacity: 0.4; */
 }
 
-.hotSpot:hover ~ span{
+/* .hotSpot:hover ~ span{
   background-color: rgb(231, 231, 179);
-}
-.hotSpot:hover {
+} */
+.hotSpot:hover, .hotSpotSelect {
   background-color: rgb(231, 231, 179);
 }
 
