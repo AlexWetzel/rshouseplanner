@@ -3,11 +3,13 @@ const initialState = {
   rooms: [
     {
       name: "Bedroom",
-      coordinates: "1,2"
+      coordinates: "1,2",
+      builds: []
     },
     {
       name: "Garden",
-      coordinates: "2,4"
+      coordinates: "2,4",
+      builds: []
     }
   ],
   selectedRoom: null,
@@ -19,7 +21,9 @@ const types = {
   selectRoom: "SELECT_ROOM",
   swapRooms: "SWAP_ROOMS",
   selectHotSpot: "SELECT_HOTSPOT",
-  addRoom: "ADD_ROOM"
+  addRoom: "ADD_ROOM",
+  changeRoom: "CHANGE_ROOM",
+  addBuild: "ADD_BUILD"
 };
 
 const reducer = (state = initialState, action) => {
@@ -48,6 +52,17 @@ const reducer = (state = initialState, action) => {
         ...state,
         rooms: [...state.rooms, action.payload]
       };
+    case types.changeRoom:
+      const newRooms = state.rooms.map(r => {
+        if (r.coordinates === action.payload.coordinates){
+          return action.payload;
+        }
+        else return r;
+      })
+      return {
+        ...state,
+        rooms: newRooms
+      }
     default:
       return state;
   }

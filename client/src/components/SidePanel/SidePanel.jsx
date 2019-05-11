@@ -10,7 +10,7 @@ import * as roomMaps from '../../data/roomMaps';
 
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);
-  const { selectedRoom, rooms } = state;
+  const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData)
 
@@ -33,16 +33,27 @@ export default function SidePanel() {
       // });
       const room = roomData[roomName];
       const map = roomMaps[roomName];
-      console.log(room);
-      console.log(map);
-  
+      // console.log(room);
+      // console.log(map);
+
+      const hotSpot = room.hotSpots.find(hs => {return hs.name === selectedHotSpot})
       return(
         <>
           <Layout room={selectedRoom} hotSpots={map}/>
           <h3>{'Hotspots'}</h3>
-          {room.hotSpots.map(hs => {
+          {/* {room.hotSpots.map(hs => {
             return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
-          })}
+          })} */}
+          {
+            (hotSpot)
+            ? <Dropdown
+                key={hotSpot.name} 
+                options={hotSpot.builds}
+                onChange={e => actions.changeBuild(e, hotSpot.name, selectedRoom)}
+              />
+            : null
+          }
+          
         </>
       );
     }

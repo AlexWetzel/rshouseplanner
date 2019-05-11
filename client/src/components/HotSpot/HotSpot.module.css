@@ -13,7 +13,7 @@
 /* .hotSpot:hover ~ span{
   background-color: rgb(231, 231, 179);
 } */
-.hotSpotHover > span, .hotSpotSelect > span {
+.hotSpotSelect > span {
   background-color: rgb(231, 231, 179);
 }
 

@@ -37,7 +37,8 @@ export const useActions = (state, dispatch) => {
     
     const newRoom = {
       name: room.name,
-      coordinates: selectRoom.coordinates
+      coordinates: selectRoom.coordinates,
+      builds: []
     }
 
     const roomIsHere = rooms.find( r => {return r.coordinates === selectRoom.coordinates})
@@ -59,10 +60,43 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.selectRoom, payload: newRoom })
   }
 
+  function changeBuild(e, hsName, selectRoom) {
+    const build = e.target.value;
+
+    const newBuild = {
+      name: build,
+      hotSpot: hsName
+    }
+    const hasBuild = selectRoom.builds.find(b => {return b.hotSpot === hsName});
+    console.log('build', hasBuild)
+    // Will this work?
+    const newRoom = {...selectRoom};
+
+    if (hasBuild) {
+      const newBuilds = selectRoom.builds.map(b => {
+        if(b.hotSpot === hsName) {
+          return newBuild;
+        }
+        else return b;
+      });
+      newRoom.builds = newBuilds;
+
+    
+    }
+    // else dispatch({ type: types.addBuild, payload: newBuild });
+    else {
+      newRoom.builds.push(newBuild);
+    }
+    console.log('New Room builds: ',newRoom.builds);
+    dispatch({ type: types.changeRoom, payload: newRoom });
+    dispatch({ type: types.selectRoom, payload: newRoom });
+  }
+
   return {
     test,
     selectRoom,
     swapRooms,
-    changeRoom
+    changeRoom,
+    changeBuild
   };
 }
