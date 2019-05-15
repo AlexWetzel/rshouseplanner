@@ -5,9 +5,12 @@ import { types } from "../../context/reducers";
 
 export default function HotSpot(props) {
   const { state, dispatch } = useContext(StoreContext);
-  const { selectedHotSpot } = state;
+  const { selectedHotSpot, selectedRoom } = state;
 
   const [hover, setHover] = useState(false);
+
+  const build = selectedRoom.builds.find(b => {return b.hotSpot === props.name});
+  console.log('build:', build);
 
   function checkForSelection() {
     if (selectedHotSpot === props.name) {
@@ -40,6 +43,7 @@ export default function HotSpot(props) {
             }
           >
             <p>{props.name}</p>
+            <p>{(build) ? build.name : '(empty)'}</p>
           </span>
         );
       })}

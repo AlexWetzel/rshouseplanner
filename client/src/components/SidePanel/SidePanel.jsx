@@ -28,9 +28,8 @@ export default function SidePanel() {
     }
     else {
       const roomName = selectedRoom.name.toLowerCase();
-      // const room = roomData.find(room => {
-      //   return room.name === selectedRoom.name
-      // });
+      const builds = selectedRoom.builds;
+
       const room = roomData[roomName];
       const map = roomMaps[roomName];
       // console.log(room);
@@ -39,7 +38,7 @@ export default function SidePanel() {
       const hotSpot = room.hotSpots.find(hs => {return hs.name === selectedHotSpot})
       return(
         <>
-          <Layout room={selectedRoom} hotSpots={map}/>
+          <Layout room={selectedRoom} hotSpots={map} builds={builds} />
           <h3>{'Hotspots'}</h3>
           {/* {room.hotSpots.map(hs => {
             return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
