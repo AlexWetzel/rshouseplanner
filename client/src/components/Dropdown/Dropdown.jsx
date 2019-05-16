@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Dropdown(props) {
+
   return (
     <div>
       <h4>{props.name}</h4>
@@ -11,8 +12,7 @@ export default function Dropdown(props) {
           return <option
             key={o.name}
             value={o.name}
-
-              >
+            >
               {o.name}
             </option>
         })}

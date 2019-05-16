@@ -8,7 +8,7 @@ function Room(props) {
       draggable
       {...props}
       >
-      {props.name}
+      {props.children}
     </div>
   )
 }

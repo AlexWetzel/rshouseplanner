@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import style from './SidePanel.module.css';
 import Layout from '../Layout';
 import Dropdown from '../Dropdown/Dropdown';
+import HotSpot from '../HotSpot/HotSpot';
 import { StoreContext } from '../../context/StoreContext';
-import { types } from '../../context/reducers';
 
 import * as roomData from '../../data/roomData';
 import * as roomMaps from '../../data/roomMaps';
@@ -31,14 +31,23 @@ export default function SidePanel() {
       const builds = selectedRoom.builds;
 
       const room = roomData[roomName];
-      const map = roomMaps[roomName];
-      // console.log(room);
-      // console.log(map);
+      const hotSpots = roomMaps[roomName];
 
       const hotSpot = room.hotSpots.find(hs => {return hs.name === selectedHotSpot})
       return(
         <>
-          <Layout room={selectedRoom} hotSpots={map} builds={builds} />
+          <div className={`${style.roomEditor}`}>
+            <Layout name={selectedRoom.name}>
+              {hotSpots.map(hs => {
+                return <HotSpot
+                  key={hs.name}
+                  name={hs.name} 
+                  position={hs.position}
+                  builds={builds}
+                  />
+              })}
+            </Layout>/>
+          </div>
           <h3>{'Hotspots'}</h3>
           {/* {room.hotSpots.map(hs => {
             return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
@@ -52,35 +61,25 @@ export default function SidePanel() {
               />
             : null
           }
-          
         </>
       );
     }
- 
   }
 
   function NoRoomSelected() {
     return(
       // <>
         <h1>No Rooms Selected</h1>
-
       // </>
     )
   }
   return (
     <div className={`${style.sidePanel}`}>
-       {
+      {
         (selectedRoom) 
         ? <RoomSelected />
         : <NoRoomSelected />  
-        }
-      
-      {/* <button onClick={() => actions.test()}>test</button> */}
-
- 
-      
-
-      
+      }
     </div>
   )
 }
