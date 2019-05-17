@@ -14,6 +14,7 @@ export const garden = {
   name: "Garden",
   level: "1",
   price: "1000",
+  type: "outdoor",
   hotSpots: [
     {
       name: "Centrepiece",
@@ -49,7 +50,68 @@ export const garden = {
       ]
     },
     {
-      name: "Tree",
+      name: "Tree 1",
+      builds: [
+        {
+          name: "Tree",
+          level: "5",
+          materials: [
+            { name: "Bagged dead tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Nice tree",
+          level: "10",
+          materials: [
+            { name: "Bagged nice tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Oak tree",
+          level: "15",
+          materials: [
+            { name: "Bagged oak tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Willow Tree",
+          level: "30",
+          materials: [
+            { name: "Bagged willow tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Maple tree",
+          level: "45",
+          materials: [
+            { name: "Bagged maple tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Yew tree",
+          level: "60",
+          materials: [
+            { name: "Bagged yew tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+        {
+          name: "Magic tree",
+          level: "75",
+          materials: [
+            { name: "Bagged magic tree", quantity: 1 },
+            { name: "Watering can", quantity: 1 }
+          ]
+        },
+      ]
+    },
+    {
+      name: "Tree 2",
       builds: [
         {
           name: "Tree",

@@ -4,11 +4,13 @@ const initialState = {
     {
       name: "Bedroom",
       coordinates: "1,2",
+      face: "n",
       builds: []
     },
     {
       name: "Garden",
       coordinates: "2,4",
+      face: "s",
       builds: []
     }
   ],

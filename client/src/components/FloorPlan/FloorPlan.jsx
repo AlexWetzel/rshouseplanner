@@ -7,6 +7,8 @@ import Layout from '../Layout';
 
 import * as roomMaps from '../../data/roomMaps';
 
+import toCamelCase from '../../helpers/toCamelCase'
+
 function FloorPlan() {
   const { state, dispatch, actions } = useContext(StoreContext);
   const { rooms } = state;
@@ -46,7 +48,7 @@ function FloorPlan() {
     const room = rooms.find(room => room.coordinates === props.coords);
  
     if (room) {
-      const roomName = room.name.toLowerCase();
+      const roomName = toCamelCase(room.name);
       const hotSpots = roomMaps[roomName];
       return (
         <Room
@@ -64,7 +66,7 @@ function FloorPlan() {
                   key={hs.name}
                   name={hs.name} 
                   position={hs.position}
-                  // builds={builds}
+                  builds={room.builds}
                 />
               )
             })}
@@ -81,11 +83,15 @@ function FloorPlan() {
   }
 
   function SmallHotSpot(props) {
+    const build = props.builds.find(b => {
+      return b.hotSpot === props.name;
+    });
+
     return(
       <span>
         {props.position.map((p, index) => {
           const [t, r, b, l] = p;
-
+          const bg = (build) ? "rgb(102, 43, 43)" : "rgb(197, 192, 192)";
           const position = {
             top: t + "%",
             right: r + "%",
@@ -97,7 +103,7 @@ function FloorPlan() {
             border: '1px dashed white', 
             width: 'auto',
             height: 'auto',
-            backgroundColor: "rgb(197, 192, 192)"
+            backgroundColor: bg
 
           };
 

@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin: 5px;
+  margin: 1px;
   border: 2px dashed white; 
   width: auto;
   height: auto;
@@ -17,6 +17,10 @@
   background-color: rgb(231, 231, 179);
 }
 
+.build {
+  background-color: rgb(102, 43, 43);
+  color: yellow;
+}
 
 
 

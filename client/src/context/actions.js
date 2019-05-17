@@ -1,5 +1,7 @@
 import { types } from './reducers';
 
+import toCamelCase from '../helpers/toCamelCase';
+
 export const useActions = (state, dispatch) => {
   function test() {
     dispatch({ type: types.test});
@@ -29,9 +31,9 @@ export const useActions = (state, dispatch) => {
   function changeRoom(e, roomData, selectRoom, rooms) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
 
-    const roomName = e.target.value;
+    const roomName = toCamelCase(e.target.value);
     console.log('room Name:', roomName);
-    const room = roomData[roomName.toLowerCase()];
+    const room = roomData[roomName];
     console.log('room data:', room);
     console.log('selectRoom: ', selectRoom)
     

@@ -8,11 +8,15 @@ import { StoreContext } from '../../context/StoreContext';
 import * as roomData from '../../data/roomData';
 import * as roomMaps from '../../data/roomMaps';
 
+import toCamelCase from '../../helpers/toCamelCase';
+
 export default function SidePanel() {
   const { state, dispatch, actions } = useContext(StoreContext);
   const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData)
+console.log(roomData)
+  console.log(roomNames)
 
   function RoomSelected() {
     if (selectedRoom.name === 'No room'){
@@ -27,7 +31,7 @@ export default function SidePanel() {
       )
     }
     else {
-      const roomName = selectedRoom.name.toLowerCase();
+      const roomName = toCamelCase(selectedRoom.name);
       const builds = selectedRoom.builds;
 
       const room = roomData[roomName];
@@ -43,10 +47,11 @@ export default function SidePanel() {
                   key={hs.name}
                   name={hs.name} 
                   position={hs.position}
+                  face={selectedRoom.face}
                   builds={builds}
                   />
               })}
-            </Layout>/>
+            </Layout>
           </div>
           <h3>{'Hotspots'}</h3>
           {/* {room.hotSpots.map(hs => {

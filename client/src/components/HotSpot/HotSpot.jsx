@@ -10,7 +10,9 @@ export default function HotSpot(props) {
 
   const [hover, setHover] = useState(false);
 
-  const build = props.builds.find(b => {return b.hotSpot === props.name});
+  const build = props.builds.find(b => {
+    return b.hotSpot === props.name;
+  });
 
   function checkForSelection() {
     if (selectedHotSpot === props.name) {
@@ -20,10 +22,24 @@ export default function HotSpot(props) {
 
   return (
     <span
-      className={`${checkForSelection() || hover ? style.hotSpotSelect : null}`}
+      className={`
+        ${checkForSelection() || hover ? style.hotSpotSelect : null} 
+
+      `}
     >
       {props.position.map((p, index) => {
-        const [t, r, b, l] = p;
+        let t = 0, r = 0, b = 0, l = 0;
+        switch (props.face) {
+          case 's':
+            [b, l, t, r,] = p;
+            break;
+          
+          
+          default:
+            [t, r, b, l] = p;
+            break;
+        }
+        
 
         const position = {
           top: t + "%",
@@ -34,7 +50,10 @@ export default function HotSpot(props) {
         return (
           <span
             key={props.name + index}
-            className={`${style.hotSpot}`}
+            className={`
+              ${style.hotSpot} 
+              ${build ? style.build : null}
+            `}
             style={position}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
@@ -43,7 +62,7 @@ export default function HotSpot(props) {
             }
           >
             <p>{props.name}</p>
-            <p>{(build) ? build.name : '(empty)'}</p>
+            <p>{build ? build.name : "(empty)"}</p>
           </span>
         );
       })}
