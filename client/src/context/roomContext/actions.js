@@ -1,6 +1,6 @@
 import { types } from './reducers';
 
-import toCamelCase from '../helpers/toCamelCase';
+import toCamelCase from '../../helpers/toCamelCase';
 
 export const useActions = (state, dispatch) => {
   function test() {

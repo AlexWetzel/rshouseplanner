@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GridPlane, GridSquare } from '../Grid';
 import Room from '../Room';
-import { StoreContext } from '../../context/StoreContext';
-import { types } from '../../context/reducers';
+import { roomContext } from '../../context/roomContext/RoomContext';
+import { types } from '../../context/roomContext/reducers';
 import Layout from '../Layout';
 
 import * as roomMaps from '../../data/roomMaps';
@@ -10,7 +10,7 @@ import * as roomMaps from '../../data/roomMaps';
 import toCamelCase from '../../helpers/toCamelCase'
 
 function FloorPlan() {
-  const { state, dispatch, actions } = useContext(StoreContext);
+  const { state, dispatch, actions } = useContext(roomContext);
   const { rooms } = state;
 
   const size = 5;

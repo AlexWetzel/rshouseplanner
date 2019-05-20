@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import style from "./HotSpot.module.css";
-import { StoreContext } from "../../context/StoreContext";
-import { types } from "../../context/reducers";
+import { roomContext } from "../../context/roomContext/RoomContext";
+import { types } from "../../context/roomContext/reducers";
 
 export default function HotSpot(props) {
-  const { state, dispatch } = useContext(StoreContext);
+  const { state, dispatch } = useContext(roomContext);
   // const { selectedHotSpot, selectedRoom } = state;
   const { selectedHotSpot } = state;
 

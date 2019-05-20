@@ -3,7 +3,7 @@ import style from './SidePanel.module.css';
 import Layout from '../Layout';
 import Dropdown from '../Dropdown/Dropdown';
 import HotSpot from '../HotSpot/HotSpot';
-import { StoreContext } from '../../context/StoreContext';
+import { roomContext } from '../../context/roomContext/RoomContext';
 
 import * as roomData from '../../data/roomData';
 import * as roomMaps from '../../data/roomMaps';
@@ -11,7 +11,7 @@ import * as roomMaps from '../../data/roomMaps';
 import toCamelCase from '../../helpers/toCamelCase';
 
 export default function SidePanel() {
-  const { state, dispatch, actions } = useContext(StoreContext);
+  const { state, dispatch, actions } = useContext(roomContext);
   const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData)
