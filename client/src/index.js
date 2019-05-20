@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { RoomProvider } from './context/roomContext/RoomContext';
+import { UserProvider } from './context/userContext/UserContext';
 
 ReactDOM.render(
   <RoomProvider>
-    <App />
+    <UserProvider>
+      <App />
+    </UserProvider>
   </RoomProvider>
   , document.getElementById('root'));
 
