@@ -16,7 +16,7 @@ function App() {
       actions.useStoredData();
     }
   }, []);
-   
+
   return (
     <div className={`${style.App}`}>
       <PlayerSearch />

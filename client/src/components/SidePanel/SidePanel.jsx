@@ -80,6 +80,7 @@ console.log(roomData)
   }
   return (
     <div className={`${style.sidePanel}`}>
+      <button onClick={() => actions.saveRooms()}>Save Rooms</button>
       {
         (selectedRoom) 
         ? <RoomSelected />

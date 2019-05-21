@@ -1,5 +1,4 @@
 const initialState = {
-  message: "Hello",
   rooms: [
     {
       name: "Bedroom",
@@ -30,9 +29,6 @@ const types = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.test:
-      console.log(state.message);
-      return state.message;
     case types.swapRooms:
       console.log("new rooms", action.payload);
       return {

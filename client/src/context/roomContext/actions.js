@@ -1,4 +1,5 @@
 import { types } from './reducers';
+import axios from 'axios';
 
 import toCamelCase from '../../helpers/toCamelCase';
 
@@ -94,11 +95,20 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.selectRoom, payload: newRoom });
   }
 
+  
+  function saveRooms() {
+    axios
+      .get("/db/save")
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
   return {
     test,
     selectRoom,
     swapRooms,
     changeRoom,
-    changeBuild
+    changeBuild,
+    saveRooms
   };
 }
