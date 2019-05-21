@@ -3,12 +3,12 @@ const initialState = {
 };
 
 const types = {
-  searchPlayer: "SEARCH_PLAYER"
+  setPlayer: "SET_PLAYER"
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.searchPlayer:
+    case types.setPlayer:
       console.log(action);
       return {...state, name: action.payload};
     default:

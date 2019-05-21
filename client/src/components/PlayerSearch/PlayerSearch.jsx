@@ -9,7 +9,7 @@ export default function PlayerSearch() {
 
   function handleSearch(e) {
     e.preventDefault();
-    actions.searchPlayer(playerName)
+    actions.searchPlayer(playerName);
   }
   return (
     <div>
