@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { types } from '../../context/userContext/reducers';
 import { userContext } from '../../context/userContext/UserContext';
 
 export default function PlayerSearch() {

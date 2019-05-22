@@ -11,7 +11,7 @@ import * as roomMaps from '../../data/roomMaps';
 import toCamelCase from '../../helpers/toCamelCase';
 
 export default function SidePanel() {
-  const { state, dispatch, actions } = useContext(roomContext);
+  const { state, actions } = useContext(roomContext);
   const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData)

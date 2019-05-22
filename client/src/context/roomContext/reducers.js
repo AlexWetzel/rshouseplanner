@@ -1,18 +1,6 @@
 const initialState = {
-  rooms: [
-    {
-      name: "Bedroom",
-      coordinates: "1,2",
-      face: "n",
-      builds: []
-    },
-    {
-      name: "Garden",
-      coordinates: "2,4",
-      face: "s",
-      builds: []
-    }
-  ],
+  id: null,
+  rooms: [],
   selectedRoom: null,
   selectedHotSpot: null
 };
@@ -24,7 +12,8 @@ const types = {
   selectHotSpot: "SELECT_HOTSPOT",
   addRoom: "ADD_ROOM",
   changeRoom: "CHANGE_ROOM",
-  addBuild: "ADD_BUILD"
+  addBuild: "ADD_BUILD",
+  setId: "SET_ID"
 };
 
 const reducer = (state = initialState, action) => {
@@ -60,6 +49,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         rooms: newRooms
+      }
+    case types.setId:    
+      return {
+        ...state,
+        id: action.payload
       }
     default:
       return state;

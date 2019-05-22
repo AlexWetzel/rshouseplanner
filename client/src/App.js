@@ -5,15 +5,18 @@ import SidePanel from './components/SidePanel';
 import style from './App.module.css';
 import PlayerSearch from './components/PlayerSearch/PlayerSearch';
 import { userContext } from "./context/userContext/UserContext";
+import { roomContext } from "./context/roomContext/RoomContext";
 // import { types } from "./context/userContext/reducers";
 
 
 function App() {
-  const { actions } = useContext(userContext);
-
+  const { actions: userActions } = useContext(userContext);
+  const { actions: roomActions } = useContext(roomContext);
   useEffect(() => {
     if(typeof(Storage) !== "undefined"){
-      actions.useStoredData();
+      userActions.useStoredData();
+      const id = localStorage.getItem("id")
+      roomActions.findHouse(id);
     }
   }, []);
 

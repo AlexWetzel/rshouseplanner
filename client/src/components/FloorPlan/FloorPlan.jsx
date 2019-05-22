@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import { GridPlane, GridSquare } from '../Grid';
 import Room from '../Room';
 import { roomContext } from '../../context/roomContext/RoomContext';

@@ -97,10 +97,31 @@ export const useActions = (state, dispatch) => {
 
   
   function saveRooms() {
+    const house = {
+      rooms: state.rooms
+    }
     axios
-      .get("/db/save")
-      .then(res => console.log(res))
+      .post("/db/save", {house})
+      .then(res => {
+        console.log(res.data.message);
+        const { id } = res.data;
+        localStorage.setItem("id", id);
+        dispatch({ type: types.setId, payload: id })
+      })
       .catch(err => console.log(err))
+  }
+
+  function findHouse(id) {
+    console.log("id:", id)
+    axios
+      .get("/db/find", {
+        params: {id}
+      })
+      .then(res => {
+        console.log(res);
+        const { house } = res.data;
+        dispatch({type: types.swapRooms, payload: house})
+      })
   }
 
   return {
@@ -109,6 +130,7 @@ export const useActions = (state, dispatch) => {
     swapRooms,
     changeRoom,
     changeBuild,
-    saveRooms
+    saveRooms,
+    findHouse
   };
 }
