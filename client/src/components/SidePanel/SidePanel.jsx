@@ -26,7 +26,7 @@ console.log(roomData)
           options={
             roomNames.map(rn => {return roomData[rn]})
           }
-          onChange={e => actions.changeRoom(e, roomData, selectedRoom, rooms)}
+          onSelect={name => actions.changeRoom(name, roomData, selectedRoom, rooms)}
         />
       )
     }

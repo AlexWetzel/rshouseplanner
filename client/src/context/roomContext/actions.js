@@ -29,10 +29,10 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.swapRooms, payload: newRooms });
   }
 
-  function changeRoom(e, roomData, selectRoom, rooms) {
+  function changeRoom(name, roomData, selectRoom, rooms) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
 
-    const roomName = toCamelCase(e.target.value);
+    const roomName = toCamelCase(name);
     console.log('room Name:', roomName);
     const room = roomData[roomName];
     console.log('room data:', room);

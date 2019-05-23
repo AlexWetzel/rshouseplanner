@@ -1,0 +1,6 @@
+.option {
+  width: 300px;
+  height: 80px;
+  background-color: rgb(33, 33, 80);
+  border: 2px solid orange;
+}
