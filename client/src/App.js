@@ -16,7 +16,11 @@ function App() {
     if(typeof(Storage) !== "undefined"){
       userActions.useStoredData();
       const id = localStorage.getItem("id")
-      roomActions.findHouse(id);
+      console.log(id)
+      if (id !== "undefined") {
+        roomActions.findHouse(id);
+      }
+      
     }
   }, []);
 

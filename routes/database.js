@@ -2,44 +2,39 @@ const router = require("express").Router();
 const db = require("../models");
 
 router.post("/save", (req, res) => {
-  const house = req.body.house;
-  // const house = {
-  //   rooms: [
-  //     {
-  //       name: "Bedroom",
-  //       coordinates: "1,2",
-  //       face: "n",
-  //       builds: []
-  //     },
-  //     {
-  //       name: "Garden",
-  //       coordinates: "2,4",
-  //       face: "s",
-  //       builds: []
-  //     }
-  //   ]
-  // }
-
-  db.House.create(house)
+  const { house: newHouse, id } = req.body;
+  console.log("House: ", newHouse)
+  if (id) {
+    console.log("ID found: ", id);
+    db.House.findById(id)
+    .then(house => {
+      console.log(house)
+      house.rooms = newHouse.rooms;
+      house.save()
+      res.send({ message: "House saved successfully. Existing data overwritten." })
+    })
+    .catch(err => console.log(err))
+  }
+  else {
+    db.House.create(house)
     .then(rooms => {
       console.log('Rooms: ', rooms)
       const id = rooms._id;
-      res.send({ id, message: "House saved successfully"})
+      res.send({ id, message: "House saved successfully" })
     })
     .catch(err => console.log(err))
-
+  }
 
 })
 
 router.get("/find", (req, res) => {
-  console.log(req.query.id);
-  const id = req.query.id;
+  const { id } = req.query;
   db.House.findById(id)
-    .then(house => {
-      console.log(house)
-      res.send({house: house.rooms});
-    })
-    .catch(err => console.log(err))
+  .then(house => {
+    console.log(house)
+    res.send({house: house.rooms});
+  })
+  .catch(err => console.log(err))
 })
 
 module.exports = router;

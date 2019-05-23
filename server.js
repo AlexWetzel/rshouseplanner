@@ -17,10 +17,15 @@ app.use('/db', dbRoutes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+
+mongoose.set('useFindAndModify', false);
 // Connect to the Mongo DB
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/RSHousePlanner",
-  {useNewUrlParser: true}
+  {
+    useNewUrlParser: true
+  }
 );
 
 if (process.env.NODE_ENV === 'production') {

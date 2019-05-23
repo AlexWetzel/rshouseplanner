@@ -100,19 +100,24 @@ export const useActions = (state, dispatch) => {
     const house = {
       rooms: state.rooms
     }
+    const id = state.id;
+    console.log("save room id: ", id)
     axios
-      .post("/db/save", {house})
+      .post("/db/save", {house, id})
       .then(res => {
         console.log(res.data.message);
         const { id } = res.data;
-        localStorage.setItem("id", id);
-        dispatch({ type: types.setId, payload: id })
+        if (id) {
+          localStorage.setItem("id", id);
+          dispatch({ type: types.setId, payload: id })
+        }
       })
       .catch(err => console.log(err))
   }
 
   function findHouse(id) {
     console.log("id:", id)
+    dispatch({type: types.setId, payload: id})
     axios
       .get("/db/find", {
         params: {id}
