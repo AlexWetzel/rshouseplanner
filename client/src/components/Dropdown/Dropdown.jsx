@@ -11,7 +11,7 @@ export default function Dropdown(props) {
   const options = [<Option key={"None"} index={0} name={"No room"} canBuild={true} />]
 
   function skillCheck(req) {
-    const level = 83;
+    const level = 0
     return (level >= req) ? true : false;
   }
   

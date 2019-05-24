@@ -20,7 +20,7 @@ export const useActions = (state, dispatch) => {
           localStorage.setItem("name", name);
         }
         console.log(player)
-        dispatch({ type: types.setPlayerName, payload: player })
+        dispatch({ type: types.setPlayer, payload: player })
     })
   }
 
