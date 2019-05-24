@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import style from './Dropdown.module.css'
+import { userContext } from '../../context/userContext/UserContext';
+
 
 export default function Dropdown(props) {
   
+  const { state: userState } = useContext(userContext);
+  const { skills } = userState;
 
-  const options = [<Option key={"None"} index={0} name={"No room"} />]
+  const options = [<Option key={"None"} index={0} name={"No room"} canBuild={true} />]
+
+  function skillCheck(req) {
+    const level = 83;
+    return (level >= req) ? true : false;
+  }
   
   props.options.forEach((o, index) => {
-    options.push(<Option key={o.name} index={index+1} name={o.name}/>);
+    options.push(
+      <Option 
+        key={o.name} 
+        index={index+1} 
+        name={o.name} 
+        canBuild={skillCheck(o.level)}
+      />
+      );
   });
   
   const [selection, setSelection] = useState(0);
@@ -18,16 +34,14 @@ export default function Dropdown(props) {
     setExpand(!expand);
     if (expand) {
       setSelection(index);
-
       props.onSelect(name);
-    }
-    
+    }    
   }
 
   function Option(props) {
     return (
       <div
-        className={style.option}
+        className={`${style.option} ${(props.canBuild) ? '' : style.disabled}`}
         onClick={() => handleDropDown(props.name, props.index)}
       >
         {props.name}
@@ -35,7 +49,6 @@ export default function Dropdown(props) {
     )
   }
   return (
-
     <div>
       <h3>{props.name}</h3>
       {
@@ -44,9 +57,6 @@ export default function Dropdown(props) {
         : options[selection]
       }
     </div>
-
-
-
 
 
     // <div>

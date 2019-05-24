@@ -4,3 +4,8 @@
   background-color: rgb(33, 33, 80);
   border: 2px solid orange;
 }
+
+.disabled {
+  background-color: black;
+  border: 2px solid white;
+}
