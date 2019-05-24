@@ -30,11 +30,13 @@ export default function Dropdown(props) {
   const [expand, setExpand] = useState(false);
 
 
-  function handleDropDown(name, index) {
-    setExpand(!expand);
-    if (expand) {
-      setSelection(index);
-      props.onSelect(name);
+  function handleDropDown(name, index, canBuild) {
+    if (canBuild || !expand) {  
+      setExpand(!expand);
+      if (expand) {
+        setSelection(index);
+        props.onSelect(name);
+      }
     }    
   }
 
@@ -42,7 +44,7 @@ export default function Dropdown(props) {
     return (
       <div
         className={`${style.option} ${(props.canBuild) ? '' : style.disabled}`}
-        onClick={() => handleDropDown(props.name, props.index)}
+        onClick={() => handleDropDown(props.name, props.index, props.canBuild)}
       >
         {props.name}
       </div>
