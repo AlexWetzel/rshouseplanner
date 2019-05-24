@@ -82,6 +82,7 @@ console.log(roomData)
     <div className={`${style.sidePanel}`}>
       <button onClick={() => actions.saveRooms()}>Save Rooms</button>
       <button onClick={() => localStorage.removeItem("id")}>Clear Id</button>
+      <button onClick={() => localStorage.removeItem("name")}>Clear Name</button>
       {
         (selectedRoom) 
         ? <RoomSelected />

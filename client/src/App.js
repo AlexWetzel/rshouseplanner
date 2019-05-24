@@ -14,7 +14,7 @@ function App() {
   const { actions: roomActions } = useContext(roomContext);
   useEffect(() => {
     if(typeof(Storage) !== "undefined"){
-      userActions.useStoredData();
+      // userActions.useStoredData();
       const id = localStorage.getItem("id")
       const name = localStorage.getItem("name");
       

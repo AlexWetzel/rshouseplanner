@@ -1,6 +1,8 @@
 const initialState = {
   name: "",
-  skills: {}
+  skills: {
+    Construction: {level: 99}
+  }
 };
 
 const types = {

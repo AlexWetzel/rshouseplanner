@@ -3,10 +3,10 @@ import axios from 'axios';
 
 
 export const useActions = (state, dispatch) => {
-  function useStoredData() {
-    const name = localStorage.getItem("name");
-    dispatch({ type: types.setPlayer, payload: name })
-  }
+  // function useStoredData() {
+  //   const name = localStorage.getItem("name");
+  //   dispatch({ type: types.setPlayer, payload: name })
+  // }
 
   function searchPlayer() {
     axios
@@ -25,7 +25,7 @@ export const useActions = (state, dispatch) => {
   }
 
   return {
-    useStoredData,
+    // useStoredData,
     searchPlayer
   };
 }
