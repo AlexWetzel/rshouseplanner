@@ -63,8 +63,8 @@ export const useActions = (state, dispatch) => {
     dispatch({ type: types.selectRoom, payload: newRoom })
   }
 
-  function changeBuild(e, hsName, selectRoom) {
-    const build = e.target.value;
+  function changeBuild(name, hsName, selectRoom) {
+    const build = name;
 
     const newBuild = {
       name: build,

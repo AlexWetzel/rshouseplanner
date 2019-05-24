@@ -62,7 +62,7 @@ console.log(roomData)
             ? <Dropdown
                 key={hotSpot.name} 
                 options={hotSpot.builds}
-                onChange={e => actions.changeBuild(e, hotSpot.name, selectedRoom)}
+                onSelect={name => actions.changeBuild(name, hotSpot.name, selectedRoom)}
               />
             : null
           }

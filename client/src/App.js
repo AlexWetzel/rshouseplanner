@@ -16,9 +16,15 @@ function App() {
     if(typeof(Storage) !== "undefined"){
       userActions.useStoredData();
       const id = localStorage.getItem("id")
+      const name = localStorage.getItem("name");
+      
       console.log(id)
       if (id !== "undefined") {
         roomActions.findHouse(id);
+      }
+
+      if (name) {
+        userActions.searchPlayer(name);
       }
       
     }
