@@ -35,8 +35,7 @@ console.log(roomData)
       const roomName = toCamelCase(selectedRoom.name);
       const builds = selectedRoom.builds;
       const selectedBuild = builds.find(b => {return b.hotSpot === selectedHotSpot});
-      console.log("Selected build: ", selectedBuild);
-
+      
       const room = roomData[roomName];
       const hotSpots = roomMaps[roomName];
 
@@ -73,7 +72,9 @@ console.log(roomData)
             ? <Dropdown
                 key={hotSpot.name}
                 options={hotSpot.builds}
-                selectedOption={selectedBuild.name}
+                selectedOption={
+                  (selectedBuild) ? selectedBuild.name : '---'
+                }
                 onSelect={name => actions.changeBuild(name, hotSpot.name, selectedRoom)}
               />
             : null
