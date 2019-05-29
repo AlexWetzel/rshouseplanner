@@ -1,8 +1,6 @@
 import { types } from './reducers';
 import axios from 'axios';
 
-import toCamelCase from '../../helpers/toCamelCase';
-
 export const useActions = (state, dispatch) => {
   function test() {
     dispatch({ type: types.test});
@@ -31,32 +29,24 @@ export const useActions = (state, dispatch) => {
 
   function changeRoom(name, roomData, selectRoom, rooms) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
-
-    // const roomName = toCamelCase(name);
-    // console.log('room Name:', roomName);
-    // const room = roomData[roomName];
-    // console.log('room data:', room);
-    // console.log('selectRoom: ', selectRoom)
     
     const newRoom = {
-      // name: room.name,
       name: name,
       coordinates: selectRoom.coordinates,
       builds: []
     }
 
-    const roomIsHere = rooms.findIndex(r =>  r.coordinates === selectRoom.coordinates)
-    console.log(roomIsHere);
+    const roomIndex = rooms.findIndex(r =>  r.coordinates === selectRoom.coordinates)
+   
     // Remove room
     if (name === '---') {
-      console.log('remove')
       const newRooms = rooms.map(r => {return r});
-      newRooms.splice(roomIsHere, 1);
+      newRooms.splice(roomIndex, 1);
       dispatch({ type: types.swapRooms, payload: newRooms })
       console.log(newRooms)
     }
     // Replace room
-    else if(roomIsHere !== -1){
+    else if(roomIndex !== -1){
       const newRooms = rooms.map( r => {
         if(r.coordinates === selectRoom.coordinates) {
           return newRoom;
@@ -80,12 +70,20 @@ export const useActions = (state, dispatch) => {
       name: build,
       hotSpot: hsName
     }
-    const hasBuild = selectRoom.builds.find(b => {return b.hotSpot === hsName});
-    console.log('build', hasBuild)
-    // Will this work?
+    const buildIndex = selectRoom.builds.findIndex(b => b.hotSpot === hsName);
     const newRoom = {...selectRoom};
+    console.log("Hotspotname: ", hsName)
+    console.log("build:" , build)
 
-    if (hasBuild) {
+    console.log("buildIndex:" , buildIndex)
+    console.log("builds ", selectRoom.builds)
+    console.log("build ", selectRoom.builds[buildIndex])
+    
+
+    if (build === "---") {
+      newRoom.builds.splice(buildIndex, 1);
+    }
+    else if (buildIndex !== -1) {
       const newBuilds = selectRoom.builds.map(b => {
         if(b.hotSpot === hsName) {
           return newBuild;
@@ -93,18 +91,14 @@ export const useActions = (state, dispatch) => {
         else return b;
       });
       newRoom.builds = newBuilds;
-
-    
     }
-    // else dispatch({ type: types.addBuild, payload: newBuild });
     else {
       newRoom.builds.push(newBuild);
     }
-    console.log('New Room builds: ',newRoom.builds);
+
     dispatch({ type: types.changeRoom, payload: newRoom });
     dispatch({ type: types.selectRoom, payload: newRoom });
   }
-
   
   function saveRooms() {
     const house = {

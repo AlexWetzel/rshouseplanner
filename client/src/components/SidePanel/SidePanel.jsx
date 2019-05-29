@@ -41,7 +41,6 @@ console.log(roomData)
       return(
         <>
           <div className={`${style.roomEditor}`}>
-            {/* <button onClick={() => actions.changeRoom}></button> */}
             <Layout name={selectedRoom.name}>
               {hotSpots.map(hs => {
                 return <HotSpot
