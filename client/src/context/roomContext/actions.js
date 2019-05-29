@@ -32,34 +32,44 @@ export const useActions = (state, dispatch) => {
   function changeRoom(name, roomData, selectRoom, rooms) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
 
-    const roomName = toCamelCase(name);
-    console.log('room Name:', roomName);
-    const room = roomData[roomName];
-    console.log('room data:', room);
-    console.log('selectRoom: ', selectRoom)
+    // const roomName = toCamelCase(name);
+    // console.log('room Name:', roomName);
+    // const room = roomData[roomName];
+    // console.log('room data:', room);
+    // console.log('selectRoom: ', selectRoom)
     
     const newRoom = {
-      name: room.name,
+      // name: room.name,
+      name: name,
       coordinates: selectRoom.coordinates,
       builds: []
     }
 
-    const roomIsHere = rooms.find( r => {return r.coordinates === selectRoom.coordinates})
+    const roomIsHere = rooms.findIndex(r =>  r.coordinates === selectRoom.coordinates)
+    console.log(roomIsHere);
     // Remove room
-    if (roomName === 'No room') {
-
+    if (name === '---') {
+      console.log('remove')
+      const newRooms = rooms.map(r => {return r});
+      newRooms.splice(roomIsHere, 1);
+      dispatch({ type: types.swapRooms, payload: newRooms })
+      console.log(newRooms)
     }
     // Replace room
-    else if(roomIsHere){
-      // dispatch({ type: types.swapRooms, payload: newRoom })
+    else if(roomIsHere !== -1){
+      const newRooms = rooms.map( r => {
+        if(r.coordinates === selectRoom.coordinates) {
+          return newRoom;
+        }
+        else return r
+      })
+      dispatch({ type: types.swapRooms, payload: newRooms })
     } 
     // Add room
     else {
       dispatch({ type: types.addRoom, payload: newRoom })
     }
-    // const newRoom = 'This is a test'
-    // console.log('new room: ',newRoom)
-
+ 
     dispatch({ type: types.selectRoom, payload: newRoom })
   }
 

@@ -78,7 +78,7 @@ function FloorPlan() {
       <Room
         key={props.coords}
         coordinates={props.coords}
-        onClick={() => dispatch({ type: types.selectRoom, payload: {name: "No room", coordinates: props.coords} })}/>
+        onClick={() => dispatch({ type: types.selectRoom, payload: {name: "---", coordinates: props.coords} })}/>
     ) 
   }
 

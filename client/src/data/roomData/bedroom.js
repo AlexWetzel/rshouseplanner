@@ -1,6 +1,6 @@
 export const bedroom = {
   name: 'Bedroom',
-  level: '99',
+  level: '5',
   price: '1000',
   hotSpots: []
 }

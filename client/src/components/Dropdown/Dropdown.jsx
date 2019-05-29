@@ -8,7 +8,7 @@ export default function Dropdown(props) {
   const { state: userState } = useContext(userContext);
   const { skills } = userState;
 
-  const options = [<Option key={"None"} index={0} name={"No room"} canBuild={true} />]
+  const options = [<Option key={"None"} index={0} name={"---"} canBuild={true} />]
 
   function skillCheck(req) {
     const level = skills.Construction.level;

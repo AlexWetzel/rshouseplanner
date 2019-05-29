@@ -19,7 +19,7 @@ console.log(roomData)
   console.log(roomNames)
 
   function RoomSelected() {
-    if (selectedRoom.name === 'No room'){
+    if (selectedRoom.name === '---'){
       return (
         <Dropdown
           name={'Select a room'}
@@ -41,6 +41,7 @@ console.log(roomData)
       return(
         <>
           <div className={`${style.roomEditor}`}>
+            {/* <button onClick={() => actions.changeRoom}></button> */}
             <Layout name={selectedRoom.name}>
               {hotSpots.map(hs => {
                 return <HotSpot
@@ -53,6 +54,13 @@ console.log(roomData)
               })}
             </Layout>
           </div>
+          <Dropdown
+            name={'Select a room'}
+            options={
+              roomNames.map(rn => {return roomData[rn]})
+            }
+            onSelect={name => actions.changeRoom(name, roomData, selectedRoom, rooms)}
+          />
           <h3>{'Hotspots'}</h3>
           {/* {room.hotSpots.map(hs => {
             return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
