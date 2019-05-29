@@ -26,6 +26,7 @@ console.log(roomData)
           options={
             roomNames.map(rn => {return roomData[rn]})
           }
+          selectedOption={selectedRoom.name}
           onSelect={name => actions.changeRoom(name, roomData, selectedRoom, rooms)}
         />
       )
@@ -33,6 +34,8 @@ console.log(roomData)
     else {
       const roomName = toCamelCase(selectedRoom.name);
       const builds = selectedRoom.builds;
+      const selectedBuild = builds.find(b => {return b.hotSpot === selectedHotSpot});
+      console.log("Selected build: ", selectedBuild);
 
       const room = roomData[roomName];
       const hotSpots = roomMaps[roomName];
@@ -58,6 +61,7 @@ console.log(roomData)
             options={
               roomNames.map(rn => {return roomData[rn]})
             }
+            selectedOption={selectedRoom.name}
             onSelect={name => actions.changeRoom(name, roomData, selectedRoom, rooms)}
           />
           <h3>{'Hotspots'}</h3>
@@ -67,8 +71,9 @@ console.log(roomData)
           {
             (hotSpot)
             ? <Dropdown
-                key={hotSpot.name} 
+                key={hotSpot.name}
                 options={hotSpot.builds}
+                selectedOption={selectedBuild.name}
                 onSelect={name => actions.changeBuild(name, hotSpot.name, selectedRoom)}
               />
             : null
