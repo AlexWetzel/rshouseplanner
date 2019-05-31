@@ -32,6 +32,7 @@ function App() {
 
   return (
     <div className={`${style.App}`}>
+      <button onClick={() => roomActions.items()}>item test</button>
       <PlayerSearch />
       <SidePanel />
       <FloorPlan />

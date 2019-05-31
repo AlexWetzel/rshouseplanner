@@ -3,11 +3,6 @@ import axios from 'axios';
 
 
 export const useActions = (state, dispatch) => {
-  // function useStoredData() {
-  //   const name = localStorage.getItem("name");
-  //   dispatch({ type: types.setPlayer, payload: name })
-  // }
-
   function searchPlayer() {
     axios
       .get("/api/player", { params: {name: "uber Guy"} })
@@ -25,7 +20,6 @@ export const useActions = (state, dispatch) => {
   }
 
   return {
-    // useStoredData,
     searchPlayer
   };
 }

@@ -119,12 +119,26 @@ export const useActions = (state, dispatch) => {
       });
   }
 
+  function items() {
+    const items = [
+      "oak plank",
+      "teak plank",
+      "mahogany plank"
+    ]
+    axios
+      .get("/api/items", {params: {items}})
+      .then(res => {
+        console.log(res);
+      })
+  }     
+
   return {
     selectRoom,
     swapRooms,
     changeRoom,
     changeBuild,
     saveRooms,
-    findHouse
+    findHouse,
+    items
   };
 };
