@@ -1,22 +1,20 @@
-import React, { useContext } from 'react'
-import { GridPlane, GridSquare } from '../Grid';
-import Room from '../Room';
-import { roomContext } from '../../context/roomContext/RoomContext';
-import { types } from '../../context/roomContext/reducers';
-import Layout from '../Layout';
+import React, { useContext } from "react";
+import { GridPlane, GridSquare } from "../Grid";
+import Room from "../Room";
+import { roomContext } from "../../context/roomContext/RoomContext";
+import { types } from "../../context/roomContext/reducers";
+import Layout from "../Layout";
 
-import * as roomMaps from '../../data/roomMaps';
+import * as roomMaps from "../../data/roomMaps";
 
-import toCamelCase from '../../helpers/toCamelCase'
+import toCamelCase from "../../helpers/toCamelCase";
 
 function FloorPlan() {
   const { state, dispatch, actions } = useContext(roomContext);
   const { rooms } = state;
 
   const size = 5;
-  const gridSquares = []
-
-  
+  const gridSquares = [];
 
   for (let x = 1; x <= size; x++) {
     for (let y = 1; y <= size; y++) {
@@ -25,15 +23,14 @@ function FloorPlan() {
         <GridSquare
           key={coords}
           coordinates={coords}
-          onDragOver={ e => onDragOver(e)}
+          onDragOver={e => onDragOver(e)}
           onDrop={e => actions.swapRooms(e, coords, rooms)}
         >
           <RoomRender coords={coords} />
         </GridSquare>
-      )
-    }    
+      );
+    }
   }
-
 
   function onDragOver(e) {
     e.preventDefault();
@@ -41,12 +38,12 @@ function FloorPlan() {
 
   function onDragStart(e, coords) {
     console.log("dragstart:", coords);
-    e.dataTransfer.setData("coordinates", coords)
+    e.dataTransfer.setData("coordinates", coords);
   }
 
   function RoomRender(props) {
     const room = rooms.find(room => room.coordinates === props.coords);
- 
+
     if (room) {
       const roomName = toCamelCase(room.name);
       const hotSpots = roomMaps[roomName];
@@ -61,25 +58,31 @@ function FloorPlan() {
         >
           <Layout>
             {hotSpots.map(hs => {
-              return(
+              return (
                 <SmallHotSpot
                   key={hs.name}
-                  name={hs.name} 
+                  name={hs.name}
                   position={hs.position}
                   builds={room.builds}
                 />
-              )
+              );
             })}
           </Layout>
         </Room>
-      )
-    }
-    else return(
-      <Room
-        key={props.coords}
-        coordinates={props.coords}
-        onClick={() => dispatch({ type: types.selectRoom, payload: {name: "---", coordinates: props.coords} })}/>
-    ) 
+      );
+    } else
+      return (
+        <Room
+          key={props.coords}
+          coordinates={props.coords}
+          onClick={() =>
+            dispatch({
+              type: types.selectRoom,
+              payload: { name: "---", coordinates: props.coords }
+            })
+          }
+        />
+      );
   }
 
   function SmallHotSpot(props) {
@@ -87,24 +90,23 @@ function FloorPlan() {
       return b.hotSpot === props.name;
     });
 
-    return(
+    return (
       <span>
         {props.position.map((p, index) => {
           const [t, r, b, l] = p;
-          const bg = (build) ? "rgb(102, 43, 43)" : "rgb(197, 192, 192)";
+          const bg = build ? "rgb(102, 43, 43)" : "rgb(197, 192, 192)";
           const position = {
             top: t + "%",
             right: r + "%",
             bottom: b + "%",
             left: l + "%",
 
-            position: 'absolute',
-            margin: '2px',
-            border: '1px dashed white', 
-            width: 'auto',
-            height: 'auto',
+            position: "absolute",
+            margin: "2px",
+            border: "1px dashed white",
+            width: "auto",
+            height: "auto",
             backgroundColor: bg
-
           };
 
           return (
@@ -124,16 +126,14 @@ function FloorPlan() {
           );
         })}
       </span>
-    )
+    );
   }
 
   return (
     <div>
-      <GridPlane>
-        {gridSquares}
-      </GridPlane>
+      <GridPlane>{gridSquares}</GridPlane>
     </div>
-  )
+  );
 }
 
 export default FloorPlan;

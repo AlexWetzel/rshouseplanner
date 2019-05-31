@@ -10,7 +10,7 @@ export const useActions = (state, dispatch) => {
 
   function searchPlayer() {
     axios
-      .post("/api/player", {name: "uber Guy"})
+      .get("/api/player", { params: {name: "uber Guy"} })
       .then(res => {
         console.log(res);
         const player = res.data.playerData;

@@ -29,10 +29,9 @@ export default function Dropdown(props) {
   const [expand, setExpand] = useState(false);
 
   function handleDropDown(name, index, canBuild) {
-    setExpand(!expand);
-
     if (canBuild || !expand) {
       console.log("index: ", index);
+      setExpand(!expand);
 
       if (expand) {
         props.onSelect(name);
@@ -65,7 +64,7 @@ export default function Dropdown(props) {
       );
     } else return defaultOption;
   }
-  
+
   return (
     <div>
       <h3>{props.name}</h3>
