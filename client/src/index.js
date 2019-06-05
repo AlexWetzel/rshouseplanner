@@ -5,11 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { RoomProvider } from './context/roomContext/RoomContext';
 import { UserProvider } from './context/userContext/UserContext';
+import { ItemProvider } from './context/itemContext/ItemContext';
 
 ReactDOM.render(
   <RoomProvider>
     <UserProvider>
-      <App />
+      <ItemProvider>
+        <App />
+      </ItemProvider>
     </UserProvider>
   </RoomProvider>
   , document.getElementById('root'));

@@ -6,12 +6,14 @@ import style from './App.module.css';
 import PlayerSearch from './components/PlayerSearch/PlayerSearch';
 import { userContext } from "./context/userContext/UserContext";
 import { roomContext } from "./context/roomContext/RoomContext";
+import { itemContext } from "./context/itemContext/ItemContext";
 // import { types } from "./context/userContext/reducers";
 
 
 function App() {
   const { actions: userActions } = useContext(userContext);
   const { actions: roomActions } = useContext(roomContext);
+  const { actions: itemActions } = useContext(itemContext);
   useEffect(() => {
     if(typeof(Storage) !== "undefined"){
       // userActions.useStoredData();
@@ -32,7 +34,7 @@ function App() {
 
   return (
     <div className={`${style.App}`}>
-      <button onClick={() => roomActions.items()}>item test</button>
+      <button onClick={() => itemActions.compileItemList()}>item test</button>
       <PlayerSearch />
       <SidePanel />
       <FloorPlan />
