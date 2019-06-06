@@ -12,7 +12,7 @@ import * as roomMaps from "../../data/roomMaps";
 import toCamelCase from "../../helpers/toCamelCase";
 
 export default function SidePanel() {
-  const [openTab, setOpenTab] = useState('layout');
+  const [openTab, setOpenTab] = useState('roomLayout');
 
   return (
     <div className={`${style.sidePanel}`}>
@@ -30,9 +30,12 @@ function TabSwitch(props) {
     case 'cost':
       return <RoomCost/>;
     default:
-      return null;
+      return <RoomLayout/>;
   }
 }
+
+
+//========================================================================================
 
 function RoomCost() {
   const { state: roomState, actions: roomActions } = useContext(roomContext);
@@ -41,7 +44,7 @@ function RoomCost() {
   const { items } = itemState;
 
   function getBuildItems() {
-    const items = [];
+    const buildItems = [];
     selectedRoom.builds.forEach(selectedRoomBuild => {
       const roomName = toCamelCase(selectedRoom.name);
       const hotSpotData = roomData[roomName].hotSpots.find(hS => {
@@ -50,10 +53,20 @@ function RoomCost() {
       const buildData = hotSpotData.builds.find(b => {
         return b.name === selectedRoomBuild.name
       })
-      buildData.materials.forEach(m => {items.push(m)});
+      buildData.materials.forEach(m => {buildItems.push(m)});
     })
 
-    return items;
+    buildItems.map(bI => {
+      const itemData = items.find(i => {return i.name === bI.name});
+      if (itemData) {
+        bI.price = itemData.price;
+      }
+      else { 
+        bI.price = '---';
+      }
+      return bI;
+    })
+    return buildItems;
   }
 
   const itemList = getBuildItems();
@@ -61,12 +74,14 @@ function RoomCost() {
   return (
     <>
       <h3>Cost</h3>
-      {itemList.map(i => {
-        return(<p key={i.name}>{`${i.name} | Quantity: ${i.quantity}`}</p>)
+      {itemList.map((i, index) => {
+        return(<p key={index}>{`${i.name} | Quantity: ${i.quantity} | Price: ${i.price}`}</p>)
       })}
     </>
   )
 }
+
+//===========================================================================================
 
 function RoomLayout() {
   const { state, actions } = useContext(roomContext);
