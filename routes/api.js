@@ -20,10 +20,11 @@ router.get("/items", (req, res) => {
   osrs.ge.getItems(items)
     .then(items => {
       items = items.map(i => {
+        
         i = JSON.parse(i);
         return {
           name: i.item.name,
-          price: parseInt(i.item.current.price)
+          price: i.item.current.price
         }
       })
       console.log('Returned', items.length, 'items');

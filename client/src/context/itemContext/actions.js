@@ -1,6 +1,7 @@
 // import { types } from "./reducers";
 import axios from "axios";
 import * as roomData from "../../data/roomData";
+import { types } from "./reducers";
 
 const untradeables = ['Platinum token']
 
@@ -49,23 +50,12 @@ export const useActions = (state, dispatch) => {
 
   function compileItemList() {
     const itemList = returnListOfItems();
-    const items = [
-      "oak plank",
-      "teak plank",
-      "mahogany plank"
-    ]
-    console.log(itemList);
-    console.log(items)
-    // const items = [
-    //   "oak plank",
-    //   "teak plank",
-    //   "mahogany plank"
-    // ]
-
     axios
       .get("/api/items", {params: {items: itemList}})
       .then(res => {
         console.log(res);
+        const { items } = res.data
+        if (items) dispatch({type: types.updateItems, payload: items});
       });
   }
 
