@@ -9,7 +9,7 @@ import { roomContext } from "../../context/roomContext/RoomContext";
 import * as roomData from "../../data/roomData";
 import * as roomMaps from "../../data/roomMaps";
 
-import toCamelCase from "../../helpers/toCamelCase";
+import { toCamelCase } from "../../helpers/parsers";
 
 export default function RoomLayout() {
   const { state, actions } = useContext(roomContext);

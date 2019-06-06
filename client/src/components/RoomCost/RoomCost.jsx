@@ -4,7 +4,7 @@ import { itemContext } from "../../context/itemContext/ItemContext";
 
 import * as roomData from "../../data/roomData";
 
-import toCamelCase from "../../helpers/toCamelCase";
+import { toCamelCase, shortPriceToLong } from "../../helpers/parsers";
 
 export default function RoomCost() {
   const { state: roomState, actions: roomActions } = useContext(roomContext);
@@ -44,7 +44,8 @@ export default function RoomCost() {
     <>
       <h3>Cost</h3>
       {itemList.map((i, index) => {
-        return(<p key={index}>{`${i.name} | Quantity: ${i.quantity} | Price: ${i.price}`}</p>)
+        const longPrice = shortPriceToLong(i.price);
+        return(<p key={index}>{`${i.name} | Quantity: ${i.quantity} | Price: ${longPrice}`}</p>)
       })}
     </>
   )

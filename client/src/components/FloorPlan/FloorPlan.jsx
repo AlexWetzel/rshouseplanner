@@ -7,7 +7,7 @@ import Layout from "../Layout";
 
 import * as roomMaps from "../../data/roomMaps";
 
-import toCamelCase from "../../helpers/toCamelCase";
+import { toCamelCase } from "../../helpers/parsers";
 
 function FloorPlan() {
   const { state, dispatch, actions } = useContext(roomContext);
