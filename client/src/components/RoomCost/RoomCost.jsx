@@ -42,10 +42,14 @@ export default function RoomCost() {
 
   return (
     <>
+      <h2>Total Room Cost</h2>
+
       <h3>Cost</h3>
       {itemList.map((i, index) => {
-        const longPrice = shortPriceToLong(i.price);
-        return(<p key={index}>{`${i.name} | Quantity: ${i.quantity} | Price: ${longPrice}`}</p>)
+        const [longPrice, priceNum]= shortPriceToLong(i.price);
+        console.log(priceNum, i.quantity)
+        const cost = priceNum * i.quantity;
+        return(<p key={index}>{`${i.name} | Item Price: ${longPrice} | Quantity: ${i.quantity} | Cost: ${cost.toLocaleString()}`}</p>)
       })}
     </>
   )

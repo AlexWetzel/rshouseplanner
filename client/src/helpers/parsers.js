@@ -8,8 +8,10 @@ export function toCamelCase(str) {
 
 export function shortPriceToLong(price) {
   let p = price;
+  let priceNum;
   if (typeof p === 'number'){ 
     p = price.toString();
+    priceNum = price
   }
 
   let priceLong = p.replace(/([.])(\w)(\w+)/g, function(match, p1, p2, p3) {
@@ -30,5 +32,8 @@ export function shortPriceToLong(price) {
       }
     }
   });
-  return priceLong;
+  if (typeof p === 'string') {
+    priceNum = parseInt(priceLong.replace(/[,]/g, ''))
+  }
+  return [priceLong, priceNum];
 }
