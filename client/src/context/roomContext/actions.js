@@ -1,7 +1,7 @@
 import { types } from "./reducers";
 import axios from "axios";
 
-export const useActions = (state, dispatch) => {
+export const useActions = (state, itemState, dispatch) => {
   function selectRoom(room) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
     dispatch({ type: types.selectRoom, payload: room });
@@ -28,6 +28,7 @@ export const useActions = (state, dispatch) => {
     const newRoom = {
       name: name,
       coordinates: selectRoom.coordinates,
+      cost: 0,
       builds: []
     };
 
@@ -119,17 +120,33 @@ export const useActions = (state, dispatch) => {
       });
   }
 
+  function calculateRoomCost(items) {
+    let totalCost = 0;
+    items.forEach(i => {
+      totalCost += (i.priceNum * i.quantity);
+    })
+
+    const newRoom = {
+      ...state.selectedRoom,
+      cost: totalCost
+    }
+
+    dispatch({ type: types.changeRoom, payload: newRoom });
+    dispatch({ type: types.selectRoom, payload: newRoom });
+  }
+
   function items() {
-    const items = [
-      "oak plank",
-      "teak plank",
-      "mahogany plank"
-    ]
-    axios
-      .get("/api/items", {params: {items}})
-      .then(res => {
-        console.log(res);
-      })
+    console.log('Item state:',itemState);
+    // const items = [
+    //   "oak plank",
+    //   "teak plank",
+    //   "mahogany plank"
+    // ]
+    // axios
+    //   .get("/api/items", {params: {items}})
+    //   .then(res => {
+    //     console.log(res);
+    //   })
   }     
 
   return {
@@ -139,6 +156,7 @@ export const useActions = (state, dispatch) => {
     changeBuild,
     saveRooms,
     findHouse,
-    items
+    items,
+    calculateRoomCost
   };
 };

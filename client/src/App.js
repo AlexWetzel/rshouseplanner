@@ -32,6 +32,10 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    roomActions.items();
+  })
+
   return (
     <div className={`${style.App}`}>
       <button onClick={() => itemActions.compileItemList()}>item test</button>

@@ -10,6 +10,7 @@ const roomSchema = new Schema ({
   name: String,
   coordinates: String,
   face: String,
+  cost: Number,
   builds: [buildSchema]
 });
 

@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect } from "react";
 import { roomContext } from "../../context/roomContext/RoomContext";
 import { itemContext } from "../../context/itemContext/ItemContext";
 
@@ -28,28 +28,48 @@ export default function RoomCost() {
     buildItems.map(bI => {
       const itemData = items.find(i => {return i.name === bI.name});
       if (itemData) {
-        bI.price = itemData.price;
+        const [longPrice, priceNum]= shortPriceToLong(itemData.price);
+        bI.shortPrice = itemData.price;
+        bI.longPrice = longPrice;
+        bI.priceNum = priceNum;
       }
       else { 
-        bI.price = '---';
+        bI.shortPrice = '---';
+        bI.longPrice = '---';
+        bI.priceNum = 0;
       }
       return bI;
-    })
+    });
+
+    
+
     return buildItems;
   }
 
-  const itemList = getBuildItems();
+  useEffect(() => {
+    roomActions.calculateRoomCost();
+  })
 
+  function totalCost(items) {
+    let totalCost = 0;
+    items.forEach(i => {
+      totalCost += (i.priceNum * i.quantity);
+    })
+    return totalCost.toLocaleString()
+  }
+
+  const itemList = getBuildItems();
+  // roomActions.calculateRoomCost(itemList);
   return (
     <>
       <h2>Total Room Cost</h2>
-
+      <p>{selectedRoom.cost.toLocaleString()}gp</p>
       <h3>Cost</h3>
       {itemList.map((i, index) => {
-        const [longPrice, priceNum]= shortPriceToLong(i.price);
-        console.log(priceNum, i.quantity)
-        const cost = priceNum * i.quantity;
-        return(<p key={index}>{`${i.name} | Item Price: ${longPrice} | Quantity: ${i.quantity} | Cost: ${cost.toLocaleString()}`}</p>)
+        // const [longPrice, priceNum]= shortPriceToLong(i.price);
+        // console.log(priceNum, i.quantity)
+        const cost = i.priceNum * i.quantity;
+        return(<p key={index}>{`${i.name} | Item Price: ${i.longPrice}gp | Quantity: ${i.quantity} | Cost: ${cost.toLocaleString()}gp`}</p>)
       })}
     </>
   )

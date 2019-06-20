@@ -1,10 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import style from "./SidePanel.module.css";
 import RoomLayout from '../RoomLayout';
 import RoomCost from '../RoomCost';
 
 export default function SidePanel() {
   const [openTab, setOpenTab] = useState('roomLayout');
+
+  useEffect(() => {
+    
+    // return () => {
+    //   effect
+    // };
+  })
+
 
   return (
     <div className={`${style.sidePanel}`}>
