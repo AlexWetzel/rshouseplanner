@@ -46,9 +46,9 @@ export default function RoomCost() {
     return buildItems;
   }
 
-  useEffect(() => {
-    roomActions.calculateRoomCost();
-  })
+  // useEffect(() => {
+  //   roomActions.calculateRoomCost();
+  // })
 
   function totalCost(items) {
     let totalCost = 0;

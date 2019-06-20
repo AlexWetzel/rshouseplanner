@@ -83,7 +83,7 @@ export default function RoomLayout() {
               options={hotSpot.builds}
               selectedOption={selectedBuild ? selectedBuild.name : "---"}
               onSelect={name =>
-                actions.changeBuild(name, hotSpot.name, selectedRoom)
+                actions.changeBuild(name, hotSpot.name)
               }
             >
 

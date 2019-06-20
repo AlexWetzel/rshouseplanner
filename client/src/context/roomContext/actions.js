@@ -1,6 +1,10 @@
 import { types } from "./reducers";
 import axios from "axios";
 
+import * as roomData from "../../data/roomData";
+
+import { toCamelCase, shortPriceToLong } from "../../helpers/parsers";
+
 export const useActions = (state, itemState, dispatch) => {
   function selectRoom(room) {
     dispatch({ type: types.selectHotSpot, payload: "none" });
@@ -62,16 +66,21 @@ export const useActions = (state, itemState, dispatch) => {
     dispatch({ type: types.selectRoom, payload: newRoom });
   }
 
-  function changeBuild(name, hsName, selectRoom) {
+  function changeBuild(name, hsName) {
     const build = name;
 
     const newBuild = {
       name: build,
-      hotSpot: hsName
+      hotSpot: hsName,
+      cost: 0
     };
-    const buildIndex = selectRoom.builds.findIndex(b => b.hotSpot === hsName);
-    const newRoom = { ...selectRoom };
 
+    const buildIndex = state.selectedRoom.builds.findIndex(b => b.hotSpot === hsName);
+   
+    const newRoom = {
+      ...state.selectedRoom,
+    }
+      
     if (build === "---") {
       newRoom.builds.splice(buildIndex, 1);
     } else if (buildIndex !== -1) {
@@ -84,6 +93,19 @@ export const useActions = (state, itemState, dispatch) => {
     } else {
       newRoom.builds.push(newBuild);
     }
+
+    const roomItemList = getBuildItems(newRoom, itemState.items);
+    console.log(roomItemList);
+
+    let totalCost = 0;
+    roomItemList.forEach(i => {
+      totalCost += (i.priceNum * i.quantity);
+    })
+
+    console.log(totalCost);
+    newRoom.cost = totalCost;
+   
+    
 
     dispatch({ type: types.changeRoom, payload: newRoom });
     dispatch({ type: types.selectRoom, payload: newRoom });
@@ -160,3 +182,39 @@ export const useActions = (state, itemState, dispatch) => {
     calculateRoomCost
   };
 };
+
+//===================================================================================
+
+function getBuildItems(room, items) {
+  const buildItems = [];
+  room.builds.forEach(selectedRoomBuild => {
+    const roomName = toCamelCase(room.name);
+    const hotSpotData = roomData[roomName].hotSpots.find(hS => {
+      return hS.name === selectedRoomBuild.hotSpot
+    })
+    const buildData = hotSpotData.builds.find(b => {
+      return b.name === selectedRoomBuild.name
+    })
+    buildData.materials.forEach(m => {buildItems.push(m)});
+  })
+
+  buildItems.map(bI => {
+    const itemData = items.find(i => {return i.name === bI.name});
+    if (itemData) {
+      const [longPrice, priceNum]= shortPriceToLong(itemData.price);
+      bI.shortPrice = itemData.price;
+      bI.longPrice = longPrice;
+      bI.priceNum = priceNum;
+    }
+    else { 
+      bI.shortPrice = '---';
+      bI.longPrice = '---';
+      bI.priceNum = 0;
+    }
+    return bI;
+  });
+
+  
+
+  return buildItems;
+}
