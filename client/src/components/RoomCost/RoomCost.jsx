@@ -63,7 +63,8 @@ export default function RoomCost() {
   return (
     <>
       <h2>Total Room Cost</h2>
-      <p>{selectedRoom.cost.toLocaleString()}gp</p>
+      {/* <p>{selectedRoom.cost.toLocaleString()}gp</p> */}
+      <p>{totalCost(itemList)}gp</p>
       <h3>Cost</h3>
       {itemList.map((i, index) => {
         // const [longPrice, priceNum]= shortPriceToLong(i.price);

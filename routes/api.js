@@ -16,9 +16,10 @@ router.get("/player", (req, res) => {
 
 router.get("/items", (req, res) => {
   const {items} = req.query;
-  console.log('Items:', items)
+  // console.log('Items:', items);
   osrs.ge.getItems(items)
     .then(items => {
+      console.log(items);
       items = items.map(i => {
         
         i = JSON.parse(i);
@@ -27,6 +28,7 @@ router.get("/items", (req, res) => {
           price: i.item.current.price
         }
       })
+
       console.log('Returned', items.length, 'items');
       res.status(200).send({ message: 'ok', items });
     })
