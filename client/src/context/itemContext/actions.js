@@ -74,21 +74,30 @@ export const useActions = (state, dispatch) => {
   function compileItemList() {
     let itemList = [];
     itemList = returnListOfItems();
-    console.log(itemList);
-    // while (itemList.length > 0) {
       
-    //   setInterval(() => {
-    //     const requestedItems = itemList.splice(0, 20);
-    //     axios
-    //       .get("/api/items", {params: {items: requestedItems}})
-    //       .then(res => {
-    //         console.log(res);
-    //         const { items } = res.data
-    //         if (items) dispatch({type: types.updateItems, payload: items});
-    //       });
-    //   }, 10000);
-    // }
-  }
+    function request() {
+      console.log('length:', itemList.length);
+      if (itemList.length == 0) {
+        return clearInterval(requestInterval);
+      }
+
+      let requestedItems = itemList.splice(0, 20);
+
+      console.log('requested items:', requestedItems);
+ 
+      axios
+        .get("/api/items", {params: {items: requestedItems}})
+        .then(res => {
+          console.log(res);
+          const { items } = res.data
+          if (items) dispatch({type: types.updateItems, payload: items});
+        });
+    }
+
+    request();
+    const requestInterval = setInterval(request, 5000);
+    
+   }
 
   return {
     compileItemList
