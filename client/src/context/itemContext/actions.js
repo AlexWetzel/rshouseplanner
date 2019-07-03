@@ -7,7 +7,6 @@ const untradeables = ['Platinum token']
 
 function returnListOfItems() {
   let itemList = [];
- 
 
   const roomNames = Object.keys(roomData);
 
@@ -74,6 +73,7 @@ export const useActions = (state, dispatch) => {
   function compileItemList() {
     let itemList = [];
     itemList = returnListOfItems();
+    const updatedItems = state.items.slice();
       
     function request() {
       console.log('length:', itemList.length);
@@ -90,7 +90,21 @@ export const useActions = (state, dispatch) => {
         .then(res => {
           console.log(res);
           const { items } = res.data
-          if (items) dispatch({type: types.updateItems, payload: items});
+          if (items) {
+            items.forEach(i => {
+              const index = updatedItems.findIndex(ui => {
+                return ui.name === i.name;
+              })
+              if (index === -1) {
+                updatedItems.push(i);
+              }
+              else {
+                updatedItems[index].price = i.price;
+              }
+            });
+            
+            dispatch({type: types.updateItems, payload: updatedItems})
+          };
         });
     }
 
