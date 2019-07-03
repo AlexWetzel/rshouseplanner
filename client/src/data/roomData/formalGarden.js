@@ -30,7 +30,7 @@ export const formalGarden = {
         {
           name: "Dungeon entrance",
           level: "70",
-          materials: [{ name: "Marble brick", quantity: 1 }]
+          materials: [{ name: "Marble block", quantity: 1 }]
         }
       ]
     },

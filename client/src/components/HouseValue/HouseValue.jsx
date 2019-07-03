@@ -58,8 +58,6 @@ export default function HouseValue() {
     roomItems.forEach(i => {itemList.push(i)})
   })
 
-  houseValue = totalCost(itemList);
-  
   return (
     <div>
       <h2>House Value: {totalCost(itemList)}gp</h2>

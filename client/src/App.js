@@ -32,6 +32,7 @@ function App() {
       }
       
     }
+    // itemActions.compileItemList();
   }, []);
 
   // useEffect(() => {
