@@ -1,6 +1,7 @@
 // import { types } from "./reducers";
 import axios from "axios";
-import * as roomData from "../../data/roomData";
+// import * as roomData from "../../data/roomData";
+import { items } from "../../data/itemData/itemConstatnts";
 import { types } from "./reducers";
 
 const untradeables = ['Platinum token']
@@ -8,33 +9,38 @@ const untradeables = ['Platinum token']
 function returnListOfItems() {
   let itemList = [];
 
-  const roomNames = Object.keys(roomData);
+  // const roomNames = Object.keys(roomData);
 
+  itemList = Object.values(items);
 
-  const gardenHotSpots = roomData.garden.hotSpots;
-  const parlourHotSpots = roomData.parlour.hotSpots;
-
-  gardenHotSpots.forEach( hs => {
-    hs.builds.forEach( b => {
-      b.materials.forEach( m => {
-        const { name } = m;
-        if (!itemList.includes(name) && !untradeables.includes(name)) {
-          itemList.push(name);
-        };
-      });
-    });
+  untradeables.forEach(ut => {
+    const index = itemList.findIndex(i => {return ut === i})
+    itemList.splice(index, 1);
   });
+  // const hotSpots = roomData.kitchen.hotSpots;
+  // const parlourHotSpots = roomData.parlour.hotSpots;
 
-  parlourHotSpots.forEach( hs => {
-    hs.builds.forEach( b => {
-      b.materials.forEach( m => {
-        const { name } = m;
-        if (!itemList.includes(name) && !untradeables.includes(name)) {
-          itemList.push(name);
-        };
-      });
-    });
-  });
+  // hotSpots.forEach( hs => {
+  //   hs.builds.forEach( b => {
+  //     b.materials.forEach( m => {
+  //       const { name } = m;
+  //       if (!itemList.includes(name) && !untradeables.includes(name)) {
+  //         itemList.push(name);
+  //       };
+  //     });
+  //   });
+  // });
+
+  // parlourHotSpots.forEach( hs => {
+  //   hs.builds.forEach( b => {
+  //     b.materials.forEach( m => {
+  //       const { name } = m;
+  //       if (!itemList.includes(name) && !untradeables.includes(name)) {
+  //         itemList.push(name);
+  //       };
+  //     });
+  //   });
+  // });
 
 
   // roomNames.forEach( rn => {

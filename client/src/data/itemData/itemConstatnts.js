@@ -1,0 +1,36 @@
+export const items = {
+  plank: 'Plank',
+  oakPlank: 'Oak plank',
+  teakPlank: 'Teak plank',
+  mahoganyPlank: 'Mahogany Plank',
+  ironBar: 'Iron bar',
+  steelBar: 'Steel bar',
+  limestoneBrick: 'Limestone brick',
+  softClay: 'Soft clay',
+  marbleBlock: 'Marble block',
+  bronzeNails: 'Bronze nails',
+  ironNails: 'Iron nails',
+  steelNails: 'Steel nails',
+  blackNails: 'Black nails',
+  mithrilNails: 'Mithril nails',
+  adamantiteNails: 'Adamantite nails',
+  runeNails: 'Rune nails',
+  baggedDeadTree: 'Bagged dead tree',
+  baggedNiceTree: 'Bagged nice tree',
+  baggedOakTree: 'Bagged oak tree',
+  baggedWillowTree: 'Bagged willow tree',
+  baggedMapleTree: 'Bagged maple tree',
+  baggedYewTree: 'Bagged yew tree',
+  baggedMagicTree: 'Bagged magic tree',
+  //======================================================
+  baggedPlant1: 'Bagged plant 1',
+  baggedPlant2: 'Bagged plant 2',
+  baggedPlant3: 'Bagged plant 3',
+  moltenGlass: 'Molten glass',
+  wateringCan: 'Watering can',
+  goldLeaf: 'Gold leaf',
+  platinumToken: 'Platinum token',
+  
+
+
+}

@@ -37,7 +37,7 @@ export const parlour = {
           materials: [{ name: "Oak plank", quantity: 2 }]
         },
         {
-          name: "Oak plank",
+          name: "Oak armchair",
           level: "26",
           materials: [{ name: "Oak plank", quantity: 3 }]
         },
@@ -88,7 +88,7 @@ export const parlour = {
           materials: [{ name: "Oak plank", quantity: 2 }]
         },
         {
-          name: "Oak plank",
+          name: "Oak armchair",
           level: "26",
           materials: [{ name: "Oak plank", quantity: 3 }]
         },
@@ -139,7 +139,7 @@ export const parlour = {
           materials: [{ name: "Oak plank", quantity: 2 }]
         },
         {
-          name: "Oak plank",
+          name: "Oak armchair",
           level: "26",
           materials: [{ name: "Oak plank", quantity: 3 }]
         },
