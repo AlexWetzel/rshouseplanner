@@ -1,36 +1,38 @@
-export const items = {
-  plank: 'Plank',
-  oakPlank: 'Oak plank',
-  teakPlank: 'Teak plank',
-  mahoganyPlank: 'Mahogany Plank',
-  ironBar: 'Iron bar',
-  steelBar: 'Steel bar',
-  limestoneBrick: 'Limestone brick',
-  softClay: 'Soft clay',
-  marbleBlock: 'Marble block',
-  bronzeNails: 'Bronze nails',
-  ironNails: 'Iron nails',
-  steelNails: 'Steel nails',
-  blackNails: 'Black nails',
-  mithrilNails: 'Mithril nails',
-  adamantiteNails: 'Adamantite nails',
-  runeNails: 'Rune nails',
-  baggedDeadTree: 'Bagged dead tree',
-  baggedNiceTree: 'Bagged nice tree',
-  baggedOakTree: 'Bagged oak tree',
-  baggedWillowTree: 'Bagged willow tree',
-  baggedMapleTree: 'Bagged maple tree',
-  baggedYewTree: 'Bagged yew tree',
-  baggedMagicTree: 'Bagged magic tree',
-  //======================================================
-  baggedPlant1: 'Bagged plant 1',
-  baggedPlant2: 'Bagged plant 2',
-  baggedPlant3: 'Bagged plant 3',
-  moltenGlass: 'Molten glass',
-  wateringCan: 'Watering can',
-  goldLeaf: 'Gold leaf',
-  platinumToken: 'Platinum token',
-  
+export const PLANK = "Plank";
+export const OAK_PLANK = "Oak plank";
+export const TEAK_PLANK = "Teak plank";
+export const MAHOGANY_PLANK = "Mahogany Plank";
+export const IRON_BAR = "Iron bar";
+export const STEEL_BAR = "Steel bar";
+export const LIMESTONE_BRICK = "Limestone brick";
+export const SOFT_CLAY = "Soft clay";
+export const MARBLE_BLOCK = "Marble block";
+export const BRONZE_NAILS = "Bronze nails";
+export const IRON_NAILS = "Iron nails";
+export const STEEL_NAILS = "Steel nails";
+export const BLACK_NAILS = "Black nails";
+export const MITHRIL_NAILS = "Mithril nails";
+export const ADAMANTITE_NAILS = "Adamantite nails";
+export const RUNE_NAILS = "Rune nails";
+export const BAGGED_DEAD_TREE = "Bagged dead tree";
+export const BAGGED_NICE_TREE = "Bagged nice tree";
+export const BAGGED_OAK_TREE = "Bagged oak tree";
+export const BAGGED_WILLOW_TREE = "Bagged willow tree";
+export const BAGGED_MAPLE_TREE = "Bagged maple tree";
+export const BAGGED_YEW_TREE = "Bagged yew tree";
+export const BAGGED_MAGIC_TREE = "Bagged magic tree";
+export const BAGGED_PLANT_1 = "Bagged plant 1";
+export const BAGGED_PLANT_2 = "Bagged plant 2";
+export const BAGGED_PLANT_3 = "Bagged plant 3";
+export const MOLTEN_GLASS = "Molten glass";
+export const WATERING_CAN = "Watering can";
+export const GOLD_LEAF = "Gold leaf";
+export const PLATINUM_TOKEN = "Platinum token";
+export const CIDER = "Cider";
+export const ASGARNIAN_ALE = "Asgarnian ale";
+export const GREENMANS_ALE = "Greenman's ale";
+export const DRAGON_BITTER = "Dragon bitter";
+export const CHEFS_DELIGHT = "Chef's delight";
+export const WOOL = "Wool";
+export const BOLT_OF_CLOTH = "Bolt of cloth";
 
-
-}

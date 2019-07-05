@@ -1,3 +1,16 @@
+import {
+  PLANK,
+  STEEL_NAILS,
+  OAK_PLANK,
+  TEAK_PLANK,
+  BOLT_OF_CLOTH,
+  LIMESTONE_BRICK,
+  SOFT_CLAY,
+  MARBLE_BLOCK,
+  MAHOGANY_PLANK,
+  GOLD_LEAF,
+} from "../itemData/itemConstatnts";
+
 export const parlour = {
   name: "Parlour",
   level: "1",
@@ -11,47 +24,45 @@ export const parlour = {
           name: "Crude wooden chair",
           level: "1",
           materials: [
-            { name: "Plank", quantity: 2 },
-            { name: "Steel nails", quantity: 2 }
+            { name: PLANK, quantity: 2 },
+            { name: STEEL_NAILS, quantity: 2 }
           ]
         },
         {
           name: "Wooden chair",
           level: "8",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Rocking chair",
           level: "14",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Oak chair",
           level: "19",
-          materials: [{ name: "Oak plank", quantity: 2 }]
+          materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
           name: "Oak armchair",
           level: "26",
-          materials: [{ name: "Oak plank", quantity: 3 }]
+          materials: [{ name: OAK_PLANK, quantity: 3 }]
         },
         {
           name: "Teak armchair",
           level: "35",
-          materials: [
-            { name: "Teak plank", quantity: 2 },
-          ]
+          materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
           name: "Mahogany armchair",
           level: "50",
-          materials: [{ name: "Mahogany plank", quantity: 2 }]
+          materials: [{ name: MAHOGANY_PLANK, quantity: 2 }]
         }
       ]
     },
@@ -62,47 +73,45 @@ export const parlour = {
           name: "Crude wooden chair",
           level: "1",
           materials: [
-            { name: "Plank", quantity: 2 },
-            { name: "Steel nails", quantity: 2 }
+            { name: PLANK, quantity: 2 },
+            { name: STEEL_NAILS, quantity: 2 }
           ]
         },
         {
           name: "Wooden chair",
           level: "8",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Rocking chair",
           level: "14",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Oak chair",
           level: "19",
-          materials: [{ name: "Oak plank", quantity: 2 }]
+          materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
           name: "Oak armchair",
           level: "26",
-          materials: [{ name: "Oak plank", quantity: 3 }]
+          materials: [{ name: OAK_PLANK, quantity: 3 }]
         },
         {
           name: "Teak armchair",
           level: "35",
-          materials: [
-            { name: "Teak plank", quantity: 2 },
-          ]
+          materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
           name: "Mahogany armchair",
           level: "50",
-          materials: [{ name: "Mahogany plank", quantity: 2 }]
+          materials: [{ name: MAHOGANY_PLANK, quantity: 2 }]
         }
       ]
     },
@@ -113,47 +122,45 @@ export const parlour = {
           name: "Crude wooden chair",
           level: "1",
           materials: [
-            { name: "Plank", quantity: 2 },
-            { name: "Steel nails", quantity: 2 }
+            { name: PLANK, quantity: 2 },
+            { name: STEEL_NAILS, quantity: 2 }
           ]
         },
         {
           name: "Wooden chair",
           level: "8",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Rocking chair",
           level: "14",
           materials: [
-            { name: "Plank", quantity: 3 },
-            { name: "Steel nails", quantity: 3 }
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Oak chair",
           level: "19",
-          materials: [{ name: "Oak plank", quantity: 2 }]
+          materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
           name: "Oak armchair",
           level: "26",
-          materials: [{ name: "Oak plank", quantity: 3 }]
+          materials: [{ name: OAK_PLANK, quantity: 3 }]
         },
         {
           name: "Teak armchair",
           level: "35",
-          materials: [
-            { name: "Teak plank", quantity: 2 },
-          ]
+          materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
           name: "Mahogany armchair",
           level: "50",
-          materials: [{ name: "Mahogany plank", quantity: 2 }]
+          materials: [{ name: MAHOGANY_PLANK, quantity: 2 }]
         }
       ]
     },
@@ -163,23 +170,19 @@ export const parlour = {
         {
           name: "Brown rug",
           level: "2",
-          materials: [
-            { name: "Bolt of cloth", quantity: 2 },
-          ]
+          materials: [{ name: BOLT_OF_CLOTH, quantity: 2 }]
         },
         {
           name: "Rug",
           level: "13",
-          materials: [
-            { name: "Bolt of cloth", quantity: 4 },
-          ]
+          materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
         },
         {
           name: "Opulent rug",
           level: "65",
           materials: [
-            { name: "Bolt of cloth", quantity: 4 },
-            { name: "Gold leaf", quantity: 1 }
+            { name: BOLT_OF_CLOTH, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 1 }
           ]
         }
       ]
@@ -190,23 +193,17 @@ export const parlour = {
         {
           name: "Clay fireplace",
           level: "3",
-          materials: [
-            { name: "Soft clay", quantity: 3 },
-          ]
+          materials: [{ name: SOFT_CLAY, quantity: 3 }]
         },
         {
           name: "Stone fireplace",
           level: "33",
-          materials: [
-            { name: "Limestone brick", quantity: 2 },
-          ]
+          materials: [{ name: LIMESTONE_BRICK, quantity: 2 }]
         },
         {
           name: "Marble fireplace",
           level: "63",
-          materials: [
-            { name: "Marble block", quantity: 1 }
-          ]
+          materials: [{ name:MARBLE_BLOCK, quantity: 1 }]
         }
       ]
     },
@@ -217,25 +214,25 @@ export const parlour = {
           name: "Torn curtains",
           level: "2",
           materials: [
-            {name: "Plank", quantity: 3},
-            {name: "Bolt of cloth", quantity: 3},
-            {name: "Steel nails", quantity: 3}
+            { name: PLANK, quantity: 3 },
+            { name: BOLT_OF_CLOTH, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 }
           ]
         },
         {
           name: "Curtains",
           level: "18",
           materials: [
-            {name: "Oak plank", quantity: 3},
-            {name: "Bolt of cloth", quantity: 3}
+            { name: OAK_PLANK, quantity: 3 },
+            { name: BOLT_OF_CLOTH, quantity: 3 }
           ]
         },
         {
           name: "Opulent curtains",
           level: "40",
           materials: [
-            {name: "Teak plank", quantity: 3},
-            {name: "Bolt of cloth", quantity: 3}
+            { name: TEAK_PLANK, quantity: 3 },
+            { name: BOLT_OF_CLOTH, quantity: 3 }
           ]
         }
       ]
@@ -247,25 +244,21 @@ export const parlour = {
           name: "Wooden bookcase",
           level: "4",
           materials: [
-            {name: "Plank", quantity: 4},
-            {name: "Steel nails", quantity: 4}
+            { name: PLANK, quantity: 4 },
+            { name: STEEL_NAILS, quantity: 4 }
           ]
         },
         {
           name: "Oak bookcase",
           level: "29",
-          materials: [
-            {name: "Oak plank", quantity:3},
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 3 }]
         },
         {
           name: "Mahogany bookcase",
           level: "40",
-          materials: [
-            {name: "Mahogany plank", quantity: 3}
-          ]
+          materials: [{ name: MAHOGANY_PLANK, quantity: 3 }]
         }
       ]
     }
   ]
-} 
+};

@@ -1,7 +1,7 @@
 // import { types } from "./reducers";
 import axios from "axios";
 // import * as roomData from "../../data/roomData";
-import { items } from "../../data/itemData/itemConstatnts";
+import * as items from "../../data/itemData/itemConstatnts";
 import { types } from "./reducers";
 
 const untradeables = ['Platinum token']
@@ -83,7 +83,7 @@ export const useActions = (state, dispatch) => {
       
     function request() {
       console.log('length:', itemList.length);
-      if (itemList.length == 0) {
+      if (itemList.length === 0) {
         return clearInterval(requestInterval);
       }
 
