@@ -8,7 +8,7 @@ import {
   SOFT_CLAY,
   MARBLE_BLOCK,
   MAHOGANY_PLANK,
-  GOLD_LEAF,
+  GOLD_LEAF
 } from "../itemData/itemConstatnts";
 
 export const parlour = {
@@ -203,7 +203,7 @@ export const parlour = {
         {
           name: "Marble fireplace",
           level: "63",
-          materials: [{ name:MARBLE_BLOCK, quantity: 1 }]
+          materials: [{ name: MARBLE_BLOCK, quantity: 1 }]
         }
       ]
     },

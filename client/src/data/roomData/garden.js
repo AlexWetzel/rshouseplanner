@@ -1,4 +1,4 @@
-import { 
+import {
   IRON_BAR,
   LIMESTONE_BRICK,
   SOFT_CLAY,
@@ -30,7 +30,6 @@ import {
 //     }
 //   ]
 // }
-
 
 export const garden = {
   name: "Garden",
@@ -129,7 +128,7 @@ export const garden = {
             { name: BAGGED_MAGIC_TREE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
-        },
+        }
       ]
     },
     {
@@ -190,7 +189,7 @@ export const garden = {
             { name: BAGGED_MAGIC_TREE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
-        },
+        }
       ]
     },
     {
@@ -200,24 +199,24 @@ export const garden = {
           name: "Plant",
           level: "1",
           materials: [
-            {name: BAGGED_PLANT_1, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_1, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Small fern",
           level: "6",
           materials: [
-            {name: BAGGED_PLANT_2, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_2, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Fern",
           level: "12",
           materials: [
-            {name: BAGGED_PLANT_3, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_3, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         }
       ]
@@ -229,24 +228,24 @@ export const garden = {
           name: "Dock leaf",
           level: "1",
           materials: [
-            {name: BAGGED_PLANT_1, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_1, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Thistle",
           level: "6",
           materials: [
-            {name: BAGGED_PLANT_2, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_2, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Reeds",
           level: "12",
           materials: [
-            {name: BAGGED_PLANT_3, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_3, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         }
       ]
@@ -258,24 +257,24 @@ export const garden = {
           name: "Fern",
           level: "1",
           materials: [
-            {name: BAGGED_PLANT_1, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_1, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Bush",
           level: "6",
           materials: [
-            {name: BAGGED_PLANT_2, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_2, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Tall plant",
           level: "12",
           materials: [
-            {name: BAGGED_PLANT_3, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_3, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         }
       ]
@@ -287,24 +286,24 @@ export const garden = {
           name: "Short Plant",
           level: "1",
           materials: [
-            {name: BAGGED_PLANT_1, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_1, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Large leaf bush",
           level: "6",
           materials: [
-            {name: BAGGED_PLANT_2, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_2, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         },
         {
           name: "Huge plant",
           level: "11",
           materials: [
-            {name: BAGGED_PLANT_3, quantity: 1},
-            {name: WATERING_CAN, quantity: 1}
+            { name: BAGGED_PLANT_3, quantity: 1 },
+            { name: WATERING_CAN, quantity: 1 }
           ]
         }
       ]
@@ -316,13 +315,13 @@ export const garden = {
           name: "Tip jar",
           level: "40",
           materials: [
-            {name: MAHOGANY_PLANK, quantity: 2},
-            {name: MOLTEN_GLASS, quantity: 1},
-            {name: GOLD_LEAF, quantity: 1},
-            {name: PLATINUM_TOKEN, quantity: 5}
+            { name: MAHOGANY_PLANK, quantity: 2 },
+            { name: MOLTEN_GLASS, quantity: 1 },
+            { name: GOLD_LEAF, quantity: 1 },
+            { name: PLATINUM_TOKEN, quantity: 5 }
           ]
         }
       ]
     }
   ]
-}
+};
