@@ -32,16 +32,12 @@ export const diningRoom = {
         {
           name: "Oak dining table",
           level: "22",
-          materials: [
-            { name: OAK_PLANK, quantity: 4 }
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
           name: "Carved oak table",
           level: "31",
-          materials: [
-            { name: OAK_PLANK, quantity: 6 }
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 6 }]
         },
         {
           name: "Teak dining table",
@@ -65,7 +61,7 @@ export const diningRoom = {
             { name: MAHOGANY_PLANK, quantity: 6 },
             { name: BOLT_OF_CLOTH, quantity: 4 },
             { name: GOLD_LEAF, quantity: 4 },
-            { name: MARBLE_BLOCK, quantity: 2 },
+            { name: MARBLE_BLOCK, quantity: 2 }
           ]
         }
       ]
@@ -86,7 +82,7 @@ export const diningRoom = {
         {
           name: "Marble fireplace",
           level: "63",
-          materials: [{ name:MARBLE_BLOCK, quantity: 1 }]
+          materials: [{ name: MARBLE_BLOCK, quantity: 1 }]
         }
       ]
     },
@@ -104,16 +100,12 @@ export const diningRoom = {
         {
           name: "Oak bench",
           level: "22",
-          materials: [
-            { name: OAK_PLANK, quantity: 4 }
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
           name: "Carved oak bench",
           level: "31",
-          materials: [
-            { name: OAK_PLANK, quantity: 4 },
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
           name: "Teak dining bench",
@@ -135,7 +127,7 @@ export const diningRoom = {
           level: "61",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 4 },
-            { name: GOLD_LEAF, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 4 }
           ]
         }
       ]
@@ -146,16 +138,12 @@ export const diningRoom = {
         {
           name: "Oak decoration",
           level: "16",
-          materials: [
-            { name: OAK_PLANK, quantity: 2 },
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
           name: "Teak decoration",
           level: "36",
-          materials: [
-            { name: TEAK_PLANK, quantity: 2 },
-          ]
+          materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
           name: "Gilded decoration",
@@ -175,7 +163,7 @@ export const diningRoom = {
           level: "26",
           materials: [
             { name: OAK_PLANK, quantity: 1 },
-            { name: ROPE, quantity: 1 },
+            { name: ROPE, quantity: 1 }
           ]
         },
         {
@@ -183,7 +171,7 @@ export const diningRoom = {
           level: "37",
           materials: [
             { name: TEAK_PLANK, quantity: 1 },
-            { name: BOLT_OF_CLOTH, quantity: 2 },
+            { name: BOLT_OF_CLOTH, quantity: 2 }
           ]
         },
         {
@@ -192,7 +180,7 @@ export const diningRoom = {
           materials: [
             { name: TEAK_PLANK, quantity: 1 },
             { name: BOLT_OF_CLOTH, quantity: 2 },
-            { name: GOLD_LEAF, quantity: 1 },
+            { name: GOLD_LEAF, quantity: 1 }
           ]
         }
       ]
