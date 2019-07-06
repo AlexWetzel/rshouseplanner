@@ -35,4 +35,5 @@ export const DRAGON_BITTER = "Dragon bitter";
 export const CHEFS_DELIGHT = "Chef's delight";
 export const WOOL = "Wool";
 export const BOLT_OF_CLOTH = "Bolt of cloth";
+export const ROPE = "Rope"
 
