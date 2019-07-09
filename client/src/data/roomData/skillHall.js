@@ -52,7 +52,7 @@ import {
   SOUL_RUNE
 } from "../itemData/itemConstatnts";
 
-export const bedroom = {
+export const skillHall = {
   name: "Hall - Skill trophies",
   level: "25",
   price: "15000",

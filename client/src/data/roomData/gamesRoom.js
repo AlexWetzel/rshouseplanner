@@ -16,7 +16,7 @@ import {
   FIRE_RUNE
 } from "../itemData/itemConstatnts";
 
-export const bedroom = {
+export const gamesRoom = {
   name: "Games room",
   level: "30",
   price: "25000",
@@ -27,24 +27,18 @@ export const bedroom = {
         {
           name: "Clay attack stone",
           level: "39",
-          materials: [
-            { name: SOFT_CLAY, quantity: 10 }
-          ]
+          materials: [{ name: SOFT_CLAY, quantity: 10 }]
         },
         {
           name: "Limestone attack stone",
           level: "59",
-          materials: [
-            { name: LIMESTONE_BRICK, quantity: 10 }
-          ]
+          materials: [{ name: LIMESTONE_BRICK, quantity: 10 }]
         },
         {
           name: "Marble attack stone",
           level: "79",
-          materials: [
-            { name: MARBLE_BLOCK, quantity: 4 }
-          ]
-        },
+          materials: [{ name: MARBLE_BLOCK, quantity: 4 }]
+        }
       ]
     },
     {
@@ -53,9 +47,7 @@ export const bedroom = {
         {
           name: "Hoop and stick",
           level: "30",
-          materials: [
-            { name: OAK_PLANK, quantity: 2 },
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
           name: "Dartboard",
@@ -72,7 +64,7 @@ export const bedroom = {
             { name: TEAK_PLANK, quantity: 6 },
             { name: STEEL_BAR, quantity: 3 }
           ]
-        },
+        }
       ]
     },
     {
@@ -85,7 +77,7 @@ export const bedroom = {
             { name: AIR_RUNE, quantity: 500 },
             { name: EARTH_RUNE, quantity: 500 },
             { name: WATER_RUNE, quantity: 500 },
-            { name: FIRE_RUNE, quantity: 500 },
+            { name: FIRE_RUNE, quantity: 500 }
           ]
         },
         {
@@ -95,7 +87,7 @@ export const bedroom = {
             { name: AIR_RUNE, quantity: 1000 },
             { name: EARTH_RUNE, quantity: 1000 },
             { name: WATER_RUNE, quantity: 1000 },
-            { name: FIRE_RUNE, quantity: 1000 },
+            { name: FIRE_RUNE, quantity: 1000 }
           ]
         },
         {
@@ -105,9 +97,9 @@ export const bedroom = {
             { name: AIR_RUNE, quantity: 2000 },
             { name: EARTH_RUNE, quantity: 2000 },
             { name: WATER_RUNE, quantity: 2000 },
-            { name: FIRE_RUNE, quantity: 2000 },
+            { name: FIRE_RUNE, quantity: 2000 }
           ]
-        },
+        }
       ]
     },
     {
@@ -116,9 +108,7 @@ export const bedroom = {
         {
           name: "Oak prize chest",
           level: "34",
-          materials: [
-            { name: OAK_PLANK, quantity: 4 },
-          ]
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
           name: "Teak prize chest",
@@ -135,7 +125,7 @@ export const bedroom = {
             { name: MAHOGANY_PLANK, quantity: 4 },
             { name: GOLD_LEAF, quantity: 1 }
           ]
-        },
+        }
       ]
     },
     {

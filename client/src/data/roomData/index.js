@@ -8,3 +8,4 @@ export * from './diningRoom';
 export * from './workshop';
 export * from './gamesRoom';
 export * from './skillHall';
+export * from './combatRoom'

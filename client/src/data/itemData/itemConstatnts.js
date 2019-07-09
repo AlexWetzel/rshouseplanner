@@ -58,6 +58,8 @@ export const SOUL_RUNE = "Soul rune";
 export const DEATH_RUNE = "Death rune";
 export const BLOOD_RUNE = "Blood rune";
 export const ASTRAL_RUNE = "Astral rune";
+export const BUCKET_OF_SAND = "Bucket of sand";
+export const BLACK_MASK = "Black mask";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -82,3 +84,4 @@ export const STUFFED_HYDRA_HEADS = "Platinum token";
 export const STUFFED_BIG_BASS = "Platinum token";
 export const STUFFED_BIG_SWORDFISH = "Platinum token";
 export const STUFFED_BIG_SHARK = "Platinum token";
+export const BUCKET_OF_SLIME = "Platinum token";
