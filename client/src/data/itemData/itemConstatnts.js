@@ -58,10 +58,18 @@ export const SOUL_RUNE = "Soul rune";
 export const DEATH_RUNE = "Death rune";
 export const BLOOD_RUNE = "Blood rune";
 export const ASTRAL_RUNE = "Astral rune";
+export const LAVA_RUNE = "Lava rune";
 export const BUCKET_OF_SAND = "Bucket of sand";
 export const BLACK_MASK = "Black mask";
 export const ANTI_DRAGON_SHIELD = "Black mask";
 export const AMULET_OF_GLORY = "Amulet of glory";
+export const BUCKET_OF_MILK = "Bucket of milk";
+export const BUCKET_OF_WATER = "Bucket of water";
+export const MAGIC_STONE = "Magic stone";
+export const SUPERCOMPOST = "Supercompost";
+export const COMPOST = "Compost";
+export const PAPYRUS = "Papyrus";
+export const GRANITE_5KG = "Granite (5kg)";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -104,3 +112,4 @@ export const DARKLIGHT = "Platinum token";
 export const SMALL_MAP = "Platinum token";
 export const MEDIUM_MAP = "Platinum token";
 export const LARGE_MAP = "Platinum token";
+export const ICE_COOLER = "Platinum token";
