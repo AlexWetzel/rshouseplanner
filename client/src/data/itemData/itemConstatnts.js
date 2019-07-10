@@ -73,6 +73,10 @@ export const GRANITE_5KG = "Granite (5kg)";
 export const UNPOWERED_ORB = "Unpowered orb";
 export const CANDLE = "Candle";
 export const GOLD_BAR = "Gold bar";
+export const BANANA = "Banana";
+export const URT_SALT = "Urt salt";
+export const TE_SALT = "Te salt";
+export const BASALT = "Basalt";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";

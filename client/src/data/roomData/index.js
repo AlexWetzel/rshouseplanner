@@ -13,4 +13,6 @@ export * from './menagerieIndoor';
 export * from './menagerieOutdoor';
 export * from './study';
 export * from './costumeRoom';
+export * from './chapel';
+export * from './portalChamber';
 
