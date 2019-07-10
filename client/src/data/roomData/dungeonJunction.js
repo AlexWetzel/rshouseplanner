@@ -10,8 +10,8 @@ import {
   MARBLE_BLOCK
 } from "../itemData/itemConstatnts";
 
-export const dungeonCorridor = {
-  name: "Dungeon - Corridor",
+export const dungeonJunction = {
+  name: "Dungeon - Junction",
   level: "70",
   price: "7500",
   type: "dungeon",

@@ -10,8 +10,8 @@ import {
   MARBLE_BLOCK
 } from "../itemData/itemConstatnts";
 
-export const dungeonCorridor = {
-  name: "Dungeon - Corridor",
+export const dungeonStairs = {
+  name: "Dungeon - Stairs",
   level: "70",
   price: "7500",
   type: "dungeon",
@@ -63,67 +63,47 @@ export const dungeonCorridor = {
       ]
     },
     {
-      name: "Trap 1",
+      name: "Guard 1",
       builds: [
         {
-          name: "Spike trap",
-          level: "72",
+          name: "Skeleton guard",
+          level: "70",
           materials: [{ name: COINS, quantity: 50000 }]
         },
         {
-          name: "Man trap",
-          level: "76",
+          name: "Guard dog",
+          level: "74",
           materials: [{ name: COINS, quantity: 75000 }]
         },
         {
-          name: "Tangle vine",
-          level: "80",
+          name: "Hobgoblin",
+          level: "78",
           materials: [{ name: COINS, quantity: 100000 }]
         },
         {
-          name: "Marble trap",
-          level: "84",
+          name: "Baby red dragon",
+          level: "82",
           materials: [{ name: COINS, quantity: 150000 }]
         },
         {
-          name: "Teleport trap",
-          level: "88",
+          name: "Huge spider",
+          level: "86",
           materials: [{ name: COINS, quantity: 200000 }]
+        },
+        {
+          name: "Troll guard",
+          level: "90",
+          materials: [{ name: COINS, quantity: 1000000 }]
+        },
+        {
+          name: "Hellhound",
+          level: "94",
+          materials: [{ name: COINS, quantity: 5000000 }]
         }
       ]
     },
     {
-      name: "Trap 2",
-      builds: [
-        {
-          name: "Spike trap",
-          level: "72",
-          materials: [{ name: COINS, quantity: 50000 }]
-        },
-        {
-          name: "Man trap",
-          level: "76",
-          materials: [{ name: COINS, quantity: 75000 }]
-        },
-        {
-          name: "Tangle vine",
-          level: "80",
-          materials: [{ name: COINS, quantity: 100000 }]
-        },
-        {
-          name: "Marble trap",
-          level: "84",
-          materials: [{ name: COINS, quantity: 150000 }]
-        },
-        {
-          name: "Teleport trap",
-          level: "88",
-          materials: [{ name: COINS, quantity: 200000 }]
-        }
-      ]
-    },
-    {
-      name: "Guard",
+      name: "Guard 2",
       builds: [
         {
           name: "Skeleton guard",
