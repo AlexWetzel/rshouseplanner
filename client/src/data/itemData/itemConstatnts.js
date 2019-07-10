@@ -95,6 +95,18 @@ export const SKULL = "Skull";
 export const TINDERBOX = "Tinderbox";
 export const RED_DYE = "Red dye";
 export const TORCH = "Torch";
+export const ANCIENT_CRYSTAL = "Ancient crystal";
+export const MUSHROOM = "Mushroom";
+export const STAMINA_POTION_4 = "Stamina potion(4)";
+export const PRAYER_POTION_4 = "Prayer potion(4)";
+export const SUPER_RESTORE_4 = "Super restore(4)";
+export const ANTI_VENOM_4 = "Anti-venom(4)";
+export const BLUE_DYE = "Blue dye";
+export const ONYX = "Onyx";
+export const REDWOOD_LOGS = "Redwood logs";
+export const TOKTZ_MEJ_KAL = "Toktz-mej-kal";
+export const TOKTZ_XIL_UL = "Toktz-mej-kal";
+export const TZHAAR_KET_OM = "Tzhaar-ket-om";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -139,3 +151,7 @@ export const MEDIUM_MAP = "Platinum token";
 export const LARGE_MAP = "Platinum token";
 export const ICE_COOLER = "Platinum token";
 export const COINS = "Platinum token";
+export const SPIRIT_SAPLING = "Platinum token";
+export const FAIRY_ENCHANTMENT = "Platinum token";
+export const PINK_DYE = "Platinum token";
+export const MAGIC_SECATEURS = "Platinum token";
