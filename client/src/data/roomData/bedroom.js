@@ -17,6 +17,7 @@ export const bedroom = {
   name: "Bedroom",
   level: "20",
   price: "10000",
+  type: "indoor",
   hotSpots: [
     {
       name: "Bed",
