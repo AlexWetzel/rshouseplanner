@@ -71,6 +71,8 @@ export const COMPOST = "Compost";
 export const PAPYRUS = "Papyrus";
 export const GRANITE_5KG = "Granite (5kg)";
 export const UNPOWERED_ORB = "Unpowered orb";
+export const CANDLE = "Candle";
+export const GOLD_BAR = "Gold bar";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
