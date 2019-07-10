@@ -6,13 +6,6 @@ import {
   BAGGED_FLOWER,
   BAGGED_DAFFODILS,
   BAGGED_BLUEBELLS,
-  BAGGED_THORNY_HEDGE,
-  BAGGED_NICE_HEDGE,
-  BAGGED_SMALL_BOX_HEDGE,
-  BAGGED_TOPIARY_HEDGE,
-  BAGGED_FANCY_HEDGE,
-  BAGGED_TALL_BOX_HEDGE,
-  BAGGED_TALL_FANCY_HEDGE,
   SOFT_CLAY,
   PLANK,
   LIMESTONE_BRICK,
@@ -24,7 +17,14 @@ import {
   MAHOGANY_PLANK,
   MOLTEN_GLASS,
   GOLD_LEAF,
-  PLATINUM_TOKEN
+  PLATINUM_TOKEN,
+  THORNY_HEDGE,
+  NICE_HEDGE,
+  SMALL_BOX_HEDGE,
+  TOPIARY_HEDGE,
+  FANCY_HEDGE,
+  TALL_FANCY_HEDGE,
+  TALL_BOX_HEDGE
 } from "../itemData/itemConstatnts";
 
 export const formalGarden = {
@@ -193,7 +193,7 @@ export const formalGarden = {
           name: "Thorny hedge",
           level: "56",
           materials: [
-            { name: BAGGED_THORNY_HEDGE, quantity: 1 },
+            { name: THORNY_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -201,7 +201,7 @@ export const formalGarden = {
           name: "Nice hedge",
           level: "60",
           materials: [
-            { name: BAGGED_NICE_HEDGE, quantity: 1 },
+            { name: NICE_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -209,7 +209,7 @@ export const formalGarden = {
           name: "Small box hedge",
           level: "64",
           materials: [
-            { name: BAGGED_SMALL_BOX_HEDGE, quantity: 1 },
+            { name: SMALL_BOX_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -217,7 +217,7 @@ export const formalGarden = {
           name: "Topiary hedge",
           level: "68",
           materials: [
-            { name: BAGGED_TOPIARY_HEDGE, quantity: 1 },
+            { name: TOPIARY_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -225,7 +225,7 @@ export const formalGarden = {
           name: "Fancy hedge",
           level: "72",
           materials: [
-            { name: BAGGED_FANCY_HEDGE, quantity: 1 },
+            { name: FANCY_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -233,7 +233,7 @@ export const formalGarden = {
           name: "Tall fancy hedge",
           level: "76",
           materials: [
-            { name: BAGGED_TALL_FANCY_HEDGE, quantity: 1 },
+            { name: TALL_FANCY_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         },
@@ -241,7 +241,7 @@ export const formalGarden = {
           name: "Tall box hedge",
           level: "80",
           materials: [
-            { name: BAGGED_TALL_BOX_HEDGE, quantity: 1 },
+            { name: TALL_BOX_HEDGE, quantity: 1 },
             { name: WATERING_CAN, quantity: 1 }
           ]
         }

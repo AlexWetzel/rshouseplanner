@@ -83,13 +83,13 @@ export const BAGGED_ROSES = "Bagged roses";
 export const BAGGED_FLOWER = "Bagged rosemary";
 export const BAGGED_DAFFODILS = "Bagged daffodils";
 export const BAGGED_BLUEBELLS = "Bagged bluebells";
-export const BAGGED_THORNY_HEDGE = "Bagged thorny hedge";
-export const BAGGED_NICE_HEDGE = "Bagged nice hedge";
-export const BAGGED_SMALL_BOX_HEDGE = "Bagged small box hedge";
-export const BAGGED_TOPIARY_HEDGE = "Bagged topiary hedge";
-export const BAGGED_FANCY_HEDGE = "Bagged fancy hedge";
-export const BAGGED_TALL_FANCY_HEDGE = "Bagged tall fancy hedge";
-export const BAGGED_TALL_BOX_HEDGE = "Bagged tall box hedge";
+export const THORNY_HEDGE = "Thorny hedge";
+export const NICE_HEDGE = "Nice hedge";
+export const SMALL_BOX_HEDGE = "Small box hedge";
+export const TOPIARY_HEDGE = "Topiary hedge";
+export const FANCY_HEDGE = "Fancy hedge";
+export const TALL_FANCY_HEDGE = "Tall fancy hedge";
+export const TALL_BOX_HEDGE = "Tall box hedge";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";

@@ -14,8 +14,9 @@ function returnListOfItems() {
   itemList = Object.values(items);
 
   untradeables.forEach(ut => {
-    const index = itemList.findIndex(i => {return ut === i})
-    itemList.splice(index, 1);
+    // const index = itemList.findIndex(i => {return ut === i})
+    // itemList.splice(index, 1);
+    itemList = itemList.filter(i => i !== ut);
   });
   // const hotSpots = roomData.kitchen.hotSpots;
   // const parlourHotSpots = roomData.parlour.hotSpots;
