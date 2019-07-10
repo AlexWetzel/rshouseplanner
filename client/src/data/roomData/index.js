@@ -11,5 +11,6 @@ export * from './skillHall';
 export * from './combatRoom'
 export * from './menagerieIndoor';
 export * from './menagerieOutdoor';
-export * from './study'
+export * from './study';
+export * from './costumeRoom';
 

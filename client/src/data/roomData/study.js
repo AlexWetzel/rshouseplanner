@@ -14,7 +14,7 @@ import {
 export const study = {
   name: "Study",
   level: "40",
-  cost: "50000",
+  price: "50000",
   type: "indoor",
   hotspots: [
     {
