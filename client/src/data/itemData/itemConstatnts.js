@@ -92,6 +92,9 @@ export const TALL_FANCY_HEDGE = "Tall fancy hedge";
 export const TALL_BOX_HEDGE = "Tall box hedge";
 export const BONES = "Bones";
 export const SKULL = "Skull";
+export const TINDERBOX = "Tinderbox";
+export const RED_DYE = "Red dye";
+export const TORCH = "Torch";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -135,3 +138,4 @@ export const SMALL_MAP = "Platinum token";
 export const MEDIUM_MAP = "Platinum token";
 export const LARGE_MAP = "Platinum token";
 export const ICE_COOLER = "Platinum token";
+export const COINS = "Platinum token";
