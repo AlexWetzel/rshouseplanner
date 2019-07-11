@@ -9,8 +9,8 @@ export * from './workshop';
 export * from './gamesRoom';
 export * from './skillHall';
 export * from './combatRoom'
-export * from './menagerieIndoor';
-export * from './menagerieOutdoor';
+export * from './menagerieIndoors';
+export * from './menagerieOutdoors';
 export * from './study';
 export * from './costumeRoom';
 export * from './chapel';

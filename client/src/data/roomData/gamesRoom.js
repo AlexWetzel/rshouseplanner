@@ -1,9 +1,6 @@
 import {
-  PLANK,
-  STEEL_NAILS,
   OAK_PLANK,
   TEAK_PLANK,
-  BOLT_OF_CLOTH,
   LIMESTONE_BRICK,
   SOFT_CLAY,
   MARBLE_BLOCK,
@@ -150,82 +147,6 @@ export const gamesRoom = {
           materials: [
             { name: TEAK_PLANK, quantity: 12 },
             { name: STEEL_BAR, quantity: 6 }
-          ]
-        }
-      ]
-    },
-    {
-      name: "Curtains",
-      builds: [
-        {
-          name: "Torn curtains",
-          level: "2",
-          materials: [
-            { name: PLANK, quantity: 3 },
-            { name: BOLT_OF_CLOTH, quantity: 3 },
-            { name: STEEL_NAILS, quantity: 3 }
-          ]
-        },
-        {
-          name: "Curtains",
-          level: "18",
-          materials: [
-            { name: OAK_PLANK, quantity: 3 },
-            { name: BOLT_OF_CLOTH, quantity: 3 }
-          ]
-        },
-        {
-          name: "Opulent curtains",
-          level: "40",
-          materials: [
-            { name: TEAK_PLANK, quantity: 3 },
-            { name: BOLT_OF_CLOTH, quantity: 3 }
-          ]
-        }
-      ]
-    },
-    {
-      name: "Wardrobe",
-      builds: [
-        {
-          name: "Shoe box",
-          level: "20",
-          materials: [
-            { name: PLANK, quantity: 2 },
-            { name: STEEL_NAILS, quantity: 2 }
-          ]
-        },
-        {
-          name: "Oak drawers",
-          level: "27",
-          materials: [{ name: OAK_PLANK, quantity: 2 }]
-        },
-        {
-          name: "Oak wardrobe",
-          level: "39",
-          materials: [{ name: OAK_PLANK, quantity: 3 }]
-        },
-        {
-          name: "Teak drawers",
-          level: "51",
-          materials: [{ name: TEAK_PLANK, quantity: 2 }]
-        },
-        {
-          name: "Teak wardrobe",
-          level: "63",
-          materials: [{ name: TEAK_PLANK, quantity: 3 }]
-        },
-        {
-          name: "Mahogany wardrobe",
-          level: "75",
-          materials: [{ name: MAHOGANY_PLANK, quantity: 3 }]
-        },
-        {
-          name: "Gilded wardrobe",
-          level: "87",
-          materials: [
-            { name: MAHOGANY_PLANK, quantity: 3 },
-            { name: GOLD_LEAF, quantity: 1 }
           ]
         }
       ]

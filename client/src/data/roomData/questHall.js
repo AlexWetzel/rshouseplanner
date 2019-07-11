@@ -31,7 +31,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const questHall = {
-  name: "Hall - Quest trophies",
+  name: "Quest hall",
   level: "35",
   price: "25000",
   hotSpots: [

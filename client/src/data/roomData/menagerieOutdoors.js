@@ -10,11 +10,21 @@ import {
   MAGIC_STONE,
   BUCKET_OF_WATER,
   SUPERCOMPOST,
-  PAPYRUS
+  PAPYRUS,
+  BAGGED_DEAD_TREE,
+  WATERING_CAN,
+  COMPOST,
+  BAGGED_NICE_TREE,
+  BAGGED_PLANT_1,
+  BUCKET_OF_SAND,
+  WATER_RUNE,
+  ICE_COOLER,
+  GRANITE_5KG,
+  LAVA_RUNE
 } from "../itemData/itemConstatnts";
 
-export const menagerieIndoor = {
-  name: "Menagerie (indoor)",
+export const menagerieOutdoors = {
+  name: "Menagerie outdoors",
   level: "37",
   price: "30000",
   type: "indoor",
@@ -174,10 +184,59 @@ export const menagerieIndoor = {
       ]
     },
     {
+      name: "Habitat",
+      builds: [
+        {
+          name: "Grassland habitat",
+          level: "37",
+          materials: [
+            { name: BAGGED_DEAD_TREE, quantity: 1 },
+            { name: COMPOST, quantity: 2 },
+            { name: WATERING_CAN, quantity: 1 }
+          ]
+        },
+        {
+          name: "Forest habitat",
+          level: "47",
+          materials: [
+            { name: BAGGED_NICE_TREE, quantity: 1 },
+            { name: SUPERCOMPOST, quantity: 3 },
+            { name: WATERING_CAN, quantity: 1 }
+          ]
+        },
+        {
+          name: "Desert habitat",
+          level: "57",
+          materials: [
+            { name: BAGGED_PLANT_1, quantity: 1 },
+            { name: BUCKET_OF_SAND, quantity: 5 },
+            { name: WATERING_CAN, quantity: 1 }
+          ]
+        },
+        {
+          name: "Polar habitat",
+          level: "67",
+          materials: [
+            { name: OAK_PLANK, quantity: 1 },
+            { name: WATER_RUNE, quantity: 2000 },
+            { name: ICE_COOLER, quantity: 5 }
+          ]
+        },
+        {
+          name: "Volcanic habitat",
+          level: "77",
+          materials: [
+            { name: GRANITE_5KG, quantity: 5 },
+            { name: LAVA_RUNE, quantity: 100 }
+          ]
+        }
+      ]
+    },
+    {
       name: "Pet list",
       builds: [
         {
-          name: "Torn curtains",
+          name: "Pet list",
           level: "38",
           materials: [
             { name: OAK_PLANK, quantity: 3 },

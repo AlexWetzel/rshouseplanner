@@ -53,7 +53,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const skillHall = {
-  name: "Hall - Skill trophies",
+  name: "Skill hall",
   level: "25",
   price: "15000",
   hotSpots: [
