@@ -15,4 +15,15 @@ export * from './study';
 export * from './costumeRoom';
 export * from './chapel';
 export * from './portalChamber';
+export * from './formalGarden';
+export * from './throneRoom';
+export * from './oubliette';
+export * from './superiorGarden';
+export * from './dungeonCorridor';
+export * from './dungeonJunction';
+export * from './dungeonStairs';
+export * from './portalNexus';
+export * from './treasureRoom';
+export * from './achievementGallery';
+
 

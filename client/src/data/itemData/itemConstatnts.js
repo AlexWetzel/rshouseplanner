@@ -108,6 +108,15 @@ export const TOKTZ_MEJ_KAL = "Toktz-mej-kal";
 export const TOKTZ_XIL_UL = "Toktz-mej-kal";
 export const TZHAAR_KET_OM = "Tzhaar-ket-om";
 export const LIZARDMAN_FANG = "Lizardman fang";
+export const PHARAOHS_SCEPTRE = "Pharaoh's sceptre";
+export const GAMES_NECKLACE_8 = "Games necklace(8)";
+export const RING_OF_DUELING_8 = "Ring of dueling(8)";
+export const SKILLS_NECKLACE_4 = "Ring of dueling(4)";
+export const COMBAT_BRACELET_4 = "Combat bracelet(4)";
+export const AMULET_OF_GLORY_4 = "Amulet of glory(4)";
+export const RING_OF_WEALTH_5 = "Ring of wealth(5)";
+export const MYSTERIOUS_EMBLEM_10 = "Mysterious emblem (tier 10)";
+
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -158,3 +167,7 @@ export const PINK_DYE = "Platinum token";
 export const MAGIC_SECATEURS = "Platinum token";
 export const XERICS_TALISMAN_INERT = "Platinum token";
 export const CURATORS_MEDALLION = "Platinum token";
+export const ANCIENT_SIGNET = "Platinum token";
+export const LUNAR_SIGNET = "Platinum token";
+export const ARCEUUS_SIGNET = "Platinum token";
+export const ENCHANTED_GEM = "Platinum token";
