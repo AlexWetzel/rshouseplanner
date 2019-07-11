@@ -107,6 +107,7 @@ export const REDWOOD_LOGS = "Redwood logs";
 export const TOKTZ_MEJ_KAL = "Toktz-mej-kal";
 export const TOKTZ_XIL_UL = "Toktz-mej-kal";
 export const TZHAAR_KET_OM = "Tzhaar-ket-om";
+export const LIZARDMAN_FANG = "Lizardman fang";
 
 //Untradeables
 export const PLATINUM_TOKEN = "Platinum token";
@@ -155,3 +156,5 @@ export const SPIRIT_SAPLING = "Platinum token";
 export const FAIRY_ENCHANTMENT = "Platinum token";
 export const PINK_DYE = "Platinum token";
 export const MAGIC_SECATEURS = "Platinum token";
+export const XERICS_TALISMAN_INERT = "Platinum token";
+export const CURATORS_MEDALLION = "Platinum token";
