@@ -87,7 +87,53 @@ export const diningRoom = {
       ]
     },
     {
-      name: "Seating",
+      name: "Seating 1",
+      builds: [
+        {
+          name: "Wooden bench",
+          level: "10",
+          materials: [
+            { name: PLANK, quantity: 4 },
+            { name: STEEL_NAILS, quantity: 4 }
+          ]
+        },
+        {
+          name: "Oak bench",
+          level: "22",
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
+        },
+        {
+          name: "Carved oak bench",
+          level: "31",
+          materials: [{ name: OAK_PLANK, quantity: 4 }]
+        },
+        {
+          name: "Teak dining bench",
+          level: "38",
+          materials: [{ name: TEAK_PLANK, quantity: 4 }]
+        },
+        {
+          name: "Carved teak bench",
+          level: "44",
+          materials: [{ name: TEAK_PLANK, quantity: 4 }]
+        },
+        {
+          name: "Mahogany bench",
+          level: "52",
+          materials: [{ name: MAHOGANY_PLANK, quantity: 4 }]
+        },
+        {
+          name: "Gilded bench",
+          level: "61",
+          materials: [
+            { name: MAHOGANY_PLANK, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 4 }
+          ]
+        }
+      ]
+    },
+    {
+      name: "Seating 2",
       builds: [
         {
           name: "Wooden bench",

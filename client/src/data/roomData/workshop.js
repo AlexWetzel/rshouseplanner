@@ -2,14 +2,8 @@ import {
   PLANK,
   STEEL_NAILS,
   OAK_PLANK,
-  TEAK_PLANK,
   BOLT_OF_CLOTH,
   LIMESTONE_BRICK,
-  SOFT_CLAY,
-  MARBLE_BLOCK,
-  MAHOGANY_PLANK,
-  GOLD_LEAF,
-  ROPE,
   STEEL_BAR,
   MOLTEN_GLASS
 } from "../itemData/itemConstatnts";
