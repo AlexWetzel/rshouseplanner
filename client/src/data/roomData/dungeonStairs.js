@@ -11,7 +11,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const dungeonStairs = {
-  name: "Dungeon - Stairs",
+  name: "Dungeon stairs",
   level: "70",
   price: "7500",
   type: "dungeon",

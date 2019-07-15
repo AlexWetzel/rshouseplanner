@@ -185,7 +185,34 @@ export const throneRoom = {
       ]
     },
     {
-      name: "Seating",
+      name: "Seating 1",
+      builds: [
+        {
+          name: "Carved teak bench",
+          level: "44",
+          materials: [
+            { name: TEAK_PLANK, quantity: 4 }
+          ]
+        },
+        {
+          name: "Mahogany bench",
+          level: "52",
+          materials: [
+            { name: MAHOGANY_PLANK, quantity: 4 }
+          ]
+        },
+        {
+          name: "Gilded bench",
+          level: "61",
+          materials: [
+            { name: MAHOGANY_PLANK, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 4 },
+          ]
+        },
+      ]
+    },
+    {
+      name: "Seating 2",
       builds: [
         {
           name: "Carved teak bench",

@@ -16,8 +16,9 @@ export default function RoomLayout() {
   const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData);
-  console.log(roomData);
-  console.log(roomNames);
+  // console.log(roomNames);
+  // console.log(roomData);
+  // console.log(roomMaps);
 
   function RoomSelected() {
     if (selectedRoom.name === "---") {
@@ -35,11 +36,11 @@ export default function RoomLayout() {
       );
     } else {
       const roomName = toCamelCase(selectedRoom.name);
+      console.log(roomName)
       const builds = selectedRoom.builds;
       const selectedBuild = builds.find(b => {
         return b.hotSpot === selectedHotSpot;
       });
-
       const room = roomData[roomName];
       const hotSpots = roomMaps[roomName];
 

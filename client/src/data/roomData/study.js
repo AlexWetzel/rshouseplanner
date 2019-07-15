@@ -16,7 +16,7 @@ export const study = {
   level: "40",
   price: "50000",
   type: "indoor",
-  hotspots: [
+  hotSpots: [
     {
       name: "Globe",
       builds: [
@@ -204,16 +204,6 @@ export const study = {
           name: "Alchemical chart",
           level: "83",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
-        }
-      ]
-    },
-    {
-      name: "Globe",
-      builds: [
-        {
-          name: "Globe",
-          level: "41",
-          materials: [{ name: OAK_PLANK, quantity: 3 }]
         }
       ]
     },
