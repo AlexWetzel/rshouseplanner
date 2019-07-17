@@ -66,9 +66,11 @@ export default function Dropdown(props) {
   }
 
   return (
-    <div>
+    <>
       <h3>{props.name}</h3>
-      {expand ? options : <SelectedOption {...props} />}
-    </div>
+      <div className={style.dropdown}>
+        {expand ? options : <SelectedOption {...props} />}
+      </div>
+    </>
   );
 }

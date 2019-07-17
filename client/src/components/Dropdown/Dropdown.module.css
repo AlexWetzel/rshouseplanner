@@ -1,6 +1,14 @@
-.option {
+.dropdown {
+  margin: 0 auto;
   width: 300px;
-  height: 80px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.option {
+  width: inherit;
+  height: 24px;
   background-color: rgb(33, 33, 80);
   border: 2px solid orange;
 }

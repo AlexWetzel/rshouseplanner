@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { GridPlane, GridSquare } from "../Grid";
 import Room from "../Room";
 import { roomContext } from "../../context/roomContext/RoomContext";
+import { itemContext } from "../../context/itemContext/ItemContext";
 import { types } from "../../context/roomContext/reducers";
 import Layout from "../Layout";
 import Doors from "../Doors";
@@ -9,10 +10,14 @@ import Doors from "../Doors";
 import * as roomMaps from "../../data/roomMaps";
 
 import { toCamelCase } from "../../helpers/parsers";
+import HouseValue from "../HouseValue/HouseValue";
+import PlayerSearch from "../PlayerSearch/PlayerSearch";
 
 function FloorPlan() {
   const { state, dispatch, actions } = useContext(roomContext);
   const { rooms } = state;
+
+  const { actions: itemActions } = useContext(itemContext);
 
   const size = 5;
   const gridSquares = [];
@@ -120,6 +125,9 @@ function FloorPlan() {
 
   return (
     <div>
+      <button onClick={() => itemActions.compileItemList()}>item test</button>
+      <HouseValue />
+      <PlayerSearch />
       <GridPlane>{gridSquares}</GridPlane>
     </div>
   );
