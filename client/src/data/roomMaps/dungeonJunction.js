@@ -1,4 +1,15 @@
-export const dungeonJunction = [
+export const dungeonJunction = {
+  doors: [
+    //North
+    [0, 37.5, 97, 37.5],
+    //East
+    [37.5, 0, 37.5, 97],
+    //South
+    [97, 37.5, 0, 37.5],
+    //West
+    [37.5, 97, 37.5, 0]
+  ],
+  hotSpots: [
   {
     name: "Door 1",
     position: [[12.5, 37.5, 82.5, 37.5]]
@@ -36,4 +47,4 @@ export const dungeonJunction = [
       [37.5, 75, 57.5, 17.5]
     ]
   }
-];
+]}

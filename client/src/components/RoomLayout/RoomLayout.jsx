@@ -17,10 +17,6 @@ export default function RoomLayout() {
   const { selectedRoom, rooms, selectedHotSpot } = state;
 
   const roomNames = Object.keys(roomData);
-  // console.log(roomNames);
-  // console.log(roomData);
-  // console.log(roomMaps);
-
   function RoomSelected() {
     if (selectedRoom.name === "---") {
       return (

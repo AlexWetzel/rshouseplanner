@@ -1,4 +1,13 @@
-export const study = [
+export const study = {
+  doors: [
+    //North
+    [0, 37.5, 97, 37.5],
+    //East
+    [37.5, 0, 37.5, 97],
+    //South
+    [97, 37.5, 0, 37.5],
+  ],
+  hotSpots: [
   {
     name: "Globe",
     position: [[50, 50, 12.5, 12.5]]
@@ -28,4 +37,4 @@ export const study = [
     name: "Bookcase",
     position: [[37.5, 87.5, 37.5, 0]]
   }
-];
+]}
