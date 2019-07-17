@@ -4,6 +4,7 @@ import Room from "../Room";
 import { roomContext } from "../../context/roomContext/RoomContext";
 import { types } from "../../context/roomContext/reducers";
 import Layout from "../Layout";
+import Doors from "../Doors";
 
 import * as roomMaps from "../../data/roomMaps";
 
@@ -46,7 +47,8 @@ function FloorPlan() {
 
     if (room) {
       const roomName = toCamelCase(room.name);
-      const hotSpots = roomMaps[roomName];
+      const { hotSpots, doors } = roomMaps[roomName];
+
       return (
         <Room
           key={props.coords}
@@ -67,6 +69,7 @@ function FloorPlan() {
                 />
               );
             })}
+            <Doors position={doors} />
           </Layout>
         </Room>
       );
@@ -109,21 +112,7 @@ function FloorPlan() {
             backgroundColor: bg
           };
 
-          return (
-            <span
-              key={props.name + index}
-              // className={`${style.hotSpot}`}
-              style={position}
-              // onMouseEnter={() => setHover(true)}
-              // onMouseLeave={() => setHover(false)}
-              // onClick={() =>
-              //   dispatch({ type: types.selectHotSpot, payload: props.name })
-              // }
-            >
-              {/* <p>{props.name}</p>
-              <p>{(build) ? build.name : '(empty)'}</p> */}
-            </span>
-          );
+          return <span key={props.name + index} style={position} />;
         })}
       </span>
     );

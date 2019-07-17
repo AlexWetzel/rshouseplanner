@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import style from './RoomLayout.module.css';
 import Layout from "../Layout";
+import Doors from "../Doors";
 import Dropdown from "../Dropdown/Dropdown";
 import HotSpot from "../HotSpot/HotSpot";
 import { roomContext } from "../../context/roomContext/RoomContext";
@@ -42,7 +43,7 @@ export default function RoomLayout() {
         return b.hotSpot === selectedHotSpot;
       });
       const room = roomData[roomName];
-      const hotSpots = roomMaps[roomName];
+      const { hotSpots, doors } = roomMaps[roomName];
 
       const hotSpot = room.hotSpots.find(hs => {
         return hs.name === selectedHotSpot;
@@ -62,6 +63,7 @@ export default function RoomLayout() {
                   />
                 );
               })}
+              <Doors position={doors} />
             </Layout>
           </div>
           <Dropdown
