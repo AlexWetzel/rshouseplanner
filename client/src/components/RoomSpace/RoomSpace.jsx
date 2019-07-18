@@ -4,9 +4,8 @@ import style from "./Room.module.css";
 
 function Room(props) {
   return (
-    <div className={`${style.room}`} draggable {...props}>
+    <div className={(props.children) ? style.occupiedSpace : style.emptySpace} draggable {...props}>
       {props.children}
-      {/* <Layout roomName={props.name} /> */}
     </div>
   );
 }

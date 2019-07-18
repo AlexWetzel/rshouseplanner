@@ -56,6 +56,7 @@ export const skillHall = {
   name: "Skill hall",
   level: "25",
   price: "15000",
+  type: "indoor",
   hotSpots: [
     {
       name: "Stairs/Rugs",

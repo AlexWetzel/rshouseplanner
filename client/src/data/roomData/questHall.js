@@ -34,6 +34,7 @@ export const questHall = {
   name: "Quest hall",
   level: "35",
   price: "25000",
+  type: "indoor",
   hotSpots: [
     {
       name: "Stairs/Rugs",

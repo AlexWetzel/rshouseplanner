@@ -49,7 +49,7 @@ export default function Layout(props) {
   }
 
   return (
-    <div className={`${style.layout}`}>
+    <div className={`${style.layout} ${style[props.roomType]}`}>
       {roomMap.hotSpots.map(hs => {
         return (
           <HotSpotMaps

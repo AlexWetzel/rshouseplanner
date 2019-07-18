@@ -1,13 +1,24 @@
-.room {
+.occupiedSpace {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
-  width: 100px;
-  height: 100px;
-  background-color: green;
-  color: white;
+  width: inherit;
+  height: inherit;
+  /* color: white; */
 }
-.room:hover {
+
+.emptySpace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 118px;
+  height: 118px;
+  background-color: green;
+  border: 1px solid rgba(12, 112, 25, 0.678);
+}
+
+.occupiedSpace:hover, .emptySpace:hover {
   opacity: 0.5;
 }

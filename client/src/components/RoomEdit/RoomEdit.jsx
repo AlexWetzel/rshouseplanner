@@ -45,6 +45,7 @@ export default function RoomLayout() {
               roomName={selectedRoom.name}
               isSelectedForEdit={true}
               orientation={selectedRoom.orientation}
+              roomType={room.type}
             />
           </div>
           <RotateButtons />

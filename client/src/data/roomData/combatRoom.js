@@ -14,6 +14,7 @@ export const combatRoom = {
   name: "Combat room",
   level: "32",
   price: "25000",
+  type: "indoor",
   hotSpots: [
     {
       name: "Ring",

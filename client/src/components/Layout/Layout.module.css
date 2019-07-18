@@ -12,6 +12,17 @@
   position: relative;
   width: inherit;
   height: inherit;
-  background-color: rgb(202, 187, 165);
   color: black;
+}
+
+.indoor {
+  background-color: rgb(202, 187, 165);
+}
+
+.outdoor {
+  background-color: green;
+}
+
+.dungeon {
+  background-color: grey;
 }

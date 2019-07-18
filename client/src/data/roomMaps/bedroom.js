@@ -43,5 +43,6 @@ export const bedroom = {
       name: "Wardrobe",
       position: [[12.5, 87.5, 75, 0]]
     }
-  ]
+  ],
+  walls: [[0, 0, 99, 0], [0, 0, 0, 99], [0, 99, 0, 0], [99, 0, 0, 0]]
 };

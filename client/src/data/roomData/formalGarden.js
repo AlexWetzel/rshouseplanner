@@ -31,6 +31,7 @@ export const formalGarden = {
   name: "Formal garden",
   level: "55",
   price: "75000",
+  type: "outdoor",
   hotSpots: [
     {
       name: "Centrepiece",

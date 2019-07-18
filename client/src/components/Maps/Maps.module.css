@@ -8,10 +8,11 @@
 
 
 .hotSpot {
+  z-index: 2;
   margin: 1px;
   border: 2px dashed white; 
   background-color: rgb(197, 192, 192);
-  /* opacity: 0.4; */
+  opacity: 0.5;
 }
 
 /* .hotSpot:hover ~ span{
@@ -27,9 +28,11 @@
 }
 
 .door {
+  z-index: 4;
   background-color: red;
 }
 
 .walls {
+  z-index: 3;
   background-color: rgb(66, 54, 26);
 }

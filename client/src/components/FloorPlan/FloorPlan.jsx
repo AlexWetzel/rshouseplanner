@@ -5,11 +5,11 @@ import { roomContext } from "../../context/roomContext/RoomContext";
 import { itemContext } from "../../context/itemContext/ItemContext";
 import { types } from "../../context/roomContext/reducers";
 import Layout from "../Layout";
-// import Doors from "../Doors";
 
-// import * as roomMaps from "../../data/roomMaps";
+import * as roomData from "../../data/roomData";
 
-// import { toCamelCase } from "../../helpers/parsers";
+import { toCamelCase } from "../../helpers/parsers";
+
 import HouseValue from "../HouseValue/HouseValue";
 import PlayerSearch from "../PlayerSearch/PlayerSearch";
 
@@ -43,7 +43,6 @@ function FloorPlan() {
   }
 
   function onDragStart(e, coords) {
-    // console.log("dragstart:", coords);
     e.dataTransfer.setData("coordinates", coords);
   }
 
@@ -51,6 +50,8 @@ function FloorPlan() {
     const room = rooms.find(room => room.coordinates === props.coords);
 
     if (room) {
+      const roomName = toCamelCase(room.name);
+      const roomType = roomData[roomName].type;
       return (
         <RoomSpace
           key={props.coords}
@@ -64,6 +65,7 @@ function FloorPlan() {
             roomName={room.name}
             isSelectedForEdit={false}
             orientation={room.orientation}
+            roomType={roomType}
           />
         </RoomSpace>
       );

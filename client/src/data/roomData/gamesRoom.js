@@ -17,6 +17,7 @@ export const gamesRoom = {
   name: "Games room",
   level: "30",
   price: "25000",
+  type: "indoor",
   hotSpots: [
     {
       name: "Stone",

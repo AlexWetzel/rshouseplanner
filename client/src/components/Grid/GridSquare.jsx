@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './GridSquare.module.css';
+import style from './Grid.module.css';
 
 function GridSquare(props) {
   return (

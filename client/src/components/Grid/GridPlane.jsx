@@ -1,5 +1,5 @@
 import React from 'react'
-import style from './GridPlane.module.css';
+import style from './Grid.module.css';
 
 function GridPlane(props) {
   return (
