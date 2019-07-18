@@ -43,7 +43,7 @@ export const garden = {
       position: [[62.5, 75, 25, 12.5]]
     }
   ],
-  stone: []
+  walls: []
 };
 // export const garden = [
 //   // {

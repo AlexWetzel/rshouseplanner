@@ -29,3 +29,7 @@
 .door {
   background-color: red;
 }
+
+.walls {
+  background-color: rgb(66, 54, 26);
+}

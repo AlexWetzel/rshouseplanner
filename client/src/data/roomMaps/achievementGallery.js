@@ -31,7 +31,7 @@ export const achievementGallery = {
       position: [[75, 75, 0, 0]]
     }
   ],
-  stone: []
+  walls: []
 };
 // export const achievementGallery = [
 //   {

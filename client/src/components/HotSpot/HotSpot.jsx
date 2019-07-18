@@ -5,12 +5,11 @@ import { types } from "../../context/roomContext/reducers";
 
 export default function HotSpot(props) {
   const { state, dispatch } = useContext(roomContext);
-  // const { selectedHotSpot, selectedRoom } = state;
-  const { selectedHotSpot } = state;
+  const { selectedHotSpot, selectedRoom } = state;
 
   const [hover, setHover] = useState(false);
 
-  const build = props.builds.find(b => {
+  const build = selectedRoom.builds.find(b => {
     return b.hotSpot === props.name;
   });
 
@@ -28,25 +27,14 @@ export default function HotSpot(props) {
       `}
     >
       {props.position.map((p, index) => {
-        let t = 0, r = 0, b = 0, l = 0;
-        switch (props.face) {
-          case 's':
-            [b, l, t, r,] = p;
-            break;
-          
-          
-          default:
-            [t, r, b, l] = p;
-            break;
-        }
-        
-
+        const [t, r, b, l] = p;
         const position = {
           top: t + "%",
           right: r + "%",
           bottom: b + "%",
           left: l + "%"
         };
+
         return (
           <span
             key={props.name + index}

@@ -33,6 +33,7 @@ export const useActions = (state, itemState, dispatch) => {
       name: name,
       coordinates: selectRoom.coordinates,
       cost: 0,
+      orientation: "north",
       builds: []
     };
 
@@ -157,6 +158,37 @@ export const useActions = (state, itemState, dispatch) => {
     dispatch({ type: types.selectRoom, payload: newRoom });
   }
 
+  function rotateRoom(rotationDirection) {
+    const rotationMachine = {
+      north: {
+        ROTATE_CLOCKWISE: "east",
+        ROTATE_COUNTERCLOCKWISE: "west"
+      },
+      east: {
+        ROTATE_CLOCKWISE: "north",
+        ROTATE_COUNTERCLOCKWISE: "north"
+      },
+      south: {
+        ROTATE_CLOCKWISE: "west",
+        ROTATE_COUNTERCLOCKWISE: "east"
+      },
+      west: {
+        ROTATE_CLOCKWISE: "north",
+        ROTATE_COUNTERCLOCKWISE: "south"
+      }
+    };
+
+    const orientation = state.selectedRoom.orientation;
+    const rotate = rotationMachine[orientation][rotationDirection];
+    
+    if (rotate) {
+      const newRoom = {...state.selectedRoom}
+      newRoom.orientation = rotate;
+      dispatch({ type: types.changeRoom, payload: newRoom });
+      dispatch({ type: types.selectRoom, payload: newRoom });
+    };
+  }
+
   function items() {
     console.log('Item state:',itemState);
     // const items = [
@@ -179,7 +211,8 @@ export const useActions = (state, itemState, dispatch) => {
     saveRooms,
     findHouse,
     items,
-    calculateRoomCost
+    calculateRoomCost,
+    rotateRoom
   };
 };
 

@@ -60,19 +60,7 @@ function FloorPlan() {
           onDragStart={e => onDragStart(e, room.coordinates)}
           onClick={() => actions.selectRoom(room)}
         >
-          <Layout roomName={room.name}>
-            {/* {hotSpots.map(hs => {
-              return (
-                <SmallHotSpot
-                  key={hs.name}
-                  name={hs.name}
-                  position={hs.position}
-                  builds={room.builds}
-                />
-              );
-            })}
-            <Doors position={doors} /> */}
-          </Layout>
+          <Layout roomName={room.name} />
         </RoomSpace>
       );
     } else
@@ -88,36 +76,6 @@ function FloorPlan() {
           }
         />
       );
-  }
-
-  function SmallHotSpot(props) {
-    const build = props.builds.find(b => {
-      return b.hotSpot === props.name;
-    });
-
-    return (
-      <span>
-        {props.position.map((p, index) => {
-          const [t, r, b, l] = p;
-          const bg = build ? "rgb(102, 43, 43)" : "rgb(197, 192, 192)";
-          const position = {
-            top: t + "%",
-            right: r + "%",
-            bottom: b + "%",
-            left: l + "%",
-
-            position: "absolute",
-            margin: "2px",
-            border: "1px dashed white",
-            width: "auto",
-            height: "auto",
-            backgroundColor: bg
-          };
-
-          return <span key={props.name + index} style={position} />;
-        })}
-      </span>
-    );
   }
 
   return (

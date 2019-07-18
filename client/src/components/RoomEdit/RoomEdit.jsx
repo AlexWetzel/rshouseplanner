@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import style from './RoomLayout.module.css';
+import style from "./RoomLayout.module.css";
 import Layout from "../Layout";
 import Dropdown from "../Dropdown/Dropdown";
 import { roomContext } from "../../context/roomContext/RoomContext";
-// import { itemContext } from "../../context/itemContext/ItemContext";
 
 import * as roomData from "../../data/roomData";
-import * as roomMaps from "../../data/roomMaps";
 
 import { toCamelCase } from "../../helpers/parsers";
 
@@ -31,13 +29,12 @@ export default function RoomLayout() {
       );
     } else {
       const roomName = toCamelCase(selectedRoom.name);
-      console.log(roomName)
+      console.log(roomName);
       const builds = selectedRoom.builds;
       const selectedBuild = builds.find(b => {
         return b.hotSpot === selectedHotSpot;
       });
       const room = roomData[roomName];
-      const { hotSpots, doors } = roomMaps[roomName];
 
       const hotSpot = room.hotSpots.find(hs => {
         return hs.name === selectedHotSpot;
@@ -45,21 +42,13 @@ export default function RoomLayout() {
       return (
         <>
           <div className={`${style.roomEditor}`}>
-            <Layout roomName={selectedRoom.name}>
-              {/* {hotSpots.map(hs => {
-                return (
-                  <HotSpot
-                    key={hs.name}
-                    name={hs.name}
-                    position={hs.position}
-                    face={selectedRoom.face}
-                    builds={builds}
-                  />
-                );
-              })}
-              <Doors position={doors} /> */}
-            </Layout>
+            <Layout
+              roomName={selectedRoom.name}
+              isSelectedForEdit={true}
+              orientation={selectedRoom.orientation}
+            />
           </div>
+          <RotateButtons />
           <Dropdown
             name={"Select a room"}
             options={roomNames.map(rn => {
@@ -79,18 +68,28 @@ export default function RoomLayout() {
               key={hotSpot.name}
               options={hotSpot.builds}
               selectedOption={selectedBuild ? selectedBuild.name : "---"}
-              onSelect={name =>
-                actions.changeBuild(name, hotSpot.name)
-              }
-            >
-
-            </Dropdown>
+              onSelect={name => actions.changeBuild(name, hotSpot.name)}
+            />
           ) : null}
         </>
       );
     }
   }
-  
+
+  function RotateButtons() {
+    const { actions } = useContext(roomContext);
+    return (
+      <>
+        <button onClick={() => actions.rotateRoom("ROTATE_CLOCKWISE")}>
+          Rotate clockwise
+        </button>
+        <button onClick={() => actions.rotateRoom("ROTATE_COUNTERCLOCKWISE")}>
+          Rotate counterclockwise
+        </button>
+      </>
+    );
+  }
+
   function NoRoomSelected() {
     return (
       // <>
