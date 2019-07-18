@@ -165,7 +165,7 @@ export const useActions = (state, itemState, dispatch) => {
         ROTATE_COUNTERCLOCKWISE: "west"
       },
       east: {
-        ROTATE_CLOCKWISE: "north",
+        ROTATE_CLOCKWISE: "south",
         ROTATE_COUNTERCLOCKWISE: "north"
       },
       south: {
@@ -180,10 +180,12 @@ export const useActions = (state, itemState, dispatch) => {
 
     const orientation = state.selectedRoom.orientation;
     const rotate = rotationMachine[orientation][rotationDirection];
-    
+
     if (rotate) {
-      const newRoom = {...state.selectedRoom}
-      newRoom.orientation = rotate;
+      const newRoom = {
+        ...state.selectedRoom,
+        orientation: rotate
+      }
       dispatch({ type: types.changeRoom, payload: newRoom });
       dispatch({ type: types.selectRoom, payload: newRoom });
     };
