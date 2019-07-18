@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import { GridPlane, GridSquare } from "../Grid";
-import Room from "../Room";
+import RoomSpace from "../RoomSpace";
 import { roomContext } from "../../context/roomContext/RoomContext";
 import { itemContext } from "../../context/itemContext/ItemContext";
 import { types } from "../../context/roomContext/reducers";
 import Layout from "../Layout";
-import Doors from "../Doors";
+// import Doors from "../Doors";
 
-import * as roomMaps from "../../data/roomMaps";
+// import * as roomMaps from "../../data/roomMaps";
 
-import { toCamelCase } from "../../helpers/parsers";
+// import { toCamelCase } from "../../helpers/parsers";
 import HouseValue from "../HouseValue/HouseValue";
 import PlayerSearch from "../PlayerSearch/PlayerSearch";
 
@@ -43,7 +43,7 @@ function FloorPlan() {
   }
 
   function onDragStart(e, coords) {
-    console.log("dragstart:", coords);
+    // console.log("dragstart:", coords);
     e.dataTransfer.setData("coordinates", coords);
   }
 
@@ -51,11 +51,8 @@ function FloorPlan() {
     const room = rooms.find(room => room.coordinates === props.coords);
 
     if (room) {
-      const roomName = toCamelCase(room.name);
-      const { hotSpots, doors } = roomMaps[roomName];
-
       return (
-        <Room
+        <RoomSpace
           key={props.coords}
           name={room.name}
           coordinates={props.coords}
@@ -63,8 +60,8 @@ function FloorPlan() {
           onDragStart={e => onDragStart(e, room.coordinates)}
           onClick={() => actions.selectRoom(room)}
         >
-          <Layout>
-            {hotSpots.map(hs => {
+          <Layout roomName={room.name}>
+            {/* {hotSpots.map(hs => {
               return (
                 <SmallHotSpot
                   key={hs.name}
@@ -74,13 +71,13 @@ function FloorPlan() {
                 />
               );
             })}
-            <Doors position={doors} />
+            <Doors position={doors} /> */}
           </Layout>
-        </Room>
+        </RoomSpace>
       );
     } else
       return (
-        <Room
+        <RoomSpace
           key={props.coords}
           coordinates={props.coords}
           onClick={() =>

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./SidePanel.module.css";
-import RoomLayout from '../RoomLayout';
+import RoomEdit from '../RoomEdit';
 import RoomCost from '../RoomCost';
 
 export default function SidePanel() {
@@ -26,10 +26,10 @@ export default function SidePanel() {
 function TabSwitch(props) {
   switch(props.openTab) {
     case 'roomLayout':
-      return <RoomLayout/>;
+      return <RoomEdit/>;
     case 'cost':
       return <RoomCost/>;
     default:
-      return <RoomLayout/>;
+      return <RoomEdit/>;
   }
 }

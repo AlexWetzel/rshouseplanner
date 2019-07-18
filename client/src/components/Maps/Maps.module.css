@@ -1,0 +1,31 @@
+.map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+
+.hotSpot {
+  margin: 1px;
+  border: 2px dashed white; 
+  background-color: rgb(197, 192, 192);
+  /* opacity: 0.4; */
+}
+
+/* .hotSpot:hover ~ span{
+  background-color: rgb(231, 231, 179);
+} */
+.hotSpotSelect > span {
+  background-color: rgb(231, 231, 179);
+}
+
+.build {
+  background-color: rgb(102, 43, 43);
+  color: yellow;
+}
+
+.door {
+  background-color: red;
+}

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import style from './RoomLayout.module.css';
 import Layout from "../Layout";
-import Doors from "../Doors";
 import Dropdown from "../Dropdown/Dropdown";
-import HotSpot from "../HotSpot/HotSpot";
 import { roomContext } from "../../context/roomContext/RoomContext";
 // import { itemContext } from "../../context/itemContext/ItemContext";
 
@@ -47,8 +45,8 @@ export default function RoomLayout() {
       return (
         <>
           <div className={`${style.roomEditor}`}>
-            <Layout name={selectedRoom.name}>
-              {hotSpots.map(hs => {
+            <Layout roomName={selectedRoom.name}>
+              {/* {hotSpots.map(hs => {
                 return (
                   <HotSpot
                     key={hs.name}
@@ -59,7 +57,7 @@ export default function RoomLayout() {
                   />
                 );
               })}
-              <Doors position={doors} />
+              <Doors position={doors} /> */}
             </Layout>
           </div>
           <Dropdown

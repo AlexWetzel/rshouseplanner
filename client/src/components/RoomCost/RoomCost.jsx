@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { roomContext } from "../../context/roomContext/RoomContext";
 import { itemContext } from "../../context/itemContext/ItemContext";
 
@@ -7,9 +7,9 @@ import * as roomData from "../../data/roomData";
 import { toCamelCase, shortPriceToLong } from "../../helpers/parsers";
 
 export default function RoomCost() {
-  const { state: roomState, actions: roomActions } = useContext(roomContext);
-  const { selectedRoom, rooms, selectedHotSpot } = roomState;
-  const { state: itemState, actions: itemActions } = useContext(itemContext);
+  const { state: roomState } = useContext(roomContext);
+  const { selectedRoom } = roomState;
+  const { state: itemState } = useContext(itemContext);
   const { items } = itemState;
 
   function getBuildItems() {
