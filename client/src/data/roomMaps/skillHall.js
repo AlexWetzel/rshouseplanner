@@ -34,5 +34,6 @@ export const skillHall = {
       name: "Rune case",
       position: [[75, 0, 12.5, 87.5]]
     }
-  ]
+  ],
+  walls: []
 };

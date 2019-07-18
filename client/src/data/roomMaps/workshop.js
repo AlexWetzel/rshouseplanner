@@ -32,5 +32,6 @@ export const workshop = {
       name: "Heraldry",
       position: [[75, 82.5, 0, 0]]
     }
-  ]
+  ],
+  walls: []
 };

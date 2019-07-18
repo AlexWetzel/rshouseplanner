@@ -48,5 +48,6 @@ export const superiorGarden = {
       name: "Seating 2",
       position: [[87.5, 12.5, 5, 62.5]]
     }
-  ]
+  ],
+  walls: []
 };

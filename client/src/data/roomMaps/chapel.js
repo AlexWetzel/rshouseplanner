@@ -41,5 +41,6 @@ export const chapel = {
       name: "Rug",
       position: [[43.75, 6.25, 43.75, 43.75]]
     }
-  ]
+  ],
+  walls: []
 };

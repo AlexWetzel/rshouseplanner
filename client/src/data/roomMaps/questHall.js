@@ -38,5 +38,6 @@ export const questHall = {
       name: "Bookcase",
       position: [[12.5, 0, 75, 87.5]]
     }
-  ]
+  ],
+  walls: []
 };

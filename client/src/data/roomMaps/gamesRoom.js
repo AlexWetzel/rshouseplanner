@@ -29,5 +29,6 @@ export const gamesRoom = {
       name: "Game",
       position: [[0, 0, 75, 75]]
     }
-  ]
+  ],
+  walls: []
 };

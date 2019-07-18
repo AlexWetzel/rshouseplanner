@@ -30,5 +30,6 @@ export const kitchen = {
       name: "Barrel",
       position: [[87.5, 75, 0, 12.5]]
     }
-  ]
+  ],
+  walls: []
 };

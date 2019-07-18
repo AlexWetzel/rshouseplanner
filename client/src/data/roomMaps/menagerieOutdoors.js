@@ -34,5 +34,6 @@ export const menagerieOutdoors = {
       name: "Pet list",
       position: [[12.5, 87.5, 75, 0]]
     }
-  ]
+  ],
+  walls: []
 };

@@ -32,5 +32,6 @@ export const throneRoom = {
       name: "Decoration",
       position: [[0, 37.5, 93.75, 37.5]]
     }
-  ]
+  ],
+  walls: []
 };

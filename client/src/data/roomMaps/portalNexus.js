@@ -39,5 +39,6 @@ export const portalNexus = {
         [62.5, 93.75, 25, 0]
       ]
     }
-  ]
+  ],
+  walls: []
 };

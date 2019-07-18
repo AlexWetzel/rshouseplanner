@@ -20,5 +20,6 @@ export const portalChamber = {
       name: "Centrepiece",
       position: [[37.5, 37.5, 37.5, 37.5]]
     }
-  ]
+  ],
+  walls: []
 };

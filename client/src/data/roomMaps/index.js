@@ -25,5 +25,3 @@ export * from './dungeonStairs';
 export * from './portalNexus';
 export * from './treasureRoom';
 export * from './achievementGallery';
-
-// export * from './dungeonCorridor';

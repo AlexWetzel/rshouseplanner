@@ -60,7 +60,11 @@ function FloorPlan() {
           onDragStart={e => onDragStart(e, room.coordinates)}
           onClick={() => actions.selectRoom(room)}
         >
-          <Layout roomName={room.name} />
+          <Layout
+            roomName={room.name}
+            isSelectedForEdit={false}
+            orientation={room.orientation}
+          />
         </RoomSpace>
       );
     } else

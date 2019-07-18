@@ -29,7 +29,6 @@ export default function RoomLayout() {
       );
     } else {
       const roomName = toCamelCase(selectedRoom.name);
-      console.log(roomName);
       const builds = selectedRoom.builds;
       const selectedBuild = builds.find(b => {
         return b.hotSpot === selectedHotSpot;
@@ -80,11 +79,11 @@ export default function RoomLayout() {
     const { actions } = useContext(roomContext);
     return (
       <>
-        <button onClick={() => actions.rotateRoom("ROTATE_CLOCKWISE")}>
-          Rotate clockwise
-        </button>
         <button onClick={() => actions.rotateRoom("ROTATE_COUNTERCLOCKWISE")}>
           Rotate counterclockwise
+        </button>
+        <button onClick={() => actions.rotateRoom("ROTATE_CLOCKWISE")}>
+          Rotate clockwise
         </button>
       </>
     );

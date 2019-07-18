@@ -11,6 +11,10 @@ export const dungeonStairs = {
   ],
   hotSpots: [
     {
+      name: "stairs",
+      position: [[37.5, 37.5, 37.5, 37.5]]
+    },
+    {
       name: "Door 1",
       position: [[12.5, 37.5, 82.5, 37.5]]
     },
@@ -49,6 +53,6 @@ export const dungeonStairs = {
     [17.5, 82.5, 62.5, 0],
     [17.5, 0, 62.5, 82.5],
     [62.5, 0, 17.5, 82.5],
-    [62.5, 82.5, 17.5, 0],
+    [62.5, 82.5, 17.5, 0]
   ]
 };

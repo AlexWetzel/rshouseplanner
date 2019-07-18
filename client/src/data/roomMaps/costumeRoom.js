@@ -28,5 +28,6 @@ export const costumeRoom = {
       name: "Fancy dress box",
       position: [[37.5, 37.5, 37.5, 37.5]]
     }
-  ]
+  ],
+  walls: []
 };

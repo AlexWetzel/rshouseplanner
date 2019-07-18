@@ -37,5 +37,6 @@ export const parlour = {
       name: "Fireplace",
       position: [[37.5, 87.5, 37.5, 0]]
     }
-  ]
+  ],
+  walls: []
 };

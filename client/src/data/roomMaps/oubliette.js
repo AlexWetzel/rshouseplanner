@@ -49,5 +49,6 @@ export const oubliette = {
         [25, 93.75, 62.5, 0]
       ]
     }
-  ]
+  ],
+  walls: []
 };

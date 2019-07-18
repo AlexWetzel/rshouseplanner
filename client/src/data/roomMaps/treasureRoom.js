@@ -33,5 +33,6 @@ export const treasureRoom = {
         [82.5, 25, 12.5, 62.5]
       ]
     }
-  ]
+  ],
+  walls: []
 };

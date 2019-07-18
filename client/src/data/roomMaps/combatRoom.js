@@ -24,5 +24,6 @@ export const combatRoom = {
       name: "Decoration",
       position: [[25, 92.5, 62.5, 0], [62.5, 92.5, 25, 0]]
     }
-  ]
+  ],
+  walls: []
 };

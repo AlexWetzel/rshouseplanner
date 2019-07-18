@@ -71,5 +71,6 @@ export const formalGarden = {
         [62.5, 0, 0, 95]
       ]
     }
-  ]
+  ],
+  walls: []
 };
