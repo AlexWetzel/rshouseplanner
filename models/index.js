@@ -1,3 +1,4 @@
 module.exports = {
-  House: require("./House")
+  House: require("./House"),
+  Item: require("./Item")
 };

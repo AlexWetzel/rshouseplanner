@@ -27,7 +27,7 @@ export const menagerieOutdoors = {
   name: "Menagerie outdoors",
   level: "37",
   price: "30000",
-  type: "indoor",
+  type: "outdoor",
   hotSpots: [
     {
       name: "Scratching post",

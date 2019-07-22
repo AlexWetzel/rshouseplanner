@@ -35,6 +35,8 @@ router.get("/find", (req, res) => {
     res.send({house: house.rooms});
   })
   .catch(err => console.log(err))
-})
+});
+
+
 
 module.exports = router;

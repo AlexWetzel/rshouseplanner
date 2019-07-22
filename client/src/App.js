@@ -6,6 +6,7 @@ import style from './App.module.css';
 // import PlayerSearch from './components/PlayerSearch/PlayerSearch';
 import { userContext } from "./context/userContext/UserContext";
 import { roomContext } from "./context/roomContext/RoomContext";
+import { itemContext } from "./context/itemContext/ItemContext";
 
 // import HouseValue from './components/HouseValue/HouseValue';
 // import { types } from "./context/userContext/reducers";
@@ -14,6 +15,7 @@ import { roomContext } from "./context/roomContext/RoomContext";
 function App() {
   const { actions: userActions } = useContext(userContext);
   const { actions: roomActions } = useContext(roomContext);
+  const { actions: itemActions } = useContext(itemContext);
   
 
   useEffect(() => {
@@ -35,9 +37,9 @@ function App() {
     // itemActions.compileItemList();
   }, []);
 
-  // useEffect(() => {
-  //   itemActions.compileItemList();
-  // }, [])
+  useEffect(() => {
+    itemActions.getItems();
+  }, [])
 
   return (
     <div className={`${style.App}`}>

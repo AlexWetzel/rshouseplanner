@@ -87,6 +87,7 @@ function FloorPlan() {
   return (
     <div>
       <button onClick={() => itemActions.compileItemList()}>item test</button>
+      <button onClick={() => itemActions.createItems()}>create items</button>
       <HouseValue />
       <PlayerSearch />
       <GridPlane>{gridSquares}</GridPlane>

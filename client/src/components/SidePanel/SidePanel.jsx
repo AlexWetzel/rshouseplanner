@@ -4,7 +4,7 @@ import RoomEdit from '../RoomEdit';
 import RoomCost from '../RoomCost';
 
 export default function SidePanel() {
-  const [openTab, setOpenTab] = useState('roomLayout');
+  const [openTab, setOpenTab] = useState('roomEdit');
 
   useEffect(() => {
     
@@ -16,7 +16,7 @@ export default function SidePanel() {
 
   return (
     <div className={`${style.sidePanel}`}>
-      <div onClick={() => setOpenTab('roomLayout')}>Room Layout</div>
+      <div onClick={() => setOpenTab('roomEdit')}>Room Edit</div>
       <div onClick={() => setOpenTab('cost')}>Cost</div>
       <TabSwitch openTab={openTab} />
     </div>
@@ -25,7 +25,7 @@ export default function SidePanel() {
 
 function TabSwitch(props) {
   switch(props.openTab) {
-    case 'roomLayout':
+    case 'roomEdit':
       return <RoomEdit/>;
     case 'cost':
       return <RoomCost/>;
