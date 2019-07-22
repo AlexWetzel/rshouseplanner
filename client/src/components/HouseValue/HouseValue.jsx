@@ -8,7 +8,7 @@ import { toCamelCase, shortPriceToLong } from "../../helpers/parsers";
 
 export default function HouseValue() {
   const { state: roomState } = useContext(roomContext);
-  const { rooms, selectedRoom } = roomState;
+  const { rooms } = roomState;
   const { state: itemState } = useContext(itemContext);
   const { items } = itemState;
 

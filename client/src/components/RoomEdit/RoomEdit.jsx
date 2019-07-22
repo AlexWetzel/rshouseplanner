@@ -90,13 +90,13 @@ export default function RoomLayout() {
     );
   }
 
-  function NoRoomSelected() {
-    return (
-      // <>
-      <h1>No Rooms Selected</h1>
-      // </>
-    );
-  }
+  // function NoRoomSelected() {
+  //   return (
+  //     // <>
+  //     <h1>No Rooms Selected</h1>
+  //     // </>
+  //   );
+  // }
   return (
     <div>
       <button onClick={() => actions.saveRooms()}>Save Rooms</button>
@@ -104,7 +104,8 @@ export default function RoomLayout() {
       <button onClick={() => localStorage.removeItem("name")}>
         Clear Name
       </button>
-      {selectedRoom ? <RoomSelected /> : <NoRoomSelected />}
+      {/* {selectedRoom ? <RoomSelected /> : <NoRoomSelected />} */}
+      <RoomSelected />
     </div>
   );
 }
