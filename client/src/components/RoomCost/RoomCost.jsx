@@ -28,8 +28,8 @@ export default function RoomCost() {
     buildItems.map(bI => {
       const itemData = items.find(i => {return i.name === bI.name});
       if (itemData) {
-        const [longPrice, priceNum]= shortPriceToLong(itemData.price);
-        bI.shortPrice = itemData.price;
+        const [longPrice, priceNum]= shortPriceToLong(itemData.exchangePrice);
+        bI.shortPrice = itemData.exchangePrice;
         bI.longPrice = longPrice;
         bI.priceNum = priceNum;
       }

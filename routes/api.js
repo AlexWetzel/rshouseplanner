@@ -14,20 +14,20 @@ router.get("/player", (req, res) => {
   });
 });
 
-router.get("/items", (req, res) => {
-  db.Item.find({})
-  .then(items => {
+// router.post("/item", (req, res) => {
+//   db.Item.find({})
+//   .then(items => {
 
-    const itemData = items.map( i => {
-      return {
-        name: i.name,
-        price: i.exchangePrice
-      }
-    })
-    res.status(200).send({ message: "ok", items: itemData });
-  })
-  .catch(err => console.log(err));
-});
+//     const itemData = items.map( i => {
+//       return {
+//         name: i.name,
+//         exchangePrice: i.exchangePrice
+//       }
+//     })
+//     res.status(200).send({ message: "ok", items: itemData });
+//   })
+//   .catch(err => console.log(err));
+// });
 
 // router.get("/items", (req, res) => {
 //   const { items } = req.query;
@@ -39,7 +39,7 @@ router.get("/items", (req, res) => {
 //         i = JSON.parse(i);
 //         return {
 //           name: i.item.name,
-//           price: i.item.current.price
+//           exchangePrice: i.item.current.price
 //         };
 //       });
 

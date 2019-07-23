@@ -37,6 +37,21 @@ router.get("/find", (req, res) => {
   .catch(err => console.log(err))
 });
 
+router.get("/items", (req, res) => {
 
+  db.Item.find({})
+    .then(itemData => {
+      const items = itemData.map( i => {
+        const { name, exchangePrice } = i;
+        return {
+          name,
+          exchangePrice
+        };
+      });
+
+      res.status(200).send({ message: "ok", items })
+    })
+    .catch(err => console.log(err));
+});
 
 module.exports = router;

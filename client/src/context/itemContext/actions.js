@@ -49,7 +49,7 @@ export const useActions = (state, dispatch) => {
               if (index === -1) {
                 updatedItems.push(i);
               } else {
-                updatedItems[index].price = i.price;
+                updatedItems[index].exchangePrice = i.exchangePrice;
               }
             });
 
@@ -68,7 +68,7 @@ export const useActions = (state, dispatch) => {
   }
 
   function getItems() {
-    axios.get("/api/items").then(res => {
+    axios.get("/db/items").then(res => {
       console.log(res);
       const { items } = res.data;
 
