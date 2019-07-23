@@ -24,6 +24,7 @@ export const useActions = (state, dispatch) => {
   function compileItemList() {
     let itemList = [];
     itemList = returnListOfItems();
+    itemList = itemList.slice(0,40);
     const updatedItems = state.items.slice();
 
     function request() {
@@ -59,7 +60,7 @@ export const useActions = (state, dispatch) => {
     }
 
     request();
-    const requestInterval = setInterval(request, 5000);
+    const requestInterval = setInterval(request, 15000);
   }
 
   function createItems() {

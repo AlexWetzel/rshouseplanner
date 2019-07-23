@@ -1,7 +1,7 @@
 export const PLANK = "Plank";
 export const OAK_PLANK = "Oak plank";
 export const TEAK_PLANK = "Teak plank";
-export const MAHOGANY_PLANK = "Mahogany Plank";
+export const MAHOGANY_PLANK = "Mahogany plank";
 export const IRON_BAR = "Iron bar";
 export const STEEL_BAR = "Steel bar";
 export const LIMESTONE_BRICK = "Limestone brick";
