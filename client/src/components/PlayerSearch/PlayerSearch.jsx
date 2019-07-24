@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { userContext } from "../../context/userContext/UserContext";
-// import axios from "axios";
 
 export default function PlayerSearch() {
   const { state, actions } = useContext(userContext);

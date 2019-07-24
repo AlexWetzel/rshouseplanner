@@ -2,6 +2,7 @@
 import axios from "axios";
 // import * as roomData from "../../data/roomData";
 import * as items from "../../data/itemData/itemConstatnts";
+import itemIds from "../../data/itemData/itemIds";
 import { types } from "./reducers";
 
 const untradeables = ["Platinum token"];
@@ -11,9 +12,9 @@ function returnListOfItems() {
 
   itemList = Object.values(items);
 
-  untradeables.forEach(ut => {
-    itemList = itemList.filter(i => i !== ut);
-  });
+  // untradeables.forEach(ut => {
+  //   itemList = itemList.filter(i => i !== ut);
+  // });
 
   console.log(itemList.length);
 
@@ -22,7 +23,6 @@ function returnListOfItems() {
 
 export const useActions = (state, dispatch) => {
   function compileItemList() {
-    
     let itemList = [];
     itemList = returnListOfItems();
     // itemList = itemList.slice(99, 117);
@@ -58,8 +58,7 @@ export const useActions = (state, dispatch) => {
 
               dispatch({ type: types.updateItems, payload: updatedItems });
             }
-          }
-          else {
+          } else {
             console.log(res.data.message);
             return clearInterval(requestInterval);
           }
@@ -84,9 +83,56 @@ export const useActions = (state, dispatch) => {
     });
   }
 
+  function itemTest() {
+    // const id = 10;
+    // const items = itemIds.slice(0, 10);
+    const items = itemIds;
+
+    const itemData = []
+
+    const calls = items.map(i => {
+      return axios
+        .get("https://www.osrsbox.com/osrsbox-db/items-json/" + i.id + ".json")
+        .then(res => {
+          const { tradeable, cost, url } = res.data;
+          itemData.push(
+            {
+              id: i.id,
+              name: i.name,
+              tradeable,
+              shopPrice: cost,
+              exchangePrice: 1,
+              url
+            }
+          )
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    });
+    // const calls = items.map(i => {
+    //   return axios
+    //     .get("https://www.osrsbox.com/osrsbox-db/items-json/" + i.id + ".json")
+    //     .then(res => {
+    //       const item = res.data;
+    //       if (item.name !== i.name) {
+    //         console.log("Item name mismatch. Written:", i.name, "| Proper:", item.name)
+    //       }
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     });
+    // });
+
+    Promise.all(calls).then(() => {
+      console.log("done");
+    });
+  }
+
   return {
     compileItemList,
     createItems,
-    getItems
+    getItems,
+    itemTest
   };
 };
