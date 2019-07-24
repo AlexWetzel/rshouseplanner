@@ -24,7 +24,7 @@ export const useActions = (state, dispatch) => {
   function compileItemList() {
     let itemList = [];
     itemList = returnListOfItems();
-    itemList = itemList.slice(0,40);
+    // itemList = itemList.slice(99, 117);
     const updatedItems = state.items.slice();
 
     function request() {
@@ -33,7 +33,7 @@ export const useActions = (state, dispatch) => {
         return clearInterval(requestInterval);
       }
 
-      let requestedItems = itemList.splice(0, 20);
+      let requestedItems = itemList.splice(0, 10);
 
       console.log("requested items:", requestedItems);
 
@@ -41,20 +41,26 @@ export const useActions = (state, dispatch) => {
         .get("/api/items", { params: { items: requestedItems } })
         .then(res => {
           console.log(res);
-          const { items } = res.data;
-          if (items) {
-            items.forEach(i => {
-              const index = updatedItems.findIndex(ui => {
-                return ui.name === i.name;
+          if (res.data.items) {
+            const { items } = res.data;
+            if (items) {
+              items.forEach(i => {
+                const index = updatedItems.findIndex(ui => {
+                  return ui.name === i.name;
+                });
+                if (index === -1) {
+                  updatedItems.push(i);
+                } else {
+                  updatedItems[index].exchangePrice = i.exchangePrice;
+                }
               });
-              if (index === -1) {
-                updatedItems.push(i);
-              } else {
-                updatedItems[index].exchangePrice = i.exchangePrice;
-              }
-            });
 
-            dispatch({ type: types.updateItems, payload: updatedItems });
+              dispatch({ type: types.updateItems, payload: updatedItems });
+            }
+          }
+          else {
+            console.log(res.data.message);
+            return clearInterval(requestInterval);
           }
         });
     }
@@ -74,7 +80,6 @@ export const useActions = (state, dispatch) => {
       const { items } = res.data;
 
       dispatch({ type: types.updateItems, payload: items });
-      
     });
   }
 

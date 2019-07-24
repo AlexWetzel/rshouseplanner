@@ -30,9 +30,9 @@ import {
   FIRE_RUNE,
   LAVA_RUNE,
   REDWOOD_LOGS,
-  TOKTZ_MEJ_KAL,
   TZHAAR_KET_OM,
-  TOKTZ_XIL_UL
+  TOKTZ_XIL_UL,
+  TOKTZ_MEJ_TAL
 } from "../itemData/itemConstatnts";
 
 export const superiorGarden = {
@@ -220,7 +220,7 @@ export const superiorGarden = {
           name: "Obsidian fence",
           level: "83",
           materials: [
-            { name: TOKTZ_MEJ_KAL, quantity: 10 },
+            { name: TOKTZ_MEJ_TAL, quantity: 10 },
             { name: TZHAAR_KET_OM, quantity: 2 },
             { name: TOKTZ_XIL_UL, quantity: 25 }
           ]

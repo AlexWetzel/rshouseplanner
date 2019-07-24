@@ -9,7 +9,6 @@ export default function SidePanel() {
 
   const { selectedRoom } = state;
 
-  console.log(selectedRoom);
 
   // useEffect(() => {
   //   console.log("test");
@@ -25,7 +24,6 @@ export default function SidePanel() {
       ) : (
         <NoRoomSelected />
       )}
-      {/* <TabSwitch openTab={openTab} selectedRoomName={selectedRoom.name} /> */}
     </div>
   );
 }
