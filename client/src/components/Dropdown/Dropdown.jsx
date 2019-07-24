@@ -30,7 +30,6 @@ export default function Dropdown(props) {
 
   function handleDropDown(name, index, canBuild) {
     if (canBuild || !expand) {
-      console.log("index: ", index);
       setExpand(!expand);
 
       if (expand) {
