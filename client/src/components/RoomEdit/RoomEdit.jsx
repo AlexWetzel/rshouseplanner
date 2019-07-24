@@ -56,7 +56,7 @@ export default function RoomLayout() {
             })}
             selectedOption={selectedRoom.name}
             onSelect={name =>
-              actions.changeRoom(name, roomData, selectedRoom, rooms)
+              actions.changeRoom(name)
             }
           />
           <h3>{"Hotspots"}</h3>

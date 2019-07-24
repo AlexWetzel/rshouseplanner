@@ -30,7 +30,7 @@ function FloorPlan() {
           key={coords}
           coordinates={coords}
           onDragOver={e => onDragOver(e)}
-          onDrop={e => actions.swapRooms(e, coords, rooms)}
+          onDrop={e => actions.swapRooms(e, coords)}
         >
           <RoomRender coords={coords} />
         </GridSquare>

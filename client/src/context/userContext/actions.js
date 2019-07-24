@@ -3,9 +3,9 @@ import axios from 'axios';
 
 
 export const useActions = (state, dispatch) => {
-  function searchPlayer() {
+  function searchPlayer(name) {
     axios
-      .get("/api/player", { params: {name: "uber Guy"} })
+      .get("/api/player", { params: { name } })
       .then(res => {
         console.log(res);
         const player = res.data.playerData;
@@ -14,7 +14,6 @@ export const useActions = (state, dispatch) => {
           const { name } = player
           localStorage.setItem("name", name);
         }
-        console.log(player)
         dispatch({ type: types.setPlayer, payload: player })
     })
   }

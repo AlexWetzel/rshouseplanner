@@ -22,6 +22,7 @@ function returnListOfItems() {
 
 export const useActions = (state, dispatch) => {
   function compileItemList() {
+    
     let itemList = [];
     itemList = returnListOfItems();
     // itemList = itemList.slice(99, 117);

@@ -9,7 +9,8 @@ export const useActions = (state, itemState, dispatch) => {
     dispatch({ type: types.selectRoom, payload: room });
   }
 
-  function swapRooms(e, newCoords, rooms) {
+  function swapRooms(e, newCoords) {
+    const { rooms } = state;
     let oldCoords = e.dataTransfer.getData("coordinates");
     console.log(oldCoords, newCoords);
     let newRooms = rooms.map(room => {
@@ -24,19 +25,20 @@ export const useActions = (state, itemState, dispatch) => {
     dispatch({ type: types.swapRooms, payload: newRooms });
   }
 
-  function changeRoom(name, roomData, selectRoom, rooms) {
+  function changeRoom(name) {
+    const { selectedRoom, rooms } = state;
     dispatch({ type: types.selectHotSpot, payload: "none" });
 
     const newRoom = {
       name: name,
-      coordinates: selectRoom.coordinates,
+      coordinates: selectedRoom.coordinates,
       cost: 0,
       orientation: "north",
       builds: []
     };
 
     const roomIndex = rooms.findIndex(
-      r => r.coordinates === selectRoom.coordinates
+      r => r.coordinates === selectedRoom.coordinates
     );
 
     // Remove room
@@ -51,7 +53,7 @@ export const useActions = (state, itemState, dispatch) => {
     // Replace room
     else if (roomIndex !== -1) {
       const newRooms = rooms.map(r => {
-        if (r.coordinates === selectRoom.coordinates) {
+        if (r.coordinates === selectedRoom.coordinates) {
           return newRoom;
         } else return r;
       });
@@ -67,6 +69,7 @@ export const useActions = (state, itemState, dispatch) => {
 
   function changeBuild(name, hsName) {
     const build = name;
+    const { selectedRoom } = state;
 
     const newBuild = {
       name: build,
@@ -74,16 +77,16 @@ export const useActions = (state, itemState, dispatch) => {
       cost: 0
     };
 
-    const buildIndex = state.selectedRoom.builds.findIndex(b => b.hotSpot === hsName);
-   
+    const buildIndex = selectedRoom.builds.findIndex(b => b.hotSpot === hsName);
+
     const newRoom = {
-      ...state.selectedRoom,
-    }
-      
+      ...selectedRoom
+    };
+
     if (build === "---") {
       newRoom.builds.splice(buildIndex, 1);
     } else if (buildIndex !== -1) {
-      const newBuilds = selectRoom.builds.map(b => {
+      const newBuilds = selectedRoom.builds.map(b => {
         if (b.hotSpot === hsName) {
           return newBuild;
         } else return b;
@@ -94,17 +97,13 @@ export const useActions = (state, itemState, dispatch) => {
     }
 
     const roomItemList = getBuildItems(newRoom, itemState.items);
-    console.log(roomItemList);
 
     let totalCost = 0;
     roomItemList.forEach(i => {
-      totalCost += (i.priceNum * i.quantity);
-    })
+      totalCost += i.priceNum * i.quantity;
+    });
 
-    console.log(totalCost);
     newRoom.cost = totalCost;
-   
-    
 
     dispatch({ type: types.changeRoom, payload: newRoom });
     dispatch({ type: types.selectRoom, payload: newRoom });
@@ -144,13 +143,13 @@ export const useActions = (state, itemState, dispatch) => {
   function calculateRoomCost(items) {
     let totalCost = 0;
     items.forEach(i => {
-      totalCost += (i.priceNum * i.quantity);
-    })
+      totalCost += i.priceNum * i.quantity;
+    });
 
     const newRoom = {
       ...state.selectedRoom,
       cost: totalCost
-    }
+    };
 
     dispatch({ type: types.changeRoom, payload: newRoom });
     dispatch({ type: types.selectRoom, payload: newRoom });
@@ -183,25 +182,11 @@ export const useActions = (state, itemState, dispatch) => {
       const newRoom = {
         ...state.selectedRoom,
         orientation: rotate
-      }
+      };
       dispatch({ type: types.changeRoom, payload: newRoom });
       dispatch({ type: types.selectRoom, payload: newRoom });
-    };
+    }
   }
-
-  function items() {
-    console.log('Item state:',itemState);
-    // const items = [
-    //   "oak plank",
-    //   "teak plank",
-    //   "mahogany plank"
-    // ]
-    // axios
-    //   .get("/api/items", {params: {items}})
-    //   .then(res => {
-    //     console.log(res);
-    //   })
-  }     
 
   return {
     selectRoom,
@@ -210,7 +195,6 @@ export const useActions = (state, itemState, dispatch) => {
     changeBuild,
     saveRooms,
     findHouse,
-    items,
     calculateRoomCost,
     rotateRoom
   };
