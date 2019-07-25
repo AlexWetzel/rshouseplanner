@@ -67,16 +67,18 @@ router.get("/oneitem", (req, res) => {
 });
 
 router.get("/items", (req, res) => {
-  const { items } = req.query;
+  let { items } = req.query;
   // const queryItems = itemBandAid(req.query.items);
+  items = items.map(i=> {return parseInt(i)});
+  console.log(items);
   osrs.ge
-    .getItems(queryItems)
+    .getItems(items)
     .then(apiItems => {
       const updatedItems = apiItems.map(i => {
         i = JSON.parse(i);
         console.log(i.item.name, i.item.current.price);
         return {
-          name: i.item.name,
+          id: i.item.id,
           exchangePrice: i.item.current.price
         };
       });
@@ -86,7 +88,7 @@ router.get("/items", (req, res) => {
       const updateOps = updatedItems.map(ui => {
         return {
           updateOne: {
-            filter: { name: ui.name },
+            filter: { id: ui.id },
             update: { exchangePrice: ui.exchangePrice }
           }
         };

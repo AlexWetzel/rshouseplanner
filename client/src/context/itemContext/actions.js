@@ -28,7 +28,8 @@ export const useActions = (state, dispatch) => {
     // itemList = returnListOfItems();
     // itemList = itemList.slice(99, 117);
     const updatedItems = state.items.slice();
-    const tradeableItems = updatedItems.filter(i => {return i.tradeable === true})
+    let tradeableItems = updatedItems.filter(i => {return i.tradeable === true})
+    tradeableItems = tradeableItems.map(ti => {return ti.id});
 
     function request() {
       console.log("length:", tradeableItems.length);
@@ -96,12 +97,12 @@ export const useActions = (state, dispatch) => {
       return axios
         .get("https://www.osrsbox.com/osrsbox-db/items-json/" + i.id + ".json")
         .then(res => {
-          const { tradeable, cost, wiki_url } = res.data;
+          const { tradeable_on_ge, cost, wiki_url } = res.data;
           itemData.push(
             {
               id: i.id,
               name: i.name,
-              tradeable,
+              tradeable: tradeable_on_ge,
               shopPrice: cost,
               exchangePrice: 1,
               wiki_url
