@@ -40,10 +40,6 @@ function App() {
     itemActions.getItems();
   }, []);
 
-  useEffect(() => {
-    itemActions.itemTest();
-  }, [])
-
   return (
     <div className={`${style.App}`}>
       <SidePanel />

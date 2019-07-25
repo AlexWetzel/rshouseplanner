@@ -1,40 +1,42 @@
 // import { types } from "./reducers";
 import axios from "axios";
 // import * as roomData from "../../data/roomData";
-import * as items from "../../data/itemData/itemConstatnts";
+// import * as items from "../../data/itemData/itemConstatnts";
 import itemIds from "../../data/itemData/itemIds";
 import { types } from "./reducers";
 
-const untradeables = ["Platinum token"];
+// const untradeables = ["Platinum token"];
 
-function returnListOfItems() {
-  let itemList = [];
+// function returnListOfItems() {
+//   let itemList = [];
 
-  itemList = Object.values(items);
+//   itemList = Object.values(items);
 
-  // untradeables.forEach(ut => {
-  //   itemList = itemList.filter(i => i !== ut);
-  // });
+//   // untradeables.forEach(ut => {
+//   //   itemList = itemList.filter(i => i !== ut);
+//   // });
 
-  console.log(itemList.length);
+//   console.log(itemList.length);
 
-  return itemList;
-}
+//   return itemList;
+// }
+
+
 
 export const useActions = (state, dispatch) => {
-  function compileItemList() {
-    let itemList = [];
-    itemList = returnListOfItems();
+  function updateExchangePrices() {
+    // itemList = returnListOfItems();
     // itemList = itemList.slice(99, 117);
     const updatedItems = state.items.slice();
+    const tradeableItems = updatedItems.filter(i => {return i.tradeable === true})
 
     function request() {
-      console.log("length:", itemList.length);
-      if (itemList.length === 0) {
+      console.log("length:", tradeableItems.length);
+      if (tradeableItems.length === 0) {
         return clearInterval(requestInterval);
       }
 
-      let requestedItems = itemList.splice(0, 10);
+      let requestedItems = tradeableItems.splice(0, 10);
 
       console.log("requested items:", requestedItems);
 
@@ -44,7 +46,7 @@ export const useActions = (state, dispatch) => {
           console.log(res);
           if (res.data.items) {
             const { items } = res.data;
-            if (items) {
+            // if (items) {
               items.forEach(i => {
                 const index = updatedItems.findIndex(ui => {
                   return ui.name === i.name;
@@ -57,7 +59,7 @@ export const useActions = (state, dispatch) => {
               });
 
               dispatch({ type: types.updateItems, payload: updatedItems });
-            }
+            // }
           } else {
             console.log(res.data.message);
             return clearInterval(requestInterval);
@@ -69,10 +71,10 @@ export const useActions = (state, dispatch) => {
     const requestInterval = setInterval(request, 15000);
   }
 
-  function createItems() {
-    const items = returnListOfItems();
-    axios.post("/api/createitems", { items });
-  }
+  // function createItems() {
+  //   const items = returnListOfItems();
+  //   axios.post("/api/createitems", { items });
+  // }
 
   function getItems() {
     axios.get("/db/items").then(res => {
@@ -83,7 +85,7 @@ export const useActions = (state, dispatch) => {
     });
   }
 
-  function itemTest() {
+  function postItems() {
     // const id = 10;
     // const items = itemIds.slice(0, 10);
     const items = itemIds;
@@ -94,7 +96,7 @@ export const useActions = (state, dispatch) => {
       return axios
         .get("https://www.osrsbox.com/osrsbox-db/items-json/" + i.id + ".json")
         .then(res => {
-          const { tradeable, cost, url } = res.data;
+          const { tradeable, cost, wiki_url } = res.data;
           itemData.push(
             {
               id: i.id,
@@ -102,7 +104,7 @@ export const useActions = (state, dispatch) => {
               tradeable,
               shopPrice: cost,
               exchangePrice: 1,
-              url
+              wiki_url
             }
           )
         })
@@ -110,29 +112,26 @@ export const useActions = (state, dispatch) => {
           console.log(err);
         });
     });
-    // const calls = items.map(i => {
-    //   return axios
-    //     .get("https://www.osrsbox.com/osrsbox-db/items-json/" + i.id + ".json")
-    //     .then(res => {
-    //       const item = res.data;
-    //       if (item.name !== i.name) {
-    //         console.log("Item name mismatch. Written:", i.name, "| Proper:", item.name)
-    //       }
-    //     })
-    //     .catch(err => {
-    //       console.log(err);
-    //     });
-    // });
+
 
     Promise.all(calls).then(() => {
-      console.log("done");
+      console.log(itemData);
+      axios
+        .post("db/items", { items: itemData })
+        .then(res => {
+          const { items } = res.data;
+          console.log(res);
+          dispatch({ type: types.updateItems, payload: items });
+        })
+        .catch(err => console.log(err))
     });
   }
 
   return {
-    compileItemList,
-    createItems,
+    updateExchangePrices,
+    // createItems,
     getItems,
-    itemTest
+    // itemTest/,
+    postItems
   };
 };

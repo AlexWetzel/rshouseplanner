@@ -67,7 +67,8 @@ router.get("/oneitem", (req, res) => {
 });
 
 router.get("/items", (req, res) => {
-  const queryItems = itemBandAid(req.query.items);
+  const { items } = req.query;
+  // const queryItems = itemBandAid(req.query.items);
   osrs.ge
     .getItems(queryItems)
     .then(apiItems => {
@@ -104,19 +105,7 @@ router.get("/items", (req, res) => {
               message: "There was an error writing item data in the database."
             });
         });
-      // db.Item.find({})
-      //   .then(itemData => {
-      //     updatedItems.forEach(ui => {
-      //       const dbItem = itemData.find(i => {
-      //         return i.name === ui.name;
-      //       });
-      //       console.log("updating", ui.name, "price to", ui.exchangePrice);
-      //       dbItem.exchangePrice = ui.exchangePrice;
-      //     });
-      //     // itemData.save();
-      //     res.status(200).send({ message: "ok", items: updatedItems });
-      //   })
-      //   .catch(err => console.log(err));
+
     })
     .catch(err => {
       console.log(err);
@@ -127,6 +116,56 @@ router.get("/items", (req, res) => {
         });
     });
 });
+
+// router.get("/items", (req, res) => {
+//   const queryItems = itemBandAid(req.query.items);
+//   osrs.ge
+//     .getItems(queryItems)
+//     .then(apiItems => {
+//       const updatedItems = apiItems.map(i => {
+//         i = JSON.parse(i);
+//         console.log(i.item.name, i.item.current.price);
+//         return {
+//           name: i.item.name,
+//           exchangePrice: i.item.current.price
+//         };
+//       });
+
+//       console.log("Returned", updatedItems.length, "items");
+
+//       const updateOps = updatedItems.map(ui => {
+//         return {
+//           updateOne: {
+//             filter: { name: ui.name },
+//             update: { exchangePrice: ui.exchangePrice }
+//           }
+//         };
+//       });
+
+//       db.Item.bulkWrite(updateOps)
+//         .then(result => {
+//           console.log(result.modifiedCount);
+//           res.status(200).send({ message: "ok", items: updatedItems });
+//         })
+//         .catch(err => {
+//           console.log(err);
+//           res
+//             .status(500)
+//             .send({
+//               message: "There was an error writing item data in the database."
+//             });
+//         });
+
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       res
+//         .status(500)
+//         .send({
+//           message: "There was an error retreiving item data from the API."
+//         });
+//     });
+// });
 
 // router.get("/itemtest", (req, res) => {
 
@@ -141,22 +180,7 @@ router.get("/items", (req, res) => {
 //     .catch(err => console.log(err));
 // });
 
-router.post("/createitems", (req, res) => {
-  const newItems = req.body.items.map(ni => {
-    return {
-      name: ni,
-      exchangePrice: "1"
-    };
-  });
 
-  console.log(newItems);
-  db.Item.create(newItems)
-    .then(items => {
-      console.log(items);
-      res.status(200).send();
-    })
-    .catch(err => console.log(err));
-});
 
 // router.get("/")
 

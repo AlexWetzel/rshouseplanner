@@ -7,7 +7,7 @@ const itemSchema = new Schema ({
   tradeable: Boolean,
   shopPrice: Number,
   exchangePrice: String,
-  url: String
+  wiki_url: String
 })
 
 const Item = mongoose.model("Item", itemSchema);
