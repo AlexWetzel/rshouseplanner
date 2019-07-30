@@ -15,6 +15,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const chapel = {
+  id: "8405",
   name: "Chapel",
   level: "45",
   price: "50000",
@@ -24,6 +25,7 @@ export const chapel = {
       name: "Altar",
       builds: [
         {
+          id: "8062",
           name: "Oak altar",
           level: "45",
           materials: [
@@ -31,6 +33,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8063",
           name: "Teak altar",
           level: "50",
           materials: [
@@ -38,6 +41,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8064",
           name: "Cloth altar",
           level: "56",
           materials: [
@@ -46,6 +50,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8065",
           name: "Mahogany altar",
           level: "60",
           materials: [
@@ -54,6 +59,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8066",
           name: "Limestone altar",
           level: "64",
           materials: [
@@ -63,6 +69,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8067",
           name: "Marble altar",
           level: "70",
           materials: [
@@ -71,6 +78,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8068",
           name: "Gilded altar",
           level: "75",
           materials: [
@@ -86,6 +94,7 @@ export const chapel = {
       name: "Lamp",
       builds: [
         {
+          id: "8069",
           name: "Steel torches",
           level: "45",
           materials: [
@@ -93,6 +102,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8070",
           name: "Wooden torches",
           level: "49",
           materials: [
@@ -101,6 +111,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8071",
           name: "Steel candlesticks",
           level: "53",
           materials: [
@@ -109,6 +120,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8072",
           name: "Gold candlesticks",
           level: "57",
           materials: [
@@ -117,6 +129,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8073",
           name: "Incense burners",
           level: "61",
           materials: [
@@ -125,6 +138,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8074",
           name: "Mahogany burners",
           level: "65",
           materials: [
@@ -133,7 +147,8 @@ export const chapel = {
           ]
         },
         {
-          name: "Mahogany burners",
+          id: "8075",
+          name: "Marble burners",
           level: "69",
           materials: [
             { name: MARBLE_BLOCK, quantity: 2 },
@@ -146,14 +161,9 @@ export const chapel = {
     {
       name: "Icon",
       builds: [
+
         {
-          name: "Guthix symbol",
-          level: "48",
-          materials: [
-            { name: OAK_PLANK, quantity: 2 },
-          ]
-        },
-        {
+          id: "8055",
           name: "Saradomin symbol",
           level: "48",
           materials: [
@@ -161,6 +171,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8056",
           name: "Zamorak symbol",
           level: "48",
           materials: [
@@ -168,14 +179,16 @@ export const chapel = {
           ]
         },
         {
-          name: "Guthix icon",
-          level: "59",
+          id: "8057",
+          name: "Guthix symbol",
+          level: "48",
           materials: [
-            { name: TEAK_PLANK, quantity: 4 },
-            { name: GOLD_LEAF, quantity: 2 },
+            { name: OAK_PLANK, quantity: 2 },
           ]
         },
+ 
         {
+          id: "8058",
           name: "Saradomin icon",
           level: "59",
           materials: [
@@ -184,6 +197,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8059",
           name: "Zamorak icon",
           level: "59",
           materials: [
@@ -192,6 +206,16 @@ export const chapel = {
           ]
         },
         {
+          id: "8060",
+          name: "Guthix icon",
+          level: "59",
+          materials: [
+            { name: TEAK_PLANK, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 2 },
+          ]
+        },
+        {
+          id: "8061",
           name: "Icon of Bob",
           level: "71",
           materials: [
@@ -207,6 +231,7 @@ export const chapel = {
       name: "Musical",
       builds: [
         {
+          id: "8079",
           name: "Windchimes",
           level: "49",
           materials: [
@@ -216,6 +241,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8080",
           name: "Bells",
           level: "58",
           materials: [
@@ -224,6 +250,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8081",
           name: "Organ",
           level: "69",
           materials: [
@@ -238,6 +265,7 @@ export const chapel = {
       name: "Statues",
       builds: [
         {
+          id: "8082",
           name: "Small statue",
           level: "49",
           materials: [
@@ -245,6 +273,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8083",
           name: "Medium statue",
           level: "69",
           materials: [
@@ -252,6 +281,7 @@ export const chapel = {
           ]
         },
         {
+          id: "8084",
           name: "Large statue",
           level: "89",
           materials: [
@@ -265,6 +295,7 @@ export const chapel = {
       name: "Windows",
       builds: [
         {
+          id: "8076",
           name: "Shuttered window",
           level: "49",
           materials: [
@@ -273,11 +304,13 @@ export const chapel = {
           ]
         },
         {
+          id: "8077",
           name: "Decorative window",
           level: "69",
           materials: [{ name: MOLTEN_GLASS, quantity: 8 }]
         },
         {
+          id: "8078",
           name: "Stained glass",
           level: "89",
           materials: [{ name: MOLTEN_GLASS, quantity: 16 }]
@@ -288,16 +321,19 @@ export const chapel = {
       name: "Rug",
       builds: [
         {
+          id: "8316",
           name: "Brown rug",
           level: "2",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 2 }]
         },
         {
+          id: "8317",
           name: "Rug",
           level: "13",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
         },
         {
+          id: "8318",
           name: "Opulent rug",
           level: "65",
           materials: [

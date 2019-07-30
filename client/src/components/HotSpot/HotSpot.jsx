@@ -49,8 +49,9 @@ export default function HotSpot(props) {
               dispatch({ type: types.selectHotSpot, payload: props.name })
             }
           >
-            <p>{props.name}</p>
-            <p>{build ? build.name : "(empty)"}</p>
+            <img src="https://www.osrsbox.com/osrsbox-db/items-icons/2347.png" alt="Empty hotspot"/>
+            {/* <p>{props.name}</p> */}
+            {/* <p>{build ? build.name : "(empty)"}</p> */}
           </span>
         );
       })}

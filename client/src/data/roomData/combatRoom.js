@@ -11,6 +11,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const combatRoom = {
+  id: "8400",
   name: "Combat room",
   level: "32",
   price: "25000",
@@ -20,6 +21,7 @@ export const combatRoom = {
       name: "Ring",
       builds: [
         {
+          id: "8023",
           name: "Boxing ring",
           level: "32",
           materials: [
@@ -28,6 +30,7 @@ export const combatRoom = {
           ]
         },
         {
+          id: "8024",
           name: "Fencing ring",
           level: "41",
           materials: [
@@ -36,6 +39,7 @@ export const combatRoom = {
           ]
         },
         {
+          id: "8025",
           name: "Combat ring",
           level: "51",
           materials: [
@@ -44,11 +48,13 @@ export const combatRoom = {
           ]
         },
         {
+          id: "8026",
           name: "Ranging pedestals",
           level: "71",
           materials: [{ name: TEAK_PLANK, quantity: 8 }]
         },
         {
+          id: "8027",
           name: "Balance beam",
           level: "81",
           materials: [
@@ -62,6 +68,7 @@ export const combatRoom = {
       name: "Combat dummy",
       builds: [
         {
+          id: "20745",
           name: "Combat dummy",
           level: "48",
           materials: [
@@ -71,6 +78,7 @@ export const combatRoom = {
           ]
         },
         {
+          id: "20746",
           name: "Undead combat dummy",
           level: "53",
           materials: [
@@ -110,16 +118,19 @@ export const combatRoom = {
       name: "Decoration",
       builds: [
         {
+          id: "8028",
           name: "Oak decoration",
           level: "16",
           materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8029",
           name: "Teak decoration",
           level: "36",
           materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8030",
           name: "Gilded decoration",
           level: "56",
           materials: [

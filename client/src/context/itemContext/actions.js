@@ -1,33 +1,10 @@
-// import { types } from "./reducers";
 import axios from "axios";
-// import * as roomData from "../../data/roomData";
-// import * as items from "../../data/itemData/itemConstatnts";
 import itemIds from "../../data/itemData/itemIds";
 import { types } from "./reducers";
 
-// const untradeables = ["Platinum token"];
-
-// function returnListOfItems() {
-//   let itemList = [];
-
-//   itemList = Object.values(items);
-
-//   // untradeables.forEach(ut => {
-//   //   itemList = itemList.filter(i => i !== ut);
-//   // });
-
-//   console.log(itemList.length);
-
-//   return itemList;
-// }
-
-
-
 export const useActions = (state, dispatch) => {
   function updateExchangePrices() {
-    // itemList = returnListOfItems();
-    // itemList = itemList.slice(99, 117);
-    const updatedItems = state.items.slice();
+     const updatedItems = state.items.slice();
     let tradeableItems = updatedItems.filter(i => {return i.tradeable === true})
     tradeableItems = tradeableItems.map(ti => {return ti.id});
 
@@ -72,11 +49,6 @@ export const useActions = (state, dispatch) => {
     const requestInterval = setInterval(request, 15000);
   }
 
-  // function createItems() {
-  //   const items = returnListOfItems();
-  //   axios.post("/api/createitems", { items });
-  // }
-
   function getItems() {
     axios.get("/db/items").then(res => {
       console.log(res);
@@ -87,8 +59,6 @@ export const useActions = (state, dispatch) => {
   }
 
   function postItems() {
-    // const id = 10;
-    // const items = itemIds.slice(0, 10);
     const items = itemIds;
 
     const itemData = []
@@ -130,9 +100,7 @@ export const useActions = (state, dispatch) => {
 
   return {
     updateExchangePrices,
-    // createItems,
     getItems,
-    // itemTest/,
     postItems
   };
 };

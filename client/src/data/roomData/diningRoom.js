@@ -13,6 +13,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const diningRoom = {
+  id: "8397",
   name: "Dining room",
   level: "10",
   price: "5000",
@@ -22,6 +23,7 @@ export const diningRoom = {
       name: "Table",
       builds: [
         {
+          id: "8115",
           name: "Wood dining table",
           level: "10",
           materials: [
@@ -30,31 +32,37 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8116",
           name: "Oak dining table",
           level: "22",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8117",
           name: "Carved oak table",
           level: "31",
           materials: [{ name: OAK_PLANK, quantity: 6 }]
         },
         {
+          id: "8118",
           name: "Teak dining table",
           level: "38",
           materials: [{ name: TEAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8119",
           name: "Carved teak table",
           level: "45",
           materials: [{ name: TEAK_PLANK, quantity: 6 }]
         },
         {
+          id: "8120",
           name: "Mahogany table",
           level: "52",
           materials: [{ name: MAHOGANY_PLANK, quantity: 6 }]
         },
         {
+          id: "8121",
           name: "Opulent table",
           level: "72",
           materials: [
@@ -70,16 +78,19 @@ export const diningRoom = {
       name: "Fireplace",
       builds: [
         {
+          id: "8325",
           name: "Clay fireplace",
           level: "3",
           materials: [{ name: SOFT_CLAY, quantity: 3 }]
         },
         {
+          id: "8326",
           name: "Stone fireplace",
           level: "33",
           materials: [{ name: LIMESTONE_BRICK, quantity: 2 }]
         },
         {
+          id: "8327",
           name: "Marble fireplace",
           level: "63",
           materials: [{ name: MARBLE_BLOCK, quantity: 1 }]
@@ -90,6 +101,7 @@ export const diningRoom = {
       name: "Seating 1",
       builds: [
         {
+          id: "8108",
           name: "Wooden bench",
           level: "10",
           materials: [
@@ -98,31 +110,37 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8109",
           name: "Oak bench",
           level: "22",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8110",
           name: "Carved oak bench",
           level: "31",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8111",
           name: "Teak dining bench",
           level: "38",
           materials: [{ name: TEAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8112",
           name: "Carved teak bench",
           level: "44",
           materials: [{ name: TEAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8113",
           name: "Mahogany bench",
           level: "52",
           materials: [{ name: MAHOGANY_PLANK, quantity: 4 }]
         },
         {
+          id: "8114",
           name: "Gilded bench",
           level: "61",
           materials: [
@@ -136,6 +154,7 @@ export const diningRoom = {
       name: "Seating 2",
       builds: [
         {
+          id: "8108",
           name: "Wooden bench",
           level: "10",
           materials: [
@@ -144,31 +163,37 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8109",
           name: "Oak bench",
           level: "22",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8110",
           name: "Carved oak bench",
           level: "31",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8111",
           name: "Teak dining bench",
           level: "38",
           materials: [{ name: TEAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8112",
           name: "Carved teak bench",
           level: "44",
           materials: [{ name: TEAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8113",
           name: "Mahogany bench",
           level: "52",
           materials: [{ name: MAHOGANY_PLANK, quantity: 4 }]
         },
         {
+          id: "8114",
           name: "Gilded bench",
           level: "61",
           materials: [
@@ -182,16 +207,19 @@ export const diningRoom = {
       name: "Decoration",
       builds: [
         {
+          id: "8102",
           name: "Oak decoration",
           level: "16",
           materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8103",
           name: "Teak decoration",
           level: "36",
           materials: [{ name: TEAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8104",
           name: "Gilded decoration",
           level: "56",
           materials: [
@@ -205,6 +233,7 @@ export const diningRoom = {
       name: "Bell-pull",
       builds: [
         {
+          id: "8099",
           name: "Rope bell-pull",
           level: "26",
           materials: [
@@ -213,6 +242,7 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8100",
           name: "Bell-pull",
           level: "37",
           materials: [
@@ -221,6 +251,7 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8101",
           name: "Posh bell-pull",
           level: "60",
           materials: [
@@ -235,6 +266,7 @@ export const diningRoom = {
       name: "Curtains",
       builds: [
         {
+          id: "8322",
           name: "Torn curtains",
           level: "2",
           materials: [
@@ -244,6 +276,7 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8323",
           name: "Curtains",
           level: "18",
           materials: [
@@ -252,6 +285,7 @@ export const diningRoom = {
           ]
         },
         {
+          id: "8324",
           name: "Opulent curtains",
           level: "40",
           materials: [
@@ -260,6 +294,6 @@ export const diningRoom = {
           ]
         }
       ]
-    }
+    },
   ]
 };

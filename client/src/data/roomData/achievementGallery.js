@@ -27,6 +27,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const achievementGallery = {
+  id: "20654",
   name: "Achievement gallery",
   level: "80",
   price: "200000",
@@ -36,6 +37,7 @@ export const achievementGallery = {
       name: "Altar",
       builds: [
         {
+          id: "20617",
           name: "Ancient altar",
           level: "80",
           materials: [
@@ -46,6 +48,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20618",
           name: "Lunar altar",
           level: "80",
           materials: [
@@ -56,6 +59,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20619",
           name: "Dark altar",
           level: "80",
           materials: [
@@ -67,6 +71,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20620",
           name: "Occult altar",
           level: "80",
           materials: [
@@ -87,6 +92,7 @@ export const achievementGallery = {
       name: "Adventure log",
       builds: [
         {
+          id: "20623",
           name: "Mahogany adventure log",
           level: "83",
           materials: [
@@ -96,6 +102,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20624",
           name: "Gilded adventure log",
           level: "88",
           materials: [
@@ -105,6 +112,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20625",
           name: "Marble adventure log",
           level: "93",
           materials: [
@@ -119,6 +127,7 @@ export const achievementGallery = {
       name: "Jewellery box",
       builds: [
         {
+          id: "20626",
           name: "Basic jewellery box",
           level: "81",
           materials: [
@@ -129,6 +138,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20627",
           name: "Fancy jewellery box",
           level: "86",
           materials: [
@@ -142,6 +152,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20628",
           name: "Ornate jewellery box",
           level: "91",
           materials: [
@@ -162,6 +173,7 @@ export const achievementGallery = {
       name: "Boss lair display",
       builds: [
         {
+          id: "20629",
           name: "Boss lair display",
           level: "87",
           materials: [
@@ -176,6 +188,7 @@ export const achievementGallery = {
       name: "Mounted display",
       builds: [
         {
+          id: "20630",
           name: "Mounted emblem",
           level: "80",
           materials: [
@@ -185,6 +198,7 @@ export const achievementGallery = {
           ]
         },
         {
+          id: "20631",
           name: "Mounted coins",
           level: "80",
           materials: [
@@ -194,7 +208,8 @@ export const achievementGallery = {
           ]
         },
         {
-          name: "Mounted coins",
+          id: "20632",
+          name: "Cape hanger",
           level: "80",
           materials: [
             { name: MARBLE_BLOCK, quantity: 1 },
@@ -207,6 +222,7 @@ export const achievementGallery = {
       name: "Quest list",
       builds: [
         {
+          id: "20633",
           name: "Quest list",
           level: "80",
           materials: [
