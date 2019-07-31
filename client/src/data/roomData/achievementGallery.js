@@ -73,7 +73,7 @@ export const achievementGallery = {
         {
           id: "20620",
           name: "Occult altar",
-          level: "80",
+          level: "90",
           materials: [
             { name: LIMESTONE_BRICK, quantity: 10 },
             { name: MAGIC_STONE, quantity: 1 },

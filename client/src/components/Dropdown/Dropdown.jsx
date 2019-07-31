@@ -20,6 +20,7 @@ export default function Dropdown(props) {
       <Option
         key={o.name}
         index={index + 1}
+        id={o.id}
         name={o.name}
         canBuild={skillCheck(o.level)}
       />
@@ -44,6 +45,7 @@ export default function Dropdown(props) {
         className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
         onClick={() => handleDropDown(props.name, props.index, props.canBuild)}
       >
+        <img src={`https://www.osrsbox.com/osrsbox-db/items-icons/${props.id}.png`} alt={props.name}/>
         {props.name}
       </div>
     );

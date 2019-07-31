@@ -19,6 +19,14 @@ export default function HotSpot(props) {
     }
   }
 
+  function getId() {
+    console.log(props.buildData)
+    const data = props.buildData.builds.find(b => {
+      return b.name === build.name;
+    });
+    return data.id
+  }
+
   return (
     <span
       className={`
@@ -49,7 +57,20 @@ export default function HotSpot(props) {
               dispatch({ type: types.selectHotSpot, payload: props.name })
             }
           >
-            <img src="https://www.osrsbox.com/osrsbox-db/items-icons/2347.png" alt="Empty hotspot"/>
+            {build ? (
+              <img
+                src={`https://www.osrsbox.com/osrsbox-db/items-icons/${
+                  getId()
+                }.png`}
+                alt={p.id}
+              />
+            ) : (
+              <img
+                src="https://www.osrsbox.com/osrsbox-db/items-icons/2347.png"
+                alt="Empty hotspot"
+              />
+            )}
+            {/* <img src="https://www.osrsbox.com/osrsbox-db/items-icons/2347.png" alt="Empty hotspot"/> */}
             {/* <p>{props.name}</p> */}
             {/* <p>{build ? build.name : "(empty)"}</p> */}
           </span>

@@ -122,7 +122,7 @@ export const treasureRoom = {
         },
         {
           id: "8123",
-          name: "Oak door",
+          name: "Steel-plated door",
           level: "84",
           materials: [
             { name: OAK_PLANK, quantity: 10 },

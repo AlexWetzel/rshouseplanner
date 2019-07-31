@@ -4,12 +4,14 @@ import Maps from "../Maps";
 import HotSpot from "../HotSpot/HotSpot";
 
 import * as roomMaps from "../../data/roomMaps";
+import * as roomData from "../../data/roomData";
 
 import { toCamelCase } from "../../helpers/parsers";
 
 export default function Layout(props) {
   const roomName = toCamelCase(props.roomName);
   const roomMap = roomMaps[roomName];
+  const room = roomData[roomName];
 
   function formatMaps(maps) {
     const orientation = props.orientation;
@@ -42,7 +44,14 @@ export default function Layout(props) {
   }
   function HotSpotMaps(props) {
     if (props.isSelectedForEdit) {
-      return <HotSpot {...props} />;
+      return (
+        <HotSpot
+          {...props}
+          buildData={room.hotSpots.find(hs => {
+            return hs.name === props.name;
+          })}
+        />
+      );
     } else {
       return <Maps {...props} />;
     }
