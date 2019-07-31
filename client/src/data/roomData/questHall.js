@@ -31,6 +31,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const questHall = {
+  id: "8403",
   name: "Quest hall",
   level: "35",
   price: "25000",
@@ -40,11 +41,13 @@ export const questHall = {
       name: "Stairs/Rugs",
       builds: [
         {
+          id: "8317",
           name: "Rug",
           level: "13",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
         },
         {
+          id: "8318",
           name: "Opulent rug",
           level: "65",
           materials: [
@@ -53,6 +56,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8249",
           name: "Oak staircase",
           level: "27",
           materials: [
@@ -61,6 +65,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8252",
           name: "Teak staircase",
           level: "48",
           materials: [
@@ -69,6 +74,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8258",
           name: "Spirial staircase",
           level: "67",
           materials: [
@@ -77,6 +83,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8255",
           name: "Marble staircase",
           level: "82",
           materials: [
@@ -85,6 +92,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8259",
           name: "Marble spiral",
           level: "97",
           materials: [
@@ -98,6 +106,7 @@ export const questHall = {
       name: "Guild trophy",
       builds: [
         {
+          id: "8282",
           name: "Anti-dragon shield",
           level: "47",
           materials: [
@@ -106,6 +115,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8283",
           name: "Amulet of Glory",
           level: "47",
           materials: [
@@ -114,6 +124,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8284",
           name: "Cape of legends",
           level: "47",
           materials: [
@@ -122,6 +133,7 @@ export const questHall = {
           ]
         },
         {
+          id: "21913",
           name: "Mythical cape",
           level: "47",
           materials: [
@@ -135,6 +147,7 @@ export const questHall = {
       name: "Portrait",
       builds: [
         {
+          id: "8285",
           name: "King Arthur",
           level: "35",
           materials: [
@@ -143,6 +156,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8286",
           name: "Elena",
           level: "35",
           materials: [
@@ -151,6 +165,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8287",
           name: "Giant Dwarf",
           level: "35",
           materials: [
@@ -159,6 +174,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8288",
           name: "Miscellanians",
           level: "55",
           materials: [
@@ -172,6 +188,7 @@ export const questHall = {
       name: "Landscape",
       builds: [
         {
+          id: "8289",
           name: "Lumbridge",
           level: "44",
           materials: [
@@ -180,6 +197,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8290",
           name: "The desert",
           level: "44",
           materials: [
@@ -188,6 +206,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8291",
           name: "Morytania",
           level: "44",
           materials: [
@@ -196,6 +215,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8292",
           name: "Karamja",
           level: "65",
           materials: [
@@ -204,6 +224,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8283",
           name: "Isafdar",
           level: "65",
           materials: [
@@ -217,6 +238,7 @@ export const questHall = {
       name: "Sword",
       builds: [
         {
+          id: "8279",
           name: "Silverlight",
           level: "42",
           materials: [
@@ -225,6 +247,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8280",
           name: "Excalibur",
           level: "42",
           materials: [
@@ -233,6 +256,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8281",
           name: "Darklight",
           level: "42",
           materials: [
@@ -246,6 +270,7 @@ export const questHall = {
       name: "Map",
       builds: [
         {
+          id: "8294",
           name: "Small map",
           level: "38",
           materials: [
@@ -254,6 +279,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8295",
           name: "Medium map",
           level: "58",
           materials: [
@@ -262,6 +288,7 @@ export const questHall = {
           ]
         },
         {
+          id: "8296",
           name: "Large map",
           level: "78",
           materials: [
@@ -275,6 +302,7 @@ export const questHall = {
       name: "Bookcase",
       builds: [
         {
+          id: "8319",
           name: "Wooden bookcase",
           level: "4",
           materials: [
@@ -283,11 +311,13 @@ export const questHall = {
           ]
         },
         {
+          id: "8320",
           name: "Oak bookcase",
           level: "29",
           materials: [{ name: OAK_PLANK, quantity: 3 }]
         },
         {
+          id: "8321",
           name: "Mahogany bookcase",
           level: "40",
           materials: [{ name: MAHOGANY_PLANK, quantity: 3 }]

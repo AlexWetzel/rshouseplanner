@@ -36,6 +36,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const superiorGarden = {
+  id: "20653",
   name: "Superior garden",
   level: "65",
   price: "75000",
@@ -45,6 +46,7 @@ export const superiorGarden = {
       name: "Natural teleport",
       builds: [
         {
+          id: "20635",
           name: "Spirit tree",
           level: "75",
           materials: [
@@ -53,7 +55,8 @@ export const superiorGarden = {
           ]
         },
         {
-          name: "Obelist",
+          id: "21788",
+          name: "Obelisk",
           level: "80",
           materials: [
             { name: ANCIENT_CRYSTAL, quantity: 4 },
@@ -61,6 +64,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20636",
           name: "Fairy ring",
           level: "85",
           materials: [
@@ -70,6 +74,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20637",
           name: "Spirit tree & fairy ring",
           level: "95",
           materials: [
@@ -85,6 +90,7 @@ export const superiorGarden = {
       name: "Topiary",
       builds: [
         {
+          id: "20638",
           name: "Topiary",
           level: "65",
           materials: [
@@ -98,6 +104,7 @@ export const superiorGarden = {
       name: "Pool",
       builds: [
         {
+          id: "20639",
           name: "Restoration pool",
           level: "65",
           materials: [
@@ -108,6 +115,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20640",
           name: "Revitalisation pool",
           level: "70",
           materials: [
@@ -119,6 +127,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20641",
           name: "Rejuvination pool",
           level: "80",
           materials: [
@@ -131,6 +140,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20642",
           name: "Fancy rejuvination pool",
           level: "85",
           materials: [
@@ -145,6 +155,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20643",
           name: "Ornate rejuvination pool",
           level: "90",
           materials: [
@@ -167,6 +178,7 @@ export const superiorGarden = {
       name: "Theme",
       builds: [
         {
+          id: "20644",
           name: "Zen theme",
           level: "65",
           materials: [
@@ -177,6 +189,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20645",
           name: "Otherworldly theme",
           level: "75",
           materials: [
@@ -188,6 +201,7 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "20646",
           name: "Volcanic theme",
           level: "85",
           materials: [
@@ -204,6 +218,7 @@ export const superiorGarden = {
       name: "Fencing",
       builds: [
         {
+          id: "20647",
           name: "Redwood fence",
           level: "75",
           materials: [
@@ -212,11 +227,13 @@ export const superiorGarden = {
           ]
         },
         {
+          id: "8202",
           name: "Marble wall",
           level: "79",
           materials: [{ name: MARBLE_BLOCK, quantity: 8 }]
         },
         {
+          id: "20648",
           name: "Obsidian fence",
           level: "83",
           materials: [
@@ -231,21 +248,25 @@ export const superiorGarden = {
       name: "Seating",
       builds: [
         {
+          id: "20649",
           name: "Teak garden bench",
           level: "66",
           materials: [{ name: TEAK_PLANK, quantity: 6 }]
         },
         {
+          id: "20650",
           name: "Gnome bench",
           level: "77",
           materials: [{ name: MAHOGANY_PLANK, quantity: 6 }]
         },
         {
+          id: "20651",
           name: "Marble decorative bench",
           level: "88",
           materials: [{ name: MARBLE_BLOCK, quantity: 6 }]
         },
         {
+          id: "20652",
           name: "Obsidian decorative bench",
           level: "98",
           materials: [

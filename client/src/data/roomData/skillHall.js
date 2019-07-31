@@ -53,6 +53,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const skillHall = {
+  id: "8401",
   name: "Skill hall",
   level: "25",
   price: "15000",
@@ -62,13 +63,13 @@ export const skillHall = {
       name: "Stairs/Rugs",
       builds: [
         {
+          id: "8317",
           name: "Rug",
           level: "13",
-          materials: [
-            { name: BOLT_OF_CLOTH, quantity: 4 }
-          ]
+          materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
         },
         {
+          id: "8318",
           name: "Opulent rug",
           level: "65",
           materials: [
@@ -77,6 +78,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8249",
           name: "Oak staircase",
           level: "27",
           materials: [
@@ -85,6 +87,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8252",
           name: "Teak staircase",
           level: "48",
           materials: [
@@ -93,6 +96,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8258",
           name: "Spirial staircase",
           level: "67",
           materials: [
@@ -101,6 +105,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8255",
           name: "Marble staircase",
           level: "82",
           materials: [
@@ -109,11 +114,12 @@ export const skillHall = {
           ]
         },
         {
+          id: "8259",
           name: "Marble spiral",
           level: "97",
           materials: [
             { name: TEAK_PLANK, quantity: 10 },
-            { name: MARBLE_BLOCK, quantity: 7 },
+            { name: MARBLE_BLOCK, quantity: 7 }
           ]
         }
       ]
@@ -122,6 +128,7 @@ export const skillHall = {
       name: "Castle Wars armour",
       builds: [
         {
+          id: "8273",
           name: "Cw armour 1",
           level: "28",
           materials: [
@@ -132,6 +139,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8274",
           name: "Cw armour 2",
           level: "28",
           materials: [
@@ -142,6 +150,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8275",
           name: "Cw armour 3",
           level: "28",
           materials: [
@@ -150,50 +159,52 @@ export const skillHall = {
             { name: DECORATIVE_SHIELD_GOLD, quantity: 1 },
             { name: DECORATIVE_BODY_GOLD, quantity: 1 }
           ]
-        },
- 
+        }
       ]
     },
     {
       name: "Armour",
       builds: [
         {
+          id: "8270",
           name: "Mithril armour stand",
           level: "28",
           materials: [
             { name: OAK_PLANK, quantity: 2 },
             { name: MITHRIL_FULL_HELM, quantity: 1 },
             { name: MITHRIL_PLATEBODY, quantity: 1 },
-            { name: MITHRIL_PLATESKIRT, quantity: 1 },
+            { name: MITHRIL_PLATESKIRT, quantity: 1 }
           ]
         },
         {
+          id: "8271",
           name: "Adamant armour stand",
           level: "28",
           materials: [
             { name: OAK_PLANK, quantity: 2 },
             { name: ADAMANT_FULL_HELM, quantity: 1 },
             { name: ADAMANT_PLATEBODY, quantity: 1 },
-            { name: ADAMANT_PLATESKIRT, quantity: 1 },
+            { name: ADAMANT_PLATESKIRT, quantity: 1 }
           ]
         },
         {
+          id: "8272",
           name: "Rune armour stand",
           level: "28",
           materials: [
             { name: OAK_PLANK, quantity: 2 },
             { name: RUNE_FULL_HELM, quantity: 1 },
             { name: RUNE_PLATEBODY, quantity: 1 },
-            { name: RUNE_PLATESKIRT, quantity: 1 },
+            { name: RUNE_PLATESKIRT, quantity: 1 }
           ]
-        },
-
+        }
       ]
     },
     {
       name: "Head trophy",
       builds: [
         {
+          id: "8260",
           name: "Crawling Hand",
           level: "38",
           materials: [
@@ -202,6 +213,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8261",
           name: "Cockatrice",
           level: "38",
           materials: [
@@ -210,6 +222,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8262",
           name: "Basilisk",
           level: "38",
           materials: [
@@ -218,6 +231,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8263",
           name: "Kurask",
           level: "58",
           materials: [
@@ -226,6 +240,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8264",
           name: "Abyssal demon",
           level: "58",
           materials: [
@@ -234,6 +249,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8265",
           name: "King Black Dragon",
           level: "78",
           materials: [
@@ -243,6 +259,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8266",
           name: "Kalphite Queen",
           level: "78",
           materials: [
@@ -252,6 +269,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "21912",
           name: "Vorkath",
           level: "82",
           materials: [
@@ -261,6 +279,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "23081",
           name: "Alchemical Hydra",
           level: "82",
           materials: [
@@ -268,14 +287,14 @@ export const skillHall = {
             { name: STUFFED_HYDRA_HEADS, quantity: 1 },
             { name: GOLD_LEAF, quantity: 2 }
           ]
-        },
-        
+        }
       ]
     },
     {
       name: "Fishing trophy",
       builds: [
         {
+          id: "8267",
           name: "Mounted bass",
           level: "36",
           materials: [
@@ -284,6 +303,7 @@ export const skillHall = {
           ]
         },
         {
+          id: "8268",
           name: "Mounted swordfish",
           level: "56",
           materials: [
@@ -292,20 +312,21 @@ export const skillHall = {
           ]
         },
         {
+          id: "8269",
           name: "Mounted shark",
           level: "76",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 2 },
             { name: STUFFED_BIG_SHARK, quantity: 1 }
           ]
-        },
-
+        }
       ]
     },
     {
       name: "Rune case",
       builds: [
         {
+          id: "8276",
           name: "Rune case 1",
           level: "41",
           materials: [
@@ -314,10 +335,11 @@ export const skillHall = {
             { name: AIR_RUNE, quantity: 1 },
             { name: WATER_RUNE, quantity: 1 },
             { name: EARTH_RUNE, quantity: 1 },
-            { name: FIRE_RUNE, quantity: 1 },
+            { name: FIRE_RUNE, quantity: 1 }
           ]
         },
         {
+          id: "8277",
           name: "Rune case 2",
           level: "41",
           materials: [
@@ -326,10 +348,11 @@ export const skillHall = {
             { name: BODY_RUNE, quantity: 1 },
             { name: COSMIC_RUNE, quantity: 1 },
             { name: CHAOS_RUNE, quantity: 1 },
-            { name: NATURE_RUNE, quantity: 1 },
+            { name: NATURE_RUNE, quantity: 1 }
           ]
         },
         {
+          id: "8278",
           name: "Rune case 3",
           level: "41",
           materials: [
@@ -338,12 +361,10 @@ export const skillHall = {
             { name: LAW_RUNE, quantity: 1 },
             { name: DEATH_RUNE, quantity: 1 },
             { name: BLOOD_RUNE, quantity: 1 },
-            { name: SOUL_RUNE, quantity: 1 },
+            { name: SOUL_RUNE, quantity: 1 }
           ]
-        },
-        
-    
+        }
       ]
-    },
+    }
   ]
 };

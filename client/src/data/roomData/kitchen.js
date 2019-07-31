@@ -16,6 +16,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const kitchen = {
+  id: "8396",
   name: "Kitchen",
   level: "5",
   price: "5000",
@@ -25,6 +26,7 @@ export const kitchen = {
       name: "Barrel",
       builds: [
         {
+          id: "8239",
           name: "Beer",
           level: "7",
           materials: [
@@ -33,6 +35,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8240",
           name: "Cider",
           level: "12",
           materials: [
@@ -42,6 +45,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8241",
           name: "Asgarnian ale",
           level: "18",
           materials: [
@@ -50,6 +54,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8242",
           name: "Greenman's ale",
           level: "26",
           materials: [
@@ -58,6 +63,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8243",
           name: "Dragon Bitter",
           level: "36",
           materials: [
@@ -67,6 +73,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8244",
           name: "Chef's Delight",
           level: "48",
           materials: [
@@ -81,6 +88,7 @@ export const kitchen = {
       name: "Table",
       builds: [
         {
+          id: "8246",
           name: "Kitchen table",
           level: "12",
           materials: [
@@ -89,6 +97,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8247",
           name: "Oak kitchen table",
           level: "32",
           materials: [
@@ -96,6 +105,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8248",
           name: "Teak kitchen table",
           level: "52",
           materials: [
@@ -108,6 +118,7 @@ export const kitchen = {
       name: "Stove",
       builds: [
         {
+          id: "8216",
           name: "Firepit",
           level: "5",
           materials: [
@@ -116,6 +127,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8217",
           name: "Firepit with hook",
           level: "11",
           materials: [
@@ -124,6 +136,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8218",
           name: "Firepit with pot",
           level: "17",
           materials: [
@@ -132,21 +145,25 @@ export const kitchen = {
           ]
         },
         {
+          id: "8219",
           name: "Small oven",
           level: "24",
           materials: [{ name: STEEL_BAR, quantity: 4 }]
         },
         {
+          id: "8220",
           name: "Large oven",
           level: "29",
           materials: [{ name: STEEL_BAR, quantity: 5 }]
         },
         {
+          id: "8221",
           name: "Steel range",
           level: "34",
           materials: [{ name: STEEL_BAR, quantity: 6 }]
         },
         {
+          id: "8222",
           name: "Fancy range",
           level: "42",
           materials: [{ name: STEEL_BAR, quantity: 8 }]
@@ -157,6 +174,7 @@ export const kitchen = {
       name: "Larder",
       builds: [
         {
+          id: "8233",
           name: "Wooden larder",
           level: "9",
           materials: [
@@ -165,6 +183,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8234",
           name: "Oak larder",
           level: "33",
           materials: [
@@ -172,6 +191,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8235",
           name: "Teak larder",
           level: "43",
           materials: [
@@ -185,6 +205,7 @@ export const kitchen = {
       name: "Shelf",
       builds: [
         {
+          id: "8223",
           name: "Wooden shelves 1",
           level: "6",
           materials: [
@@ -193,6 +214,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8224",
           name: "Wooden shelves 2",
           level: "12",
           materials: [
@@ -202,6 +224,17 @@ export const kitchen = {
           ]
         },
         {
+          id: "8225",
+          name: "Wooden shelves 3",
+          level: "23",
+          materials: [
+            { name: PLANK, quantity: 3 },
+            { name: STEEL_NAILS, quantity: 3 },
+            { name: SOFT_CLAY, quantity: 6 }
+          ]
+        },
+        {
+          id: "8226",
           name: "Oak shelves 1",
           level: "34",
           materials: [
@@ -210,6 +243,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8227",
           name: "Oak shelves 2",
           level: "45",
           materials: [
@@ -218,6 +252,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8228",
           name: "Teak shelves 1",
           level: "56",
           materials: [
@@ -226,6 +261,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8229",
           name: "Teak shelves 2",
           level: "67",
           materials: [
@@ -240,6 +276,7 @@ export const kitchen = {
       name: "Sink",
       builds: [
         {
+          id: "8230",
           name: "Pump and drain",
           level: "7",
           materials: [
@@ -247,6 +284,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8231",
           name: "Pump and tub",
           level: "27",
           materials: [
@@ -254,6 +292,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8232",
           name: "Sink",
           level: "47",
           materials: [
@@ -266,6 +305,7 @@ export const kitchen = {
       name: "Basket",
       builds: [
         {
+          id: "8236",
           name: "Cat blanket",
           level: "5",
           materials: [
@@ -273,6 +313,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8237",
           name: "Cat basket",
           level: "19",
           materials: [
@@ -281,6 +322,7 @@ export const kitchen = {
           ]
         },
         {
+          id: "8238",
           name: "Cushioned basket",
           level: "3",
           materials: [

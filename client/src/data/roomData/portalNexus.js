@@ -22,10 +22,11 @@ import {
   BOLT_OF_CLOTH,
   PLANK,
   STEEL_NAILS,
-  OAK_PLANK,
+  OAK_PLANK
 } from "../itemData/itemConstatnts";
 
 export const portalNexus = {
+  id: "22704",
   name: "Portal nexus",
   level: "72",
   price: "200000",
@@ -35,94 +36,101 @@ export const portalNexus = {
       name: "Portal nexus",
       builds: [
         {
+          id: "22705",
           name: "Marble portal nexus",
           level: "72",
-          materials: [
-            { name: MARBLE_BLOCK, quantity: 4 },
-          ]
+          materials: [{ name: MARBLE_BLOCK, quantity: 4 }]
         },
         {
+          id: "22706",
           name: "Gilded portal nexus",
           level: "82",
           materials: [
             { name: MARBLE_BLOCK, quantity: 8 },
-            { name: GOLD_LEAF, quantity: 2 },
+            { name: GOLD_LEAF, quantity: 2 }
           ]
         },
         {
+          id: "22707",
           name: "Gilded portal nexus",
           level: "82",
           materials: [
             { name: MARBLE_BLOCK, quantity: 8 },
             { name: MAGIC_STONE, quantity: 2 },
-            { name: GOLD_LEAF, quantity: 4 },
+            { name: GOLD_LEAF, quantity: 4 }
           ]
-        },
- 
+        }
       ]
     },
     {
       name: "Amulet 1",
       builds: [
         {
+          id: "22708",
           name: "Mounted Xeric's talisman",
           level: "72",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 1 },
             { name: GOLD_LEAF, quantity: 1 },
             { name: XERICS_TALISMAN_INERT, quantity: 1 },
-            { name: LIZARDMAN_FANG, quantity: 5000 },
+            { name: LIZARDMAN_FANG, quantity: 5000 }
           ]
         },
         {
+          id: "22709",
           name: "Mounted digsite pendant",
           level: "82",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 1 },
             { name: GOLD_LEAF, quantity: 1 },
-            { name: CURATORS_MEDALLION, quantity: 1 },
+            { name: CURATORS_MEDALLION, quantity: 1 }
           ]
-        },
+        }
       ]
     },
     {
       name: "Amulet 2",
       builds: [
         {
+          id: "22708",
           name: "Mounted Xeric's talisman",
           level: "72",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 1 },
             { name: GOLD_LEAF, quantity: 1 },
             { name: XERICS_TALISMAN_INERT, quantity: 1 },
-            { name: LIZARDMAN_FANG, quantity: 5000 },
+            { name: LIZARDMAN_FANG, quantity: 5000 }
           ]
         },
         {
+          id: "22709",
           name: "Mounted digsite pendant",
           level: "82",
           materials: [
             { name: MAHOGANY_PLANK, quantity: 1 },
             { name: GOLD_LEAF, quantity: 1 },
-            { name: CURATORS_MEDALLION, quantity: 1 },
+            { name: CURATORS_MEDALLION, quantity: 1 }
           ]
-        },
+        }
       ]
     },
     {
       name: "Rug",
       builds: [
         {
+          id: "8316",
           name: "Brown rug",
           level: "2",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 2 }]
         },
         {
+          id: "8317",
           name: "Rug",
           level: "13",
           materials: [{ name: BOLT_OF_CLOTH, quantity: 4 }]
         },
         {
+          id: "8318",
           name: "Opulent rug",
           level: "65",
           materials: [
@@ -132,11 +140,11 @@ export const portalNexus = {
         }
       ]
     },
-
     {
       name: "Curtains",
       builds: [
         {
+          id: "8322",
           name: "Torn curtains",
           level: "2",
           materials: [
@@ -146,6 +154,7 @@ export const portalNexus = {
           ]
         },
         {
+          id: "8323",
           name: "Curtains",
           level: "18",
           materials: [
@@ -154,6 +163,7 @@ export const portalNexus = {
           ]
         },
         {
+          id: "8324",
           name: "Opulent curtains",
           level: "40",
           materials: [
@@ -170,159 +180,159 @@ export const portalNexus = {
           name: "Varrock",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: FIRE_RUNE, quantity: 100 }, 
-            { name: AIR_RUNE, quantity: 300 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: FIRE_RUNE, quantity: 100 },
+            { name: AIR_RUNE, quantity: 300 }
           ]
         },
         {
           name: "Lumbridge",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: EARTH_RUNE, quantity: 100 }, 
-            { name: AIR_RUNE, quantity: 300 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: EARTH_RUNE, quantity: 100 },
+            { name: AIR_RUNE, quantity: 300 }
           ]
         },
         {
           name: "Falador",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: WATER_RUNE, quantity: 100 }, 
-            { name: AIR_RUNE, quantity: 300 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: WATER_RUNE, quantity: 100 },
+            { name: AIR_RUNE, quantity: 300 }
           ]
         },
         {
           name: "Camelot",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: AIR_RUNE, quantity: 500 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: AIR_RUNE, quantity: 500 }
           ]
         },
         {
           name: "Ardougne",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 200 }, 
-            { name: WATER_RUNE, quantity: 200 }, 
+            { name: LAW_RUNE, quantity: 200 },
+            { name: WATER_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Watchtower",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 200 }, 
-            { name: EARTH_RUNE, quantity: 200 }, 
+            { name: LAW_RUNE, quantity: 200 },
+            { name: EARTH_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Senntisten",
           level: "0",
           materials: [
-            { name: SOUL_RUNE, quantity: 100 }, 
-            { name: LAW_RUNE, quantity: 200 }, 
+            { name: SOUL_RUNE, quantity: 100 },
+            { name: LAW_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Marim",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 200 }, 
-            { name: FIRE_RUNE, quantity: 200 }, 
-            { name: WATER_RUNE, quantity: 200 }, 
-            { name: BANANA, quantity: 100 }, 
+            { name: LAW_RUNE, quantity: 200 },
+            { name: FIRE_RUNE, quantity: 200 },
+            { name: WATER_RUNE, quantity: 200 },
+            { name: BANANA, quantity: 100 }
           ]
         },
         {
           name: "Kharyrll",
           level: "0",
           materials: [
-            { name: BLOOD_RUNE, quantity: 100 }, 
-            { name: LAW_RUNE, quantity: 200 }, 
+            { name: BLOOD_RUNE, quantity: 100 },
+            { name: LAW_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Lunar Isle",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: ASTRAL_RUNE, quantity: 200 }, 
-            { name: EARTH_RUNE, quantity: 200 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: ASTRAL_RUNE, quantity: 200 },
+            { name: EARTH_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Kourend Castle",
           level: "0",
           materials: [
-            { name: SOUL_RUNE, quantity: 200 }, 
-            { name: LAW_RUNE, quantity: 200 }, 
-            { name: FIRE_RUNE, quantity: 500 }, 
-            { name: WATER_RUNE, quantity: 400 }, 
+            { name: SOUL_RUNE, quantity: 200 },
+            { name: LAW_RUNE, quantity: 200 },
+            { name: FIRE_RUNE, quantity: 500 },
+            { name: WATER_RUNE, quantity: 400 }
           ]
         },
         {
           name: "Waterbirth Isle",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 100 }, 
-            { name: ASTRAL_RUNE, quantity: 200 }, 
-            { name: WATER_RUNE, quantity: 100 }, 
+            { name: LAW_RUNE, quantity: 100 },
+            { name: ASTRAL_RUNE, quantity: 200 },
+            { name: WATER_RUNE, quantity: 100 }
           ]
         },
         {
           name: "Carrallangar",
           level: "0",
           materials: [
-            { name: SOUL_RUNE, quantity: 200 }, 
-            { name: LAW_RUNE, quantity: 200 }, 
+            { name: SOUL_RUNE, quantity: 200 },
+            { name: LAW_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Fishing guild",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 300 }, 
-            { name: ASTRAL_RUNE, quantity: 300 }, 
-            { name: WATER_RUNE, quantity: 1000 }, 
+            { name: LAW_RUNE, quantity: 300 },
+            { name: ASTRAL_RUNE, quantity: 300 },
+            { name: WATER_RUNE, quantity: 1000 }
           ]
         },
         {
           name: "Catherby",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 300 }, 
-            { name: ASTRAL_RUNE, quantity: 300 }, 
-            { name: WATER_RUNE, quantity: 1000 }, 
+            { name: LAW_RUNE, quantity: 300 },
+            { name: ASTRAL_RUNE, quantity: 300 },
+            { name: WATER_RUNE, quantity: 1000 }
           ]
         },
         {
           name: "Annakarl",
           level: "0",
           materials: [
-            { name: BLOOD_RUNE, quantity: 200 }, 
-            { name: LAW_RUNE, quantity: 200 }, 
+            { name: BLOOD_RUNE, quantity: 200 },
+            { name: LAW_RUNE, quantity: 200 }
           ]
         },
         {
           name: "Ghorrock",
           level: "0",
           materials: [
-            { name: LAW_RUNE, quantity: 200 }, 
-            { name: BLOOD_RUNE, quantity: 800 }, 
+            { name: LAW_RUNE, quantity: 200 },
+            { name: BLOOD_RUNE, quantity: 800 }
           ]
         },
         {
           name: "Troll Stronghold",
           level: "0",
           materials: [
-            { name: URT_SALT, quantity: 300 }, 
-            { name: TE_SALT, quantity: 100 }, 
-            { name: BASALT, quantity: 100 }, 
+            { name: URT_SALT, quantity: 300 },
+            { name: TE_SALT, quantity: 100 },
+            { name: BASALT, quantity: 100 }
           ]
-        },
+        }
       ]
-    },
+    }
   ]
 };

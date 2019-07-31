@@ -9,6 +9,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const workshop = {
+  id: "8406",
   name: "Workshop",
   level: "15",
   price: "10000",
@@ -18,6 +19,7 @@ export const workshop = {
       name: "Workbench",
       builds: [
         {
+          id: "8375",
           name: "Wooden workbench",
           level: "17",
           materials: [
@@ -26,11 +28,13 @@ export const workshop = {
           ]
         },
         {
+          id: "8376",
           name: "Oak workbench",
           level: "32",
           materials: [{ name: OAK_PLANK, quantity: 5 }]
         },
         {
+          id: "8377",
           name: "Steel framed workbench",
           level: "46",
           materials: [
@@ -39,6 +43,7 @@ export const workshop = {
           ]
         },
         {
+          id: "8378",
           name: "Bench with vice",
           level: "62",
           materials: [
@@ -47,6 +52,7 @@ export const workshop = {
           ]
         },
         {
+          id: "8379",
           name: "Bench with lathe",
           level: "77",
           materials: [
@@ -60,11 +66,13 @@ export const workshop = {
       name: "Crafting table",
       builds: [
         {
+          id: "8380",
           name: "Crafting table 1",
           level: "16",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8381",
           name: "Crafting table 2",
           level: "25",
           materials: [
@@ -73,6 +81,7 @@ export const workshop = {
           ]
         },
         {
+          id: "8382",
           name: "Crafting table 3",
           level: "34",
           materials: [
@@ -81,6 +90,7 @@ export const workshop = {
           ]
         },
         {
+          id: "8383",
           name: "Crafting table 4",
           level: "42",
           materials: [
@@ -94,17 +104,20 @@ export const workshop = {
       name: "Repair benches",
       builds: [
         {
+          id: "8389",
           name: "Repair bench",
           level: "15",
           materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8390",
           name: "Whetstone",
           level: "35",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
-          name: "Carved oak bench",
+          id: "8391",
+          name: "Armour stand",
           level: "55",
           materials: [
             { name: OAK_PLANK, quantity: 8 },
@@ -117,26 +130,31 @@ export const workshop = {
       name: "Tool store",
       builds: [
         {
+          id: "8384",
           name: "Tool store 1",
           level: "15",
           materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8385",
           name: "Tool store 2",
           level: "25",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8386",
           name: "Tool store 3",
           level: "35",
           materials: [{ name: OAK_PLANK, quantity: 6 }]
         },
         {
+          id: "8387",
           name: "Tool store 4",
           level: "44",
           materials: [{ name: OAK_PLANK, quantity: 8 }]
         },
         {
+          id: "8388",
           name: "Tool store 5",
           level: "55",
           materials: [{ name: OAK_PLANK, quantity: 10 }]
@@ -147,16 +165,19 @@ export const workshop = {
       name: "Heraldry stand",
       builds: [
         {
+          id: "8392",
           name: "Pluming stand",
           level: "16",
           materials: [{ name: OAK_PLANK, quantity: 2 }]
         },
         {
+          id: "8393",
           name: "Shield easel",
           level: "41",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "8394",
           name: "Banner easel",
           level: "66",
           materials: [

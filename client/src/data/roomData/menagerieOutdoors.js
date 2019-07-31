@@ -24,6 +24,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const menagerieOutdoors = {
+  id: "12726",
   name: "Menagerie outdoors",
   level: "37",
   price: "30000",
@@ -33,6 +34,7 @@ export const menagerieOutdoors = {
       name: "Scratching post",
       builds: [
         {
+          id: "12715",
           name: "Oak scratching post",
           level: "39",
           materials: [
@@ -41,6 +43,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12716",
           name: "Teak scratching post",
           level: "49",
           materials: [
@@ -50,6 +53,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12717",
           name: "Mahogany scratching post",
           level: "59",
           materials: [
@@ -64,6 +68,7 @@ export const menagerieOutdoors = {
       name: "Pet feeder",
       builds: [
         {
+          id: "12722",
           name: "Oak feeder",
           level: "37",
           materials: [
@@ -72,6 +77,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12723",
           name: "Teak feeder",
           level: "48",
           materials: [
@@ -80,6 +86,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12724",
           name: "Mahogany feeder",
           level: "59",
           materials: [
@@ -94,11 +101,13 @@ export const menagerieOutdoors = {
       name: "Pet house",
       builds: [
         {
+          id: "12704",
           name: "Oak house",
           level: "37",
           materials: [{ name: OAK_PLANK, quantity: 4 }]
         },
         {
+          id: "12705",
           name: "Teak house",
           level: "48",
           materials: [
@@ -107,6 +116,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12706",
           name: "Mahogany house",
           level: "59",
           materials: [
@@ -116,6 +126,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12707",
           name: "Consecrated house",
           level: "70",
           materials: [
@@ -126,6 +137,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12708",
           name: "Desecrated house",
           level: "81",
           materials: [
@@ -137,6 +149,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12709",
           name: "Nature house",
           level: "92",
           materials: [
@@ -155,6 +168,7 @@ export const menagerieOutdoors = {
       name: "Arena",
       builds: [
         {
+          id: "12718",
           name: "Simple arena",
           level: "63",
           materials: [
@@ -164,6 +178,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12719",
           name: "Advanced arena",
           level: "73",
           materials: [
@@ -173,6 +188,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12720",
           name: "Glorious arena",
           level: "63",
           materials: [
@@ -187,6 +203,7 @@ export const menagerieOutdoors = {
       name: "Habitat",
       builds: [
         {
+          id: "12710",
           name: "Grassland habitat",
           level: "37",
           materials: [
@@ -196,6 +213,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12711",
           name: "Forest habitat",
           level: "47",
           materials: [
@@ -205,6 +223,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12712",
           name: "Desert habitat",
           level: "57",
           materials: [
@@ -214,6 +233,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12713",
           name: "Polar habitat",
           level: "67",
           materials: [
@@ -223,6 +243,7 @@ export const menagerieOutdoors = {
           ]
         },
         {
+          id: "12714",
           name: "Volcanic habitat",
           level: "77",
           materials: [
@@ -236,6 +257,7 @@ export const menagerieOutdoors = {
       name: "Pet list",
       builds: [
         {
+          id: "12721",
           name: "Pet list",
           level: "38",
           materials: [

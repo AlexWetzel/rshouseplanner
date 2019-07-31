@@ -28,6 +28,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const formalGarden = {
+  id: "8416",
   name: "Formal garden",
   level: "55",
   price: "75000",
@@ -37,11 +38,13 @@ export const formalGarden = {
       name: "Centrepiece",
       builds: [
         {
+          id: "8168",
           name: "Exit portal",
           level: "1",
           materials: [{ name: IRON_BAR, quantity: 10 }]
         },
         {
+          id: "8192",
           name: "Gazebo",
           level: "65",
           materials: [
@@ -50,21 +53,25 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8172",
           name: "Dungeon entrance",
           level: "70",
           materials: [{ name: MARBLE_BLOCK, quantity: 1 }]
         },
         {
+          id: "8193",
           name: "Small fountain",
           level: "71",
           materials: [{ name: MARBLE_BLOCK, quantity: 1 }]
         },
         {
+          id: "8194",
           name: "Large fountain",
           level: "75",
           materials: [{ name: MARBLE_BLOCK, quantity: 2 }]
         },
         {
+          id: "8195",
           name: "Posh fountain",
           level: "81",
           materials: [{ name: MARBLE_BLOCK, quantity: 3 }]
@@ -75,6 +82,7 @@ export const formalGarden = {
       name: "Small Plant 1",
       builds: [
         {
+          id: "8213",
           name: "Sunflower",
           level: "66",
           materials: [
@@ -83,6 +91,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8214",
           name: "Marigolds",
           level: "71",
           materials: [
@@ -91,6 +100,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8215",
           name: "Roses",
           level: "76",
           materials: [
@@ -104,6 +114,7 @@ export const formalGarden = {
       name: "Big Plant 1",
       builds: [
         {
+          id: "8213",
           name: "Sunflower",
           level: "66",
           materials: [
@@ -112,6 +123,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8214",
           name: "Marigolds",
           level: "71",
           materials: [
@@ -120,6 +132,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8215",
           name: "Roses",
           level: "76",
           materials: [
@@ -133,6 +146,7 @@ export const formalGarden = {
       name: "Small Plant 2",
       builds: [
         {
+          id: "8210",
           name: "Rosemary",
           level: "66",
           materials: [
@@ -141,6 +155,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8211",
           name: "Daffodils",
           level: "71",
           materials: [
@@ -149,6 +164,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8212",
           name: "Bluebells",
           level: "76",
           materials: [
@@ -162,6 +178,7 @@ export const formalGarden = {
       name: "Big Plant 2",
       builds: [
         {
+          id: "8210",
           name: "Rosemary",
           level: "66",
           materials: [
@@ -170,6 +187,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8211",
           name: "Daffodils",
           level: "71",
           materials: [
@@ -178,6 +196,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8212",
           name: "Bluebells",
           level: "76",
           materials: [
@@ -191,6 +210,7 @@ export const formalGarden = {
       name: "Hedging",
       builds: [
         {
+          id: "8203",
           name: "Thorny hedge",
           level: "56",
           materials: [
@@ -199,6 +219,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8204",
           name: "Nice hedge",
           level: "60",
           materials: [
@@ -207,6 +228,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8205",
           name: "Small box hedge",
           level: "64",
           materials: [
@@ -215,6 +237,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8206",
           name: "Topiary hedge",
           level: "68",
           materials: [
@@ -223,6 +246,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8207",
           name: "Fancy hedge",
           level: "72",
           materials: [
@@ -231,6 +255,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8208",
           name: "Tall fancy hedge",
           level: "76",
           materials: [
@@ -239,6 +264,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8209",
           name: "Tall box hedge",
           level: "80",
           materials: [
@@ -252,21 +278,25 @@ export const formalGarden = {
       name: "Fencing",
       builds: [
         {
+          id: "8196",
           name: "Boundary stones",
           level: "55",
           materials: [{ name: SOFT_CLAY, quantity: 10 }]
         },
         {
+          id: "8197",
           name: "Wooden fence",
           level: "59",
           materials: [{ name: PLANK, quantity: 10 }]
         },
         {
+          id: "8198",
           name: "Stone wall",
           level: "63",
           materials: [{ name: LIMESTONE_BRICK, quantity: 10 }]
         },
         {
+          id: "8199",
           name: "Iron railings",
           level: "67",
           materials: [
@@ -275,6 +305,7 @@ export const formalGarden = {
           ]
         },
         {
+          id: "8200",
           name: "Picket fence",
           level: "71",
           materials: [
@@ -283,7 +314,8 @@ export const formalGarden = {
           ]
         },
         {
-          name: "Tall fancy hedge",
+          id: "8201",
+          name: "Garden fence",
           level: "75",
           materials: [
             { name: TEAK_PLANK, quantity: 10 },
@@ -291,7 +323,8 @@ export const formalGarden = {
           ]
         },
         {
-          name: "Tall box hedge",
+          id: "8202",
+          name: "Marble wall",
           level: "79",
           materials: [{ name: MARBLE_BLOCK, quantity: 8 }]
         }
@@ -301,6 +334,7 @@ export const formalGarden = {
       name: "Tip jar",
       builds: [
         {
+          id: "20634",
           name: "Tip jar",
           level: "40",
           materials: [
