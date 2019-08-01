@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const buildSchema = new Schema ({
   name: String,
-  hotSpot: String
+  hotSpot: String,
+  cost: String
 })
 
 const roomSchema = new Schema ({

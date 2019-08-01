@@ -20,7 +20,7 @@ export default function HotSpot(props) {
   }
 
   function getId() {
-    console.log(props.buildData)
+    // console.log(props.buildData)
     const data = props.buildData.builds.find(b => {
       return b.name === build.name;
     });

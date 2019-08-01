@@ -20,7 +20,10 @@ function formatItemData(itemData) {
 router.post("/save", (req, res) => {
   const { house: newHouse, id } = req.body;
   console.log("House: ", newHouse);
-  if (id) {
+  console.log("House: ", newHouse.rooms[0].builds);
+
+  console.log("Id:", id)
+  if (id && id !== null) {
     console.log("ID found: ", id);
     db.House.findById(id)
       .then(house => {
@@ -33,7 +36,16 @@ router.post("/save", (req, res) => {
       })
       .catch(err => console.log(err));
   } else {
-    db.House.create(house)
+    const h = {rooms:[
+      {
+        name: 'Parlour',
+        coordinates: '2,3',
+        cost: 806,
+        orientation: 'north',
+        builds: []
+      }
+    ]}
+    db.House.create(newHouse)
       .then(rooms => {
         console.log("Rooms: ", rooms);
         const id = rooms._id;

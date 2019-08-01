@@ -9,6 +9,13 @@ export default function Dropdown(props) {
     <Option key={"None"} index={0} name={"---"} canBuild={true} />
   );
   const options = [defaultOption];
+  
+  function getId(name) {
+    const data = props.options.find(o => {
+      return o.name === name;
+    });
+    return data.id;
+  }
 
   function skillCheck(req) {
     const level = skills.Construction.level;
@@ -60,6 +67,7 @@ export default function Dropdown(props) {
         <Option
           key={selectedOption.name}
           name={selectedOption.name}
+          id={getId(selectedOption.name)}
           canBuild={skillCheck(selectedOption.level)}
         />
       );
