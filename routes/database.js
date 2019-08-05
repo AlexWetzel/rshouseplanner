@@ -36,15 +36,6 @@ router.post("/save", (req, res) => {
       })
       .catch(err => console.log(err));
   } else {
-    const h = {rooms:[
-      {
-        name: 'Parlour',
-        coordinates: '2,3',
-        cost: 806,
-        orientation: 'north',
-        builds: []
-      }
-    ]}
     db.House.create(newHouse)
       .then(rooms => {
         console.log("Rooms: ", rooms);

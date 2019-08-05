@@ -2,14 +2,14 @@ import React, { useState, useContext } from "react";
 import style from "./Dropdown.module.css";
 import { userContext } from "../../context/userContext/UserContext";
 
-export default function Dropdown(props) {
+export function Dropdown(props) {
   const { state: userState } = useContext(userContext);
   const { skills } = userState;
   const defaultOption = (
     <Option key={"None"} index={0} name={"---"} canBuild={true} />
   );
   const options = [defaultOption];
-  
+
   function getId(name) {
     const data = props.options.find(o => {
       return o.name === name;
@@ -52,8 +52,16 @@ export default function Dropdown(props) {
         className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
         onClick={() => handleDropDown(props.name, props.index, props.canBuild)}
       >
-        <img src={`https://www.osrsbox.com/osrsbox-db/items-icons/${props.id}.png`} alt={props.name}/>
-        {props.name}
+        {props.id ? (
+          <img
+            src={`https://www.osrsbox.com/osrsbox-db/items-icons/${
+              props.id
+            }.png`}
+            alt={props.name}
+          />
+        ) : null}
+
+        <p>{props.name}</p>
       </div>
     );
   }

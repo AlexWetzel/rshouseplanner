@@ -12,6 +12,7 @@ import {
 } from "../itemData/itemConstatnts";
 
 export const study = {
+  id: "8407",
   name: "Study",
   level: "40",
   price: "50000",

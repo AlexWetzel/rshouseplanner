@@ -1,6 +1,6 @@
 .dropdown {
   margin: 0 auto;
-  width: 300px;
+  width: 100%;
   max-height: 400px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -8,12 +8,17 @@
 
 .option {
   width: inherit;
-  height: 24px;
-  background-color: rgb(33, 33, 80);
-  border: 2px solid orange;
+  height: 40px;
+  background-color: rgb(129, 113, 76);
+  border-top: 2px solid rgb(85, 68, 38);
+  border-bottom: 2px solid rgb(85, 68, 38);
 }
 
 .disabled {
   background-color: black;
   border: 2px solid white;
+}
+
+.dropdown img {
+  float: left;
 }
