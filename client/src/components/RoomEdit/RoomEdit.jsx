@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import style from "./RoomLayout.module.css";
 import Layout from "../Layout";
-import { Dropdown, DropdownTwo } from "../Dropdown";
+import { Dropdown, DropdownTwo, RoomOption } from "../Dropdown";
 import { roomContext } from "../../context/roomContext/RoomContext";
 
 import * as roomData from "../../data/roomData";
@@ -51,13 +51,27 @@ export default function RoomLayout() {
             />
           </div>
           <RotateButtons />
+
+
+
           <DropdownTwo 
             title={"test"}
-            options={testArray.map(ta => {
-              return <p>{ta}</p>
+            // options={testArray.map(ta => {
+            //   return <p>{ta}</p>
+            // })}
+            options={roomNames.map(rn => {
+              const data = roomData[rn];
+              return <RoomOption 
+                key={data.name}
+                id={data.id}
+                name={data.name}
+                onClick={() => actions.changeRoom(data.name)}
+              />;
             })}
             default={"zero"}
           />
+
+
           <Dropdown
             name={"Select a room"}
             options={roomNames.map(rn => {

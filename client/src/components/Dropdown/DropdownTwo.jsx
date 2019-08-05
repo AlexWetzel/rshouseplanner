@@ -22,7 +22,7 @@ export function DropdownTwo(props) {
   // });
 
   const [expand, setExpand] = useState(false);
-  const [selection, setSelection] = useState(true);
+  const [selection, setSelection] = useState(0);
 
   function handleDropDown(name, index, canBuild) {
     if (expand) {
@@ -35,7 +35,10 @@ export function DropdownTwo(props) {
       <div
         className={`${style.option}`}
         // className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
-        onClick={() => setExpand(false)}
+        onClick={() => {
+          setExpand(false);
+          setSelection(props.index);
+        }}
       >
         {props.children}
       </div>
@@ -72,7 +75,7 @@ export function DropdownTwo(props) {
           })
         ) : (
           <div key={props.title} onClick={() => setExpand(true)}>
-            {options[0]}
+            {options[selection]}
           </div>
         )}
       </div>
