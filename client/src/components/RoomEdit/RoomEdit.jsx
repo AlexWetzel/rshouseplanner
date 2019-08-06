@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import style from "./RoomLayout.module.css";
 import Layout from "../Layout";
-import { Dropdown, DropdownTwo, RoomOption } from "../Dropdown";
+import { DropdownTwo, RoomOption, HotspotOption } from "../Dropdown";
 import { roomContext } from "../../context/roomContext/RoomContext";
+import { userContext } from "../../context/userContext/UserContext";
 
 import * as roomData from "../../data/roomData";
 
@@ -11,90 +12,139 @@ import { toCamelCase } from "../../helpers/parsers";
 export default function RoomLayout() {
   const { state, actions } = useContext(roomContext);
   const { selectedRoom, rooms, selectedHotSpot } = state;
+  const { state: userState } = useContext(userContext);
+  const { skills } = userState;
 
   const roomNames = Object.keys(roomData);
+
+  function skillCheck(req) {
+  
+    const level = skills.Construction.level;
+    console.log(req);
+    return level >= req ? true : false;
+  }
+
+  function RoomNotSelected() {
+    return <RoomDropDown />;
+  }
+
   function RoomSelected() {
-    if (selectedRoom.name === "---") {
-      return (
-        <Dropdown
-          name={"Select a room"}
-          options={roomNames.map(rn => {
-            return roomData[rn];
-          })}
-          selectedOption={selectedRoom.name}
-          onSelect={name =>
-            actions.changeRoom(name, roomData, selectedRoom, rooms)
-          }
-        />
-      );
-    } else {
-      const roomName = toCamelCase(selectedRoom.name);
-      const builds = selectedRoom.builds;
-      const selectedBuild = builds.find(b => {
-        return b.hotSpot === selectedHotSpot;
-      });
-      const room = roomData[roomName];
+    const roomName = toCamelCase(selectedRoom.name);
+    const selectedRoomData = roomData[roomName];
+    const hotSpot = selectedRoomData.hotSpots.find(hs => {
+      return hs.name === selectedHotSpot;
+    });
 
-      const hotSpot = room.hotSpots.find(hs => {
-        return hs.name === selectedHotSpot;
-      });
-
-      const testArray = ["one", "two", "three"]
-      return (
-        <>
-          <div className={`${style.roomEditor}`}>
-            <Layout
-              roomName={selectedRoom.name}
-              isSelectedForEdit={true}
-              orientation={selectedRoom.orientation}
-              roomType={room.type}
-            />
-          </div>
-          <RotateButtons />
-
-
-
-          <DropdownTwo 
-            title={"test"}
-            // options={testArray.map(ta => {
-            //   return <p>{ta}</p>
-            // })}
-            options={roomNames.map(rn => {
-              const data = roomData[rn];
-              return <RoomOption 
-                key={data.name}
-                id={data.id}
-                name={data.name}
-                onClick={() => actions.changeRoom(data.name)}
-              />;
-            })}
-            default={"zero"}
+    return (
+      <>
+        <div className={`${style.roomEditor}`}>
+          <Layout
+            roomName={selectedRoom.name}
+            isSelectedForEdit={true}
+            orientation={selectedRoom.orientation}
+            roomType={selectedRoomData.type}
           />
+        </div>
+        <RotateButtons />
+        <RoomDropDown />
+        <h3>{"Hotspots"}</h3>
+        {hotSpot ? <HotSpotSelected hotSpot={hotSpot} /> : null}
+      </>
+    );
+  }
 
+  function RoomDropDown() {
+    const roomName = toCamelCase(selectedRoom.name);
+    const selectedRoomData = roomData[roomName];
 
-          <Dropdown
-            name={"Select a room"}
-            options={roomNames.map(rn => {
-              return roomData[rn];
-            })}
-            selectedOption={selectedRoom.name}
-            onSelect={name => actions.changeRoom(name)}
+    const roomOptions = [
+      <RoomOption
+        key={"---"}
+        name={"---"}
+        onClick={() => actions.changeRoom("---")}
+      />,
+      roomNames.map(rn => {
+        const data = roomData[rn];
+        return (
+          <RoomOption
+            key={data.name}
+            id={data.id}
+            name={data.name}
+            canBuild={skillCheck(data.level)}
+            onClick={() => actions.changeRoom(data.name)}
           />
-          <h3>{"Hotspots"}</h3>
-          {/* {room.hotSpots.map(hs => {
-            return <Dropdown key={hs.name} name={hs.name} options={hs.builds}/>
-          })} */}
-          {hotSpot ? (
-            <Dropdown
-              key={hotSpot.name}
-              options={hotSpot.builds}
-              selectedOption={selectedBuild ? selectedBuild.name : "---"}
-              onSelect={name => actions.changeBuild(name, hotSpot.name)}
-            />
-          ) : null}
-        </>
-      );
+        );
+      })
+    ];
+
+    return (
+      <DropdownTwo
+        title={"Select a room"}
+        options={roomOptions}
+        default={
+          <RoomOption
+            key={selectedRoom.name}
+            id={selectedRoomData ? selectedRoomData.id : null}
+            name={selectedRoom.name}
+            onClick={() => {}}
+          />
+        }
+      />
+    );
+  }
+
+  function HotSpotSelected(props) {
+    const { hotSpot } = props;
+    const builds = selectedRoom.builds;
+    const selectedBuild = builds.find(b => {
+      return b.hotSpot === selectedHotSpot;
+    });
+
+    let selectedBuildData = null;
+
+    if (selectedBuild) {
+      selectedBuildData = hotSpot.builds.find(b => {
+        return b.name === selectedBuild.name;
+      });
     }
+
+    const hotspotOptions = [
+      <HotspotOption
+        key={"---"}
+        name={"---"}
+        onClick={() => actions.changeBuild("---", hotSpot.name)}
+      />,
+      hotSpot.builds.map(b => {
+        return (
+          <HotspotOption
+            key={b.name}
+            id={b.id}
+            name={b.name}
+            canBuild={skillCheck(b.level)}
+            onClick={() => actions.changeBuild(b.name, hotSpot.name)}
+          />
+        );
+      })
+    ];
+
+    return (
+      <DropdownTwo
+        title={hotSpot.name}
+        options={hotspotOptions}
+        default={
+          selectedBuild ? (
+            <RoomOption
+              key={selectedBuild.name}
+              id={selectedBuildData.id}
+              name={selectedBuild.name}
+              onClick={() => {}}
+            />
+          ) : (
+            <RoomOption key={"None"} name={"---"} onClick={() => {}} />
+          )
+        }
+      />
+    );
   }
 
   function RotateButtons() {
@@ -111,13 +161,6 @@ export default function RoomLayout() {
     );
   }
 
-  // function NoRoomSelected() {
-  //   return (
-  //     // <>
-  //     <h1>No Rooms Selected</h1>
-  //     // </>
-  //   );
-  // }
   return (
     <div>
       <button onClick={() => actions.saveRooms()}>Save Rooms</button>
@@ -125,8 +168,7 @@ export default function RoomLayout() {
       <button onClick={() => localStorage.removeItem("name")}>
         Clear Name
       </button>
-      {/* {selectedRoom ? <RoomSelected /> : <NoRoomSelected />} */}
-      <RoomSelected />
+      {selectedRoom.name === "---" ? <RoomNotSelected /> : <RoomSelected />}
     </div>
   );
 }

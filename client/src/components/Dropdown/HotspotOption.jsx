@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import style from "./Dropdown.module.css";
 
-export function RoomOption(props) {
+export function HotspotOption(props) {
   return (
     <div
       className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
@@ -16,5 +16,10 @@ export function RoomOption(props) {
 
       <p>{props.name}</p>
     </div>
-  );
+  )
 }
+
+
+
+
+///////////// ENKI

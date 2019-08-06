@@ -1,43 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import style from "./Dropdown.module.css";
-import { userContext } from "../../context/userContext/UserContext";
 
 export function DropdownTwo(props) {
-  const { state: userState } = useContext(userContext);
-  const { skills } = userState;
-  const defaultOption = (
-    <Option key={"None"} index={0} name={"---"} canBuild={true}>
-      {props.default}
-    </Option>
-  );
 
-  const options = [props.default, ...props.options];
-
-  // props.options.forEach((o, index) => {
-  //   options.push(
-  //     <Option key={props.title + index} index={index}>
-  //       {o}
-  //     </Option>
-  //   );
-  // });
-
+  const options = [...props.options];
   const [expand, setExpand] = useState(false);
-  const [selection, setSelection] = useState(0);
-
-  function handleDropDown(name, index, canBuild) {
-    if (expand) {
-      props.onSelect(name);
-    }
-  }
+  // const [selection, setSelection] = useState(0);
 
   function Option(props) {
     return (
       <div
-        className={`${style.option}`}
+        // className={`${style.option}`}
         // className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
         onClick={() => {
           setExpand(false);
-          setSelection(props.index);
+          // console.log(props.index);
+          // setSelection(props.index);
         }}
       >
         {props.children}
@@ -75,7 +53,7 @@ export function DropdownTwo(props) {
           })
         ) : (
           <div key={props.title} onClick={() => setExpand(true)}>
-            {options[selection]}
+            {props.default}
           </div>
         )}
       </div>

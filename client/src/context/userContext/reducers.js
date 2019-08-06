@@ -1,7 +1,7 @@
 const initialState = {
   name: "",
   skills: {
-    Construction: {level: 99}
+    Construction: {level: 50}
   }
 };
 
