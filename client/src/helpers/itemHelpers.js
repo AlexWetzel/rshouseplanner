@@ -33,6 +33,27 @@ export function getBuildItems(room, items) {
     }
     return bI;
   });
+  // getItemData()
 
   return buildItems;
 }
+
+// export function getItemData(items) {
+//   buildItems.map(bI => {
+//     const itemData = items.find(i => {
+//       return i.name === bI.name;
+//     });
+//     if (itemData) {
+//       const [longPrice, priceNum] = shortPriceToLong(itemData.exchangePrice);
+//       bI.shortPrice = itemData.exchangePrice;
+//       bI.longPrice = longPrice;
+//       bI.priceNum = priceNum;
+//     } else {
+//       bI.shortPrice = "---";
+//       bI.longPrice = "---";
+//       bI.priceNum = 0;
+//     }
+//     return bI;
+//   });
+//   return
+// }

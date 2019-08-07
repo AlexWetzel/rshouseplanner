@@ -7,6 +7,8 @@
 }
 
 .option {
+  display: flex;
+  /* justify-content: space-between; */
   width: inherit;
   height: 40px;
   background-color: rgb(129, 113, 76);
@@ -19,6 +21,22 @@
   border: 2px solid white;
 }
 
-.dropdown img {
-  float: left;
+.roomLevel {
+  flex-grow: 2;
 }
+
+.roomIcon {
+  flex-grow: 2;
+}
+
+.roomName {
+  flex-grow: 3;
+}
+
+.roomPrice {
+  flex-grow: 2
+}
+
+/* .dropdown img {
+  float: left;
+} */

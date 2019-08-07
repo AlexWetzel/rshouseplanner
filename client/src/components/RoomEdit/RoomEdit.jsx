@@ -4,6 +4,7 @@ import Layout from "../Layout";
 import { DropdownTwo, RoomOption, HotspotOption } from "../Dropdown";
 import { roomContext } from "../../context/roomContext/RoomContext";
 import { userContext } from "../../context/userContext/UserContext";
+import { itemContext } from "../../context/itemContext/ItemContext";
 
 import * as roomData from "../../data/roomData";
 
@@ -15,12 +16,13 @@ export default function RoomLayout() {
   const { state: userState } = useContext(userContext);
   const { skills } = userState;
 
+
+
   const roomNames = Object.keys(roomData);
 
   function skillCheck(req) {
   
     const level = skills.Construction.level;
-    console.log(req);
     return level >= req ? true : false;
   }
 
@@ -70,6 +72,8 @@ export default function RoomLayout() {
             key={data.name}
             id={data.id}
             name={data.name}
+            level={data.level}
+            price={data.price}
             canBuild={skillCheck(data.level)}
             onClick={() => actions.changeRoom(data.name)}
           />
@@ -86,6 +90,7 @@ export default function RoomLayout() {
             key={selectedRoom.name}
             id={selectedRoomData ? selectedRoomData.id : null}
             name={selectedRoom.name}
+            canBuild={true}
             onClick={() => {}}
           />
         }
@@ -94,6 +99,9 @@ export default function RoomLayout() {
   }
 
   function HotSpotSelected(props) {
+    const { state: itemState } = useContext(itemContext);
+    const { items } = itemState;
+
     const { hotSpot } = props;
     const builds = selectedRoom.builds;
     const selectedBuild = builds.find(b => {
@@ -108,18 +116,42 @@ export default function RoomLayout() {
       });
     }
 
+    function getIds(materials) {
+      materials.map( m => {
+        const itemData = items.find( i => {
+          return i.name == m.name
+        })
+
+        if (itemData) {
+          m.id = itemData.id;
+          console.log(m.id);
+        }
+        else{
+          console.log("item not found");
+        }
+        return m;
+      })
+
+      return materials;
+    }
+
     const hotspotOptions = [
       <HotspotOption
         key={"---"}
         name={"---"}
+        materials={[]}
         onClick={() => actions.changeBuild("---", hotSpot.name)}
       />,
       hotSpot.builds.map(b => {
+        const mats = getIds(b.materials)
+        // console.log(mats);
         return (
           <HotspotOption
             key={b.name}
             id={b.id}
             name={b.name}
+            level={b.level}
+            materials={mats}
             canBuild={skillCheck(b.level)}
             onClick={() => actions.changeBuild(b.name, hotSpot.name)}
           />
@@ -133,10 +165,12 @@ export default function RoomLayout() {
         options={hotspotOptions}
         default={
           selectedBuild ? (
-            <RoomOption
+            <HotspotOption
               key={selectedBuild.name}
               id={selectedBuildData.id}
               name={selectedBuild.name}
+              level={selectedBuild.level}
+              // materials={getIds(selectedBuild.materials)}
               onClick={() => {}}
             />
           ) : (
