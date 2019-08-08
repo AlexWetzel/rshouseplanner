@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-// import style from "./RoomLayout.module.css";
-// import Layout from "../Layout";
 import { DropdownTwo } from "../../Dropdown";
 import HotspotOption from "./HotspotOption";
 import { roomContext } from "../../../context/roomContext/RoomContext";

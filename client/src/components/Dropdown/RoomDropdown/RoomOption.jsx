@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./Dropdown.module.css";
+import style from "../Dropdown.module.css";
 
-export function RoomOption(props) {
+export default function RoomOption(props) {
   function RoomOptionWrapper(props) {
     return (
       <div

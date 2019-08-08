@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import style from "./RoomLayout.module.css";
 import Layout from "../Layout";
-import { DropdownTwo, RoomOption } from "../Dropdown";
 import HotspotDropdown from "../Dropdown/HotspotDropdown";
+import RoomDropdown from "../Dropdown/RoomDropdown";
 import { roomContext } from "../../context/roomContext/RoomContext";
-import { userContext } from "../../context/userContext/UserContext";
-import { itemContext } from "../../context/itemContext/ItemContext";
 
 import * as roomData from "../../data/roomData";
 
@@ -14,21 +12,10 @@ import { toCamelCase } from "../../helpers/parsers";
 export default function RoomLayout() {
   const { state, actions } = useContext(roomContext);
   const { selectedRoom, selectedHotSpot } = state;
-  const { state: userState } = useContext(userContext);
-  const { skills } = userState;
 
-
-
-  const roomNames = Object.keys(roomData);
-
-  function skillCheck(req) {
-  
-    const level = skills.Construction.level;
-    return level >= req ? true : false;
-  }
 
   function RoomNotSelected() {
-    return <RoomDropDown />;
+    return <RoomDropdown />;
   }
 
   function RoomSelected() {
@@ -49,139 +36,11 @@ export default function RoomLayout() {
           />
         </div>
         <RotateButtons />
-        <RoomDropDown />
+        <RoomDropdown />
         <h3>{"Hotspots"}</h3>
-        {hotSpot ? <HotSpotSelected hotSpot={hotSpot} /> : null}
+        {hotSpot ? <HotspotDropdown /> : null}
       </>
     );
-  }
-
-  function RoomDropDown() {
-    const roomName = toCamelCase(selectedRoom.name);
-    const selectedRoomData = roomData[roomName];
-
-    const roomOptions = [
-      <RoomOption
-        key={"---"}
-        name={"---"}
-        canBuild={true}
-        onClick={() => actions.changeRoom("---")}
-      />,
-      roomNames.map(rn => {
-        const data = roomData[rn];
-        return (
-          <RoomOption
-            key={data.name}
-            id={data.id}
-            name={data.name}
-            level={data.level}
-            price={data.price}
-            canBuild={skillCheck(data.level)}
-            onClick={() => actions.changeRoom(data.name)}
-          />
-        );
-      })
-    ];
-
-    return (
-      <DropdownTwo
-        title={"Select a room"}
-        options={roomOptions}
-        default={
-          <RoomOption
-            key={selectedRoom.name}
-            id={selectedRoomData ? selectedRoomData.id : null}
-            name={selectedRoom.name}
-            canBuild={true}
-            onClick={() => {}}
-          />
-        }
-      />
-    );
-  }
-
-  function HotSpotSelected(props) {
-    // const { state: itemState } = useContext(itemContext);
-    // const { items } = itemState;
-
-    // const { hotSpot } = props;
-    // const builds = selectedRoom.builds;
-    // const selectedBuild = builds.find(b => {
-    //   return b.hotSpot === selectedHotSpot;
-    // });
-
-    // let selectedBuildData = null;
-
-    // if (selectedBuild) {
-    //   selectedBuildData = hotSpot.builds.find(b => {
-    //     return b.name === selectedBuild.name;
-    //   });
-    // }
-
-    // function getIds(materials) {
-    //   materials.map( m => {
-    //     const itemData = items.find( i => {
-    //       return i.name === m.name
-    //     })
-
-    //     if (itemData) {
-    //       m.id = itemData.id;
-    //     }
-    //     else{
-    //       console.log("item not found");
-    //     }
-    //     return m;
-    //   })
-
-    //   return materials;
-    // }
-
-    // const hotspotOptions = [
-    //   <HotspotOption
-    //     key={"---"}
-    //     name={"---"}
-    //     canBuild={true}
-    //     onClick={() => actions.changeBuild("---", hotSpot.name)}
-    //   />,
-    //   hotSpot.builds.map(b => {
-    //     const mats = getIds(b.materials)
-    //     // console.log(mats);
-    //     return (
-    //       <HotspotOption
-    //         key={b.name}
-    //         id={b.id}
-    //         name={b.name}
-    //         level={b.level}
-    //         materials={mats}
-    //         canBuild={skillCheck(b.level)}
-    //         onClick={() => actions.changeBuild(b.name, hotSpot.name)}
-    //       />
-    //     );
-    //   })
-    // ];
-    // return (
-    //   <DropdownTwo
-    //     title={hotSpot.name}
-    //     options={hotspotOptions}
-    //     default={
-    //       selectedBuild ? (
-    //         <HotspotOption
-    //           key={selectedBuild.name}
-    //           id={selectedBuildData.id}
-    //           name={selectedBuild.name}
-    //           level={selectedBuild.level}
-    //           materials={getIds(selectedBuildData.materials)}
-    //           onClick={() => {}}
-    //         />
-    //       ) : (
-    //         <HotspotOption key={"None"} name={"---"} onClick={() => {}} />
-    //       )
-    //     }
-    //   />
-    // );
-    return (
-      <HotspotDropdown />
-    )
   }
 
   function RotateButtons() {
