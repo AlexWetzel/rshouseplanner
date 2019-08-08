@@ -124,7 +124,6 @@ export default function RoomLayout() {
 
         if (itemData) {
           m.id = itemData.id;
-          console.log(m.id);
         }
         else{
           console.log("item not found");
@@ -158,7 +157,6 @@ export default function RoomLayout() {
         );
       })
     ];
-
     return (
       <DropdownTwo
         title={hotSpot.name}
@@ -170,7 +168,7 @@ export default function RoomLayout() {
               id={selectedBuildData.id}
               name={selectedBuild.name}
               level={selectedBuild.level}
-              // materials={getIds(selectedBuild.materials)}
+              materials={getIds(selectedBuildData.materials)}
               onClick={() => {}}
             />
           ) : (
