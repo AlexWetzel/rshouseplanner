@@ -43,6 +43,12 @@ export const useActions = (state, itemState, dispatch) => {
 
     // Remove room
     if (name === "---") {
+      /*
+      * The next statement prevents inintentional room deletions
+      * when selecting an empty room in a dropdown when the room
+      * is already empty
+      */
+      if (roomIndex === -1) {return}
       const newRooms = rooms.map(r => {
         return r;
       });
@@ -52,6 +58,7 @@ export const useActions = (state, itemState, dispatch) => {
     }
     // Replace room
     else if (roomIndex !== -1) {
+      
       const newRooms = rooms.map(r => {
         if (r.coordinates === selectedRoom.coordinates) {
           return newRoom;

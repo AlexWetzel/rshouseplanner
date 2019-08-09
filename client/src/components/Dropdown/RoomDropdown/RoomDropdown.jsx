@@ -10,7 +10,7 @@ import { toCamelCase } from "../../../helpers/parsers";
 
 export default function RoomDropdown() {
   const { state, actions } = useContext(roomContext);
-  const { selectedRoom } = state;
+  const { selectedRoom, selectedFloor } = state;
   const { state: userState } = useContext(userContext);
   const { skills } = userState;
 
@@ -24,6 +24,22 @@ export default function RoomDropdown() {
     return level >= req ? true : false;
   }
 
+  function roomIsValidOnFloor(type) {
+    switch (selectedFloor) {
+      case 0:
+        if (type === "indoor" || type === "outdoor") return true;
+        else return false;
+      case 1:
+        if (type === "indoor") return true;
+        else return false;
+      case -1:
+        if (type === "indoor" || type === "dungeon") return true;
+        else return false;
+      default:
+        return false;
+    }
+  }
+
   const roomOptions = [
     <RoomOption
       key={"---"}
@@ -33,17 +49,20 @@ export default function RoomDropdown() {
     />,
     roomNames.map(rn => {
       const data = roomData[rn];
-      return (
-        <RoomOption
-          key={data.name}
-          id={data.id}
-          name={data.name}
-          level={data.level}
-          price={data.price}
-          canBuild={skillCheck(data.level)}
-          onClick={() => actions.changeRoom(data.name)}
-        />
-      );
+
+      if (roomIsValidOnFloor(data.type)) {
+        return (
+          <RoomOption
+            key={data.name}
+            id={data.id}
+            name={data.name}
+            level={data.level}
+            price={data.price}
+            canBuild={skillCheck(data.level)}
+            onClick={() => actions.changeRoom(data.name)}
+          />
+        );
+      } else return null;
     })
   ];
 
