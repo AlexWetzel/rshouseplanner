@@ -13,7 +13,6 @@ export default function RoomLayout() {
   const { state, actions } = useContext(roomContext);
   const { selectedRoom, selectedHotSpot } = state;
 
-
   function RoomNotSelected() {
     return <RoomDropdown />;
   }

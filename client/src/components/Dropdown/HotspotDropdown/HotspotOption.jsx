@@ -6,7 +6,8 @@ export default function HotspotOption(props) {
     return (
       <div
         className={`${style.option} ${props.canBuild ? "" : style.disabled}`}
-        onClick={props.onClick}
+        onClick={props.canBuild ? props.onClick : () => {}}
+        // onClick={props.onClick}
       >
         {props.children}
       </div>

@@ -19,8 +19,6 @@ function formatItemData(itemData) {
 
 router.post("/save", (req, res) => {
   const { house: newHouse, id } = req.body;
-  console.log("House: ", newHouse);
-  console.log("House: ", newHouse.rooms[0].builds);
 
   console.log("Id:", id)
   if (id && id !== null) {

@@ -83,7 +83,17 @@ export const useActions = (state, itemState, dispatch) => {
       ...selectedRoom
     };
 
+    
+
     if (build === "---") {
+      /*
+       * If an empty build is selected on an empty hotspot 
+       * while another build exists in the same room, then that other
+       * build will be erased, so the next if statement prevents
+       * such behavior 
+      */
+      if (buildIndex === -1) {return}
+
       newRoom.builds.splice(buildIndex, 1);
     } else if (buildIndex !== -1) {
       const newBuilds = selectedRoom.builds.map(b => {

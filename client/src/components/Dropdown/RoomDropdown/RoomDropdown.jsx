@@ -19,7 +19,7 @@ export default function RoomDropdown() {
 
   const roomNames = Object.keys(roomData);
 
-  function skillCheck(req) {  
+  function skillCheck(req) {
     const level = skills.Construction.level;
     return level >= req ? true : false;
   }

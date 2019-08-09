@@ -1,6 +1,7 @@
 const initialState = {
   id: null,
   rooms: [],
+  selectedFloor: 0,
   selectedRoom: null,
   selectedHotSpot: null
 };
@@ -13,7 +14,8 @@ const types = {
   addRoom: "ADD_ROOM",
   changeRoom: "CHANGE_ROOM",
   addBuild: "ADD_BUILD",
-  setId: "SET_ID"
+  setId: "SET_ID",
+  selectFloor: "SELECT_FLOOR"
 };
 
 const reducer = (state = initialState, action) => {
@@ -41,20 +43,24 @@ const reducer = (state = initialState, action) => {
       };
     case types.changeRoom:
       const newRooms = state.rooms.map(r => {
-        if (r.coordinates === action.payload.coordinates){
+        if (r.coordinates === action.payload.coordinates) {
           return action.payload;
-        }
-        else return r;
-      })
+        } else return r;
+      });
       return {
         ...state,
         rooms: newRooms
-      }
-    case types.setId:    
+      };
+    case types.setId:
       return {
         ...state,
         id: action.payload
-      }
+      };
+    case types.selectFloor:
+      return {
+        ...state,
+        selectedFloor: action.payload
+      };
     default:
       return state;
   }

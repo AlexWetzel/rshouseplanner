@@ -20,23 +20,6 @@ function FloorPlan() {
   const { actions: itemActions } = useContext(itemContext);
 
   const size = 5;
-  const gridSquares = [];
-
-  for (let x = 1; x <= size; x++) {
-    for (let y = 1; y <= size; y++) {
-      const coords = `${x},${y}`;
-      gridSquares.push(
-        <GridSquare
-          key={coords}
-          coordinates={coords}
-          onDragOver={e => onDragOver(e)}
-          onDrop={e => actions.swapRooms(e, coords)}
-        >
-          <RoomRender coords={coords} />
-        </GridSquare>
-      );
-    }
-  }
 
   function onDragOver(e) {
     e.preventDefault();
@@ -84,13 +67,76 @@ function FloorPlan() {
       );
   }
 
+  function Floor(props) {
+    const gridSquares = [];
+
+    for (let x = 1; x <= size; x++) {
+      for (let y = 1; y <= size; y++) {
+        const coords = `${x},${y},${props.floor}`;
+        gridSquares.push(
+          <GridSquare
+            key={coords}
+            coordinates={coords}
+            onDragOver={e => onDragOver(e)}
+            onDrop={e => actions.swapRooms(e, coords)}
+          >
+            <RoomRender coords={coords} />
+          </GridSquare>
+        );
+      }
+    }
+    return <GridPlane>{gridSquares}</GridPlane>;
+  }
+
+  function Floors() {
+    const { state, dispatch } = useContext(roomContext);
+    const { selectedFloor } = state;
+
+    function floorHeader() {
+      switch (selectedFloor) {
+        case 0:
+          return "Ground floor";
+        case 1:
+          return "Upstairs";
+        case -1:
+          return "Basement";
+        default:
+          return "Floor error";
+      }
+    }
+
+    return (
+      <>
+        <h1>{floorHeader()}</h1>
+        <Floor floor={selectedFloor} />
+        <button
+          onClick={() => dispatch({ type: types.selectFloor, payload: 1 })}
+        >
+          Upstairs
+        </button>
+        <button
+          onClick={() => dispatch({ type: types.selectFloor, payload: 0 })}
+        >
+          Ground floor
+        </button>
+        <button
+          onClick={() => dispatch({ type: types.selectFloor, payload: -1 })}
+        >
+          Basement
+        </button>
+      </>
+    );
+  }
+
   return (
     <div>
-      <button onClick={() => itemActions.updateExchangePrices()}>item test</button>
+      <button onClick={() => itemActions.updateExchangePrices()}>
+        item test
+      </button>
       <button onClick={() => itemActions.postItems()}>create items</button>
       <HouseValue />
       <PlayerSearch />
-      <GridPlane>{gridSquares}</GridPlane>
+      <Floors />
     </div>
   );
 }

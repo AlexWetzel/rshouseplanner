@@ -59,13 +59,17 @@ export default function HotspotDropdown() {
     return level >= req ? true : false;
   }
 
-  const hotspotOptions = [
+  const emptyHotspot = (
     <HotspotOption
       key={"---"}
       name={"---"}
       canBuild={true}
       onClick={() => actions.changeBuild("---", hotSpot.name)}
-    />,
+    />
+  );
+
+  const hotspotOptions = [
+    emptyHotspot,
     hotSpot.builds.map(b => {
       const mats = getIds(b.materials);
       // console.log(mats);
@@ -92,12 +96,18 @@ export default function HotspotDropdown() {
             key={selectedBuild.name}
             id={selectedBuildData.id}
             name={selectedBuild.name}
-            level={selectedBuild.level}
+            level={selectedBuildData.level}
             materials={getIds(selectedBuildData.materials)}
+            canBuild={skillCheck(selectedBuildData.level)}
             onClick={() => {}}
           />
         ) : (
-          <HotspotOption key={"None"} name={"---"} onClick={() => {}} />
+          <HotspotOption
+            key={"---"}
+            name={"---"}
+            canBuild={true}
+            onClick={() => {}}
+          />
         )
       }
     />
